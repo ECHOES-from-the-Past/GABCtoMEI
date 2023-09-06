@@ -6,6 +6,9 @@
 from xml.dom import minidom
 
 doc = minidom.parse("ReadyToGo_neumes.mei")
+
+layer_elems = doc.getElementsByTagName("layer")
+layer1 = layer_elems[0]
 # staff_elems = doc.getElementsByTagName("staff")
 # staff1 = staff_elems[0]
 #
@@ -102,19 +105,45 @@ def convert_to_mei_neume(gabc_token):
 	
 	return mei_neume
 
+def get_syl_and_neumes(gabc_syllable):
+	syl_neumes_pair = gabc_syllable.split('(')
+	syl = syl_neumes_pair[0]
+	neumes = syl_neumes_pair[1]
+
+	indiv_neumes_list = neumes.split('/')
+		
+	return syl, indiv_neumes_list
 
 
 # ------------ #
 # Main program #
 # ------------ #
-line = "c3 gvFE gfge> ghg"
-list_of_tokens = line.split()
-clef = list_of_tokens[0]
-mei_neumes = [convert_to_mei_neume(gabc_neume) for gabc_neume in list_of_tokens[1:]]
-for mei_neume in mei_neumes:
-	layer_elems = doc.getElementsByTagName("layer")
-	layer1 = layer_elems[0]
-	layer1.appendChild(mei_neume)
+line = "(c3) Chris(gvFE)te(gf/ge>) Na(ghg)"
+
+words = line.split()
+clef = words[0]
+
+for word in words[1:]:
+	#print('The word is: ', word)
+	syllables = word.split(')')
+	#print(syllables[:-1])
+	for gabc_syllable in syllables[:-1]:
+		#print(gabc_syllable)
+		syllable_mei = doc.createElement('syllable')
+		layer1.appendChild(syllable_mei)
+
+		syl_text, indiv_neumes_list = get_syl_and_neumes(gabc_syllable)
+		#print(syl)
+		#print(indiv_neumes_list)
+
+		syl_mei = doc.createElement('syl')
+		text = doc.createTextNode(syl_text)
+		syl_mei.appendChild(text)
+		syllable_mei.appendChild(syl_mei)
+		for gabc_neume in indiv_neumes_list:
+			mei_neume = convert_to_mei_neume(gabc_neume)
+			syllable_mei.appendChild(mei_neume)
+
 
 myfile = open("output.mei", "w")
 myfile.write(doc.toxml())

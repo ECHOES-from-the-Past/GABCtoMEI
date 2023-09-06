@@ -20,6 +20,7 @@ doc = minidom.parse("ReadyToGo_neumes.mei")
 # ----------- #
 regular_pitches = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm']
 inclinatum_pitches = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M']
+locs = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 pitches = regular_pitches + inclinatum_pitches
 
 prefixes = ['@']
@@ -49,9 +50,11 @@ def get_nc_attributes(gabc_nc):
 	for item in characters:
 		# Pitches
 		if item in regular_pitches:
-			attributes.append(('pname', item))
+			locval = locs[regular_pitches.index(item)]
+			attributes.append(('loc', str(locval)))
 		elif item in inclinatum_pitches:
-			attributes.append(('pname', item))
+			locval = locs[inclinatum_pitches.index(item)]
+			attributes.append(('loc', str(locval)))
 			attributes.append(('tilt', 'se'))
 		# Prefixes
 		elif item == '@':

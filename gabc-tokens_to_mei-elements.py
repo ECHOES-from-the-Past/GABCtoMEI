@@ -28,6 +28,7 @@ pitches = regular_pitches + inclinatum_pitches
 
 prefixes = ['@']
 suffixes = ['~', '>', '<', 'o', 'w', 's', 'v', 'V']
+# Missing episema ('_')
 
 # --------- #
 # Functions #
@@ -64,16 +65,22 @@ def get_nc_attributes(gabc_nc):
 			pass
 		# Suffixes
 		elif item == '~':
+			# THE LITTLE ONES ???
 			pass
 		elif item == '>':
+			# liquescent
 			pass
 		elif item == '<':
+			# liquescent
 			pass
 		elif item == 'o':
+			# oriscus
 			pass
 		elif item == 'w':
+			# quilisma
 			pass
 		elif item == 's':
+			# strophicus
 			pass
 		elif item == 'v':
 			attributes.append(('tilt', 's'))

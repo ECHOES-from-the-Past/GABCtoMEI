@@ -6,13 +6,13 @@
 from xml.dom import minidom
 
 doc = minidom.parse("ReadyToGo_neumes.mei")
-staff_elems = doc.getElementsByTagName("staff")
-staff1 = staff_elems[0]
-
-neume_elem = doc.createElement('neume')
-neume_elem.setAttribute("syl", "primera")
-nc_elem = doc.createElement('nc')
-neume_elem.appendChild(nc_elem)
+# staff_elems = doc.getElementsByTagName("staff")
+# staff1 = staff_elems[0]
+#
+# neume_elem = doc.createElement('neume')
+# neume_elem.setAttribute("syl", "primera")
+# nc_elem = doc.createElement('nc')
+# neume_elem.appendChild(nc_elem)
 
 
 # ----------- #
@@ -52,7 +52,7 @@ def get_nc_attributes(gabc_nc):
 			attributes.append(('pname', item))
 		elif item in inclinatum_pitches:
 			attributes.append(('pname', item))
-			attributes.append(('tilt', '"se"'))
+			attributes.append(('tilt', 'se'))
 		# Prefixes
 		elif item == '@':
 			pass
@@ -70,32 +70,32 @@ def get_nc_attributes(gabc_nc):
 		elif item == 's':
 			pass
 		elif item == 'v':
-			attributes.append(('tilt', '"s"'))
+			attributes.append(('tilt', 's'))
 		elif item == 'V':
-			attributes.append(('tilt', '"n"'))
+			attributes.append(('tilt', 'n'))
 		else:
 			print("this character is not included in the list of processing characters")
 	return(attributes)
 
 def convert_to_mei_nc(gabc_nc):
 	# DEFINE (EMPTY) NC ELEMENT IN MEI
-	mei_nc = MeiElement('nc') # LIBMEI METHOD
+	mei_nc = doc.createElement('nc') # LIBMEI METHOD
 	# ADD ATTRIBUTES TO IT
 	attriblist = get_nc_attributes(gabc_nc)
 	for attrib in attriblist:
-		mei_nc.addAttribute(attrib[0], attrib[1]) # LIBMEI METHOD
+		mei_nc.setAttribute(attrib[0], attrib[1]) # LIBMEI METHOD
 	
 	return mei_nc
 
 
 def convert_to_mei_neume(gabc_token):
 	# DEFINE (EMPTY) NEUME ELEMENT IN MEI
-	mei_neume = MeiElement('neume') # LIBMEI METHOD
+	mei_neume = doc.createElement('neume') # LIBMEI METHOD
 	# FILL IT WITH <NC> CHILDREN
 	gabc_ncs_of_neume = get_gabc_ncs(gabc_token)
 	for gabc_nc in gabc_ncs_of_neume:
 		mei_nc = convert_to_mei_nc(gabc_nc)
-		mei_neume.addChild(mei_nc) # LIBMEI METHOD
+		mei_neume.appendChild(mei_nc) # LIBMEI METHOD
 	
 	return mei_neume
 
@@ -108,3 +108,11 @@ line = "c3 gvFE gfge> ghg"
 list_of_tokens = line.split()
 clef = list_of_tokens[0]
 mei_neumes = [convert_to_mei_neume(gabc_neume) for gabc_neume in list_of_tokens[1:]]
+for mei_neume in mei_neumes:
+	layer_elems = doc.getElementsByTagName("layer")
+	layer1 = layer_elems[0]
+	layer1.appendChild(mei_neume)
+
+myfile = open("output.mei", "w")
+myfile.write(doc.toxml())
+myfile.close()

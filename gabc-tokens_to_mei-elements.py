@@ -150,7 +150,10 @@ if __name__ == "__main__":
 	args = parser.parse_args()
 
 	line = args.gabc
-	# line = "(c3) Chris(gvFE)te(gf/ge>) Na(ghg)"
+	# python3 gabc-tokens_to_mei-elements.py "(c3) Chris(gvFE)te(gf/ge>) Na(ghg)" out.mei
+	# python3 gabc-tokens_to_mei-elements.py "(f2) Be(e!E!fv)ne(dev)di(ghv)ci(g!E)te(fff!d/ed) om(g)nes(g) An(ijv)ge(h)li(g) Do(h)mi(g)ni(f) Do(h/ih)mi(g/hg)num(g) hym(g)num(g) di(ijv)ci(h!g)te(g!h!/iwjvi!i!h) et(h) su(i/ji)pe(g)re(h)xal(g)ta(f!ghv)te(h) e(g!e/f!ed!ev)um(e!d) in(e/f!f!f!d/ghv) se(g!f/g/hg)cu(e/gf!f)la(fe)" aquit1_82441.mei
+	# python3 gabc-tokens_to_mei-elements.py "(f2) Ec(d)ce(c/fe) vir(fe~)go(d) con(cev)ci(ghv)pi(g!e)et(f!e/fd) et(dev) pa(g!ghv/j!jkv!h)ri(ghv)et(h) fi(h!g)li(hiwj!h)um(h) et(h) vo(h!g)ca(j!j)bi((h!g)tur(j!j!ih!iv) no(g!h/ih)men(f!f!E) e(g/ih)jus(h!g) Em(fgve!d)ma(d!f!ghv)nu(f!e!d)el(d)" aquit10_84614.mei
+	# python3 gabc-tokens_to_mei-elements.py "(f2) Ec(d)ce(d/fe) vir(fg~)go(d) con(cev)ci(ghv)pi(g!e)et(f!e/fd) et(cev) pa(g!hjv/j/kh)ri(ghv)et(h) fi(h)li(h!ghv/i/jh)um(h) et(h/ih~) vo(jj)ca(h!g)bi(I!hiv)tur(g!hiv/ioh) no(f!E)men(ge~) ej(fhv/i!hg)us(h!g) Em(f/ge/eod)ma(d!fghv)nu(f!E)el(d)" aquit11_84548.mei
 	words = line.split()
 	clef = words[0]
 

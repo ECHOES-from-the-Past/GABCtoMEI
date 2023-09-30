@@ -27,163 +27,163 @@ suffixes = ['~', '>', '<', 'o', 'w', 's', 'v', 'V']
 # Functions #
 # --------- #
 def get_gabc_ncs(gabc_token):
-	chars_in_token = list(gabc_token)
+    chars_in_token = list(gabc_token)
 
-	ncs_in_token = []
-	for i, origchar in enumerate(chars_in_token):
-		if ((origchar in pitches) or (origchar in prefixes)):
-			ncs_in_token.append(origchar)
-		elif (origchar in suffixes):
-			ncs_in_token[-1] = ncs_in_token[-1] + origchar
-		else:
-			print('unknown character: ', origchar)
+    ncs_in_token = []
+    for i, origchar in enumerate(chars_in_token):
+        if ((origchar in pitches) or (origchar in prefixes)):
+            ncs_in_token.append(origchar)
+        elif (origchar in suffixes):
+            ncs_in_token[-1] = ncs_in_token[-1] + origchar
+        else:
+            print('unknown character: ', origchar)
 
-	return ncs_in_token
+    return ncs_in_token
 
 
 def get_nc_qualities(gabc_nc):
-	characters = list(gabc_nc)
-	features = []
-	for item in characters:
+    characters = list(gabc_nc)
+    features = []
+    for item in characters:
 
-		# Pitches
-		if item in regular_pitches:
-			# loc attribute
-			locval = locs[regular_pitches.index(item)]
-			attribute = ('loc', str(locval))
-			features.append(attribute)
-		elif item in inclinatum_pitches:
-			# loc attribute
-			locval = locs[inclinatum_pitches.index(item)]
-			attribute = ('loc', str(locval))
-			features.append(attribute)
-			# tilt attribute
-			attribute = ('tilt', 'se')
-			features.append(attribute)
+        # Pitches
+        if item in regular_pitches:
+            # loc attribute
+            locval = locs[regular_pitches.index(item)]
+            attribute = ('loc', str(locval))
+            features.append(attribute)
+        elif item in inclinatum_pitches:
+            # loc attribute
+            locval = locs[inclinatum_pitches.index(item)]
+            attribute = ('loc', str(locval))
+            features.append(attribute)
+            # tilt attribute
+            attribute = ('tilt', 'se')
+            features.append(attribute)
 
-		# Prefixes
-		elif item == '@':
-			pass
-		# Suffixes
-		elif item == '~':
-			# liquescent
-			nc_type = doc.createElement('liquescent') # LIBMEI METHOD
-			features.append(nc_type)
-		elif item == '>':
-			# liquescent
-			nc_type = doc.createElement('liquescent') # LIBMEI METHOD
-			features.append(nc_type)
-		elif item == '<':
-			# liquescent
-			nc_type = doc.createElement('liquescent') # LIBMEI METHOD
-			features.append(nc_type)
-		elif item == 'o':
-			# oriscus
-			nc_type = doc.createElement('oriscus') # LIBMEI METHOD
-			features.append(nc_type)
-		elif item == 'w':
-			# quilisma
-			nc_type = doc.createElement('quilisma') # LIBMEI METHOD
-			features.append(nc_type)
-		elif item == 's':
-			# strophicus
-			nc_type = doc.createElement('strophicus') # LIBMEI METHOD
-			features.append(nc_type)
-		elif item == 'v':
-			# tilt attribute
-			attribute = ('tilt', 's')
-			features.append(attribute)
-		elif item == 'V':
-			# tilt attribute
-			attribute = ('tilt', 'n')
-			features.append(attribute)
-		else:
-			print("this character is not included in the list of processing characters")
+        # Prefixes
+        elif item == '@':
+            pass
+        # Suffixes
+        elif item == '~':
+            # liquescent
+            nc_type = doc.createElement('liquescent') # LIBMEI METHOD
+            features.append(nc_type)
+        elif item == '>':
+            # liquescent
+            nc_type = doc.createElement('liquescent') # LIBMEI METHOD
+            features.append(nc_type)
+        elif item == '<':
+            # liquescent
+            nc_type = doc.createElement('liquescent') # LIBMEI METHOD
+            features.append(nc_type)
+        elif item == 'o':
+            # oriscus
+            nc_type = doc.createElement('oriscus') # LIBMEI METHOD
+            features.append(nc_type)
+        elif item == 'w':
+            # quilisma
+            nc_type = doc.createElement('quilisma') # LIBMEI METHOD
+            features.append(nc_type)
+        elif item == 's':
+            # strophicus
+            nc_type = doc.createElement('strophicus') # LIBMEI METHOD
+            features.append(nc_type)
+        elif item == 'v':
+            # tilt attribute
+            attribute = ('tilt', 's')
+            features.append(attribute)
+        elif item == 'V':
+            # tilt attribute
+            attribute = ('tilt', 'n')
+            features.append(attribute)
+        else:
+            print("this character is not included in the list of processing characters")
 
-	return(features)
+    return(features)
 
 def convert_to_mei_nc(gabc_nc):
-	# DEFINE (EMPTY) NC ELEMENT IN MEI
-	mei_nc = doc.createElement('nc') # LIBMEI METHOD
+    # DEFINE (EMPTY) NC ELEMENT IN MEI
+    mei_nc = doc.createElement('nc') # LIBMEI METHOD
 
-	# ADD CHARACTERISTICS TO IT
-	qualities = get_nc_qualities(gabc_nc)
-	for feature in qualities:
-		if (type(feature) == tuple):
-			# Then it is an attribute, and you add it to the <nc>
-			mei_nc.setAttribute(feature[0], feature[1]) # LIBMEI METHOD
-		else:
-			# Then it is an element, and you add it as a child of <nc>
-			mei_nc.appendChild(feature) # LIBMEI METHOD
+    # ADD CHARACTERISTICS TO IT
+    qualities = get_nc_qualities(gabc_nc)
+    for feature in qualities:
+        if (type(feature) == tuple):
+            # Then it is an attribute, and you add it to the <nc>
+            mei_nc.setAttribute(feature[0], feature[1]) # LIBMEI METHOD
+        else:
+            # Then it is an element, and you add it as a child of <nc>
+            mei_nc.appendChild(feature) # LIBMEI METHOD
 
-	return mei_nc
+    return mei_nc
 
 
 def convert_to_mei_neume(gabc_token):
-	# DEFINE (EMPTY) NEUME ELEMENT IN MEI
-	mei_neume = doc.createElement('neume') # LIBMEI METHOD
-	# FILL IT WITH <NC> CHILDREN
-	gabc_ncs_of_neume = get_gabc_ncs(gabc_token)
-	for gabc_nc in gabc_ncs_of_neume:
-		mei_nc = convert_to_mei_nc(gabc_nc)
-		mei_neume.appendChild(mei_nc) # LIBMEI METHOD
+    # DEFINE (EMPTY) NEUME ELEMENT IN MEI
+    mei_neume = doc.createElement('neume') # LIBMEI METHOD
+    # FILL IT WITH <NC> CHILDREN
+    gabc_ncs_of_neume = get_gabc_ncs(gabc_token)
+    for gabc_nc in gabc_ncs_of_neume:
+        mei_nc = convert_to_mei_nc(gabc_nc)
+        mei_neume.appendChild(mei_nc) # LIBMEI METHOD
 
-	return mei_neume
+    return mei_neume
 
 def get_syl_and_neumes(gabc_syllable):
-	syl_neumes_pair = gabc_syllable.split('(')
-	syl = syl_neumes_pair[0]
-	neumes = syl_neumes_pair[1]
+    syl_neumes_pair = gabc_syllable.split('(')
+    syl = syl_neumes_pair[0]
+    neumes = syl_neumes_pair[1]
 
-	indiv_neumes_list = neumes.split('/')
+    indiv_neumes_list = neumes.split('/')
 
-	return syl, indiv_neumes_list
+    return syl, indiv_neumes_list
 
 
 # ------------ #
 # Main program #
 # ------------ #
 def gabc2mei(gabc_line, mei_file):
-	words = gabc_line.split()
-	clef = words[0]
-	print(words)
+    words = gabc_line.split()
+    clef = words[0]
+    print(words)
 
-	for word in words[1:]:
-		print('\nThe word is: ', word)
-		syllables = word.split(')')
-		#print(syllables[:-1])
-		for gabc_syllable in syllables[:-1]:
-			print()
-			syllable_mei = doc.createElement('syllable')
-			layer1.appendChild(syllable_mei)
+    for word in words[1:]:
+        print('\nThe word is: ', word)
+        syllables = word.split(')')
+        #print(syllables[:-1])
+        for gabc_syllable in syllables[:-1]:
+            print()
+            syllable_mei = doc.createElement('syllable')
+            layer1.appendChild(syllable_mei)
 
-			syl_text, indiv_neumes_list = get_syl_and_neumes(gabc_syllable)
-			print(syl_text)
-			print(indiv_neumes_list)
+            syl_text, indiv_neumes_list = get_syl_and_neumes(gabc_syllable)
+            print(syl_text)
+            print(indiv_neumes_list)
 
-			syl_mei = doc.createElement('syl')
-			text = doc.createTextNode(syl_text)
-			syl_mei.appendChild(text)
-			syllable_mei.appendChild(syl_mei)
-			for gabc_neume in indiv_neumes_list:
-				mei_neume = convert_to_mei_neume(gabc_neume)
-				syllable_mei.appendChild(mei_neume)
+            syl_mei = doc.createElement('syl')
+            text = doc.createTextNode(syl_text)
+            syl_mei.appendChild(text)
+            syllable_mei.appendChild(syl_mei)
+            for gabc_neume in indiv_neumes_list:
+                mei_neume = convert_to_mei_neume(gabc_neume)
+                syllable_mei.appendChild(mei_neume)
 
-	myfile = open(mei_file, "w")
-	myfile.write(doc.toxml())
-	myfile.close()
+    myfile = open(mei_file, "w")
+    myfile.write(doc.toxml())
+    myfile.close()
 
 
 if __name__ == "__main__":
-	parser = argparse.ArgumentParser(description='GABC file to MEI Neumes file')
-	parser.add_argument('gabc', help='GABC line')
-	parser.add_argument('mei_output', help='MEI output file')
-	args = parser.parse_args()
-	gabc_file = open(args.gabc, "r")
-	gabc2mei(gabc_file.readline(), args.mei_output)
-	gabc_file.close()
+    parser = argparse.ArgumentParser(description='GABC file to MEI Neumes file')
+    parser.add_argument('gabc', help='GABC line')
+    parser.add_argument('mei_output', help='MEI output file')
+    args = parser.parse_args()
+    gabc_file = open(args.gabc, "r")
+    gabc2mei(gabc_file.readline(), args.mei_output)
+    gabc_file.close()
 
-	# python3 gabc-tokens_to_mei-elements.py "(c3) Chris(gvFE)te(gf/ge>) Na(ghg)" out.mei
-	# python3 gabc-tokens_to_mei-elements.py gabc1_82441.txt aquit1_82441.mei
-	# python3 gabc-tokens_to_mei-elements.py gabc10_84614.txt aquit10_84614.mei
-	# python3 gabc-tokens_to_mei-elements.py gabc11_84548.txt aquit11_84548.mei
+    # python3 gabc-tokens_to_mei-elements.py "(c3) Chris(gvFE)te(gf/ge>) Na(ghg)" out.mei
+    # python3 gabc-tokens_to_mei-elements.py gabc1_82441.txt aquit1_82441.mei
+    # python3 gabc-tokens_to_mei-elements.py gabc10_84614.txt aquit10_84614.mei
+    # python3 gabc-tokens_to_mei-elements.py gabc11_84548.txt aquit11_84548.mei

@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><?xml-model href="https://music-encoding.org/schema/4.0.1/mei-Neumes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://music-encoding.org/schema/4.0.1/mei-Neumes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><mei xmlns="http://www.music-encoding.org/ns/mei" meiversion="4.0.1">
+<?xml version="1.0" ?><?xml-model href="https://music-encoding.org/schema/5.0/mei-Neumes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://music-encoding.org/schema/5.0/mei-Neumes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?><mei xmlns="http://www.music-encoding.org/ns/mei" meiversion="5.0">
     <meiHead>
         <fileDesc>
             <titleStmt>
@@ -19,22 +19,35 @@
                     <section>
                         <staff n="1">
                             <layer n="1">
-                                <neume>
-                                    <nc loc="3" tilt="s"/>
-                                    <nc loc="2" tilt="se"/>
-                                    <nc loc="1" tilt="se"/>
-                                </neume>
-                                <neume>
-                                    <nc loc="3"/>
-                                    <nc loc="2"/>
-                                    <nc loc="3"/>
-                                    <nc loc="1"/>
-                                </neume>
-                                <neume>
-                                    <nc loc="3"/>
-                                    <nc loc="4"/>
-                                    <nc loc="3"/>
-                                </neume>
+                                <syllable>
+                                    <syl>Chris</syl>
+                                    <neume>
+                                        <nc loc="3" tilt="s"/>
+                                        <nc loc="2" tilt="se"/>
+                                        <nc loc="1" tilt="se"/>
+                                    </neume>
+                                </syllable>
+                                <syllable>
+                                    <syl>te</syl>
+                                    <neume>
+                                        <nc loc="3"/>
+                                        <nc loc="2"/>
+                                    </neume>
+                                    <neume>
+                                        <nc loc="3"/>
+                                        <nc loc="1">
+                                            <liquescent/>
+                                        </nc>
+                                    </neume>
+                                </syllable>
+                                <syllable>
+                                    <syl>Na</syl>
+                                    <neume>
+                                        <nc loc="3"/>
+                                        <nc loc="4"/>
+                                        <nc loc="3"/>
+                                    </neume>
+                                </syllable>
                             </layer>
                         </staff>
                     </section>

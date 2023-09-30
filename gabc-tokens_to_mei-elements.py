@@ -9,13 +9,6 @@ doc = minidom.parse("ReadyToGo_neumes.mei")
 
 layer_elems = doc.getElementsByTagName("layer")
 layer1 = layer_elems[0]
-# staff_elems = doc.getElementsByTagName("staff")
-# staff1 = staff_elems[0]
-#
-# neume_elem = doc.createElement('neume')
-# neume_elem.setAttribute("syl", "primera")
-# nc_elem = doc.createElement('nc')
-# neume_elem.appendChild(nc_elem)
 
 
 # ----------- #
@@ -48,56 +41,81 @@ def get_gabc_ncs(gabc_token):
 	return ncs_in_token
 
 
-def get_nc_attributes(gabc_nc):
+def get_nc_qualities(gabc_nc):
 	characters = list(gabc_nc)
-	attributes = []
+	features = []
 	for item in characters:
+
 		# Pitches
 		if item in regular_pitches:
+			# loc attribute
 			locval = locs[regular_pitches.index(item)]
-			attributes.append(('loc', str(locval)))
+			attribute = ('loc', str(locval))
+			features.append(attribute)
 		elif item in inclinatum_pitches:
+			# loc attribute
 			locval = locs[inclinatum_pitches.index(item)]
-			attributes.append(('loc', str(locval)))
-			attributes.append(('tilt', 'se'))
+			attribute = ('loc', str(locval))
+			features.append(attribute)
+			# tilt attribute
+			attribute = ('tilt', 'se')
+			features.append(attribute)
+
 		# Prefixes
 		elif item == '@':
 			pass
 		# Suffixes
 		elif item == '~':
-			# THE LITTLE ONES ???
-			pass
+			# liquescent
+			nc_type = doc.createElement('liquescent') # LIBMEI METHOD
+			features.append(nc_type)
 		elif item == '>':
 			# liquescent
-			pass
+			nc_type = doc.createElement('liquescent') # LIBMEI METHOD
+			features.append(nc_type)
 		elif item == '<':
 			# liquescent
-			pass
+			nc_type = doc.createElement('liquescent') # LIBMEI METHOD
+			features.append(nc_type)
 		elif item == 'o':
 			# oriscus
-			pass
+			nc_type = doc.createElement('oriscus') # LIBMEI METHOD
+			features.append(nc_type)
 		elif item == 'w':
 			# quilisma
-			pass
+			nc_type = doc.createElement('quilisma') # LIBMEI METHOD
+			features.append(nc_type)
 		elif item == 's':
 			# strophicus
-			pass
+			nc_type = doc.createElement('strophicus') # LIBMEI METHOD
+			features.append(nc_type)
 		elif item == 'v':
-			attributes.append(('tilt', 's'))
+			# tilt attribute
+			attribute = ('tilt', 's')
+			features.append(attribute)
 		elif item == 'V':
-			attributes.append(('tilt', 'n'))
+			# tilt attribute
+			attribute = ('tilt', 'n')
+			features.append(attribute)
 		else:
 			print("this character is not included in the list of processing characters")
-	return(attributes)
+
+	return(features)
 
 def convert_to_mei_nc(gabc_nc):
 	# DEFINE (EMPTY) NC ELEMENT IN MEI
 	mei_nc = doc.createElement('nc') # LIBMEI METHOD
-	# ADD ATTRIBUTES TO IT
-	attriblist = get_nc_attributes(gabc_nc)
-	for attrib in attriblist:
-		mei_nc.setAttribute(attrib[0], attrib[1]) # LIBMEI METHOD
-	
+
+	# ADD CHARACTERISTICS TO IT
+	qualities = get_nc_qualities(gabc_nc)
+	for feature in qualities:
+		if (type(feature) == tuple):
+			# Then it is an attribute, and you add it to the <nc>
+			mei_nc.setAttribute(feature[0], feature[1]) # LIBMEI METHOD
+		else:
+			# Then it is an element, and you add it as a child of <nc>
+			mei_nc.appendChild(feature) # LIBMEI METHOD
+
 	return mei_nc
 
 
@@ -109,7 +127,7 @@ def convert_to_mei_neume(gabc_token):
 	for gabc_nc in gabc_ncs_of_neume:
 		mei_nc = convert_to_mei_nc(gabc_nc)
 		mei_neume.appendChild(mei_nc) # LIBMEI METHOD
-	
+
 	return mei_neume
 
 def get_syl_and_neumes(gabc_syllable):
@@ -118,7 +136,7 @@ def get_syl_and_neumes(gabc_syllable):
 	neumes = syl_neumes_pair[1]
 
 	indiv_neumes_list = neumes.split('/')
-		
+
 	return syl, indiv_neumes_list
 
 

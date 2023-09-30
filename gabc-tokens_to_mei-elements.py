@@ -5,7 +5,7 @@
 import argparse
 from xml.dom import minidom
 
-doc = minidom.parse("ReadyToGo_neumes.mei")
+doc = minidom.parse("template.mei")
 
 layer_elems = doc.getElementsByTagName("layer")
 layer1 = layer_elems[0]

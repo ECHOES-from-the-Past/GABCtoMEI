@@ -2,7 +2,7 @@
 # https://www.geeksforgeeks.org/parsing-xml-with-dom-apis-in-python/
 # https://lxml.de/xpathxslt.html#regular-expressions-in-xpath
 # https://towardsdatascience.com/xpath-for-python-89f4423415e0
-
+import argparse
 from xml.dom import minidom
 
 doc = minidom.parse("ReadyToGo_neumes.mei")
@@ -143,33 +143,38 @@ def get_syl_and_neumes(gabc_syllable):
 # ------------ #
 # Main program #
 # ------------ #
-line = "(c3) Chris(gvFE)te(gf/ge>) Na(ghg)"
+if __name__ == "__main__":
+	parser = argparse.ArgumentParser(description='GABC file to MEI Neumes file')
+	parser.add_argument('gabc', help='GABC line')
+	parser.add_argument('mei_output', help='MEI output file')
+	args = parser.parse_args()
 
-words = line.split()
-clef = words[0]
+	line = args.gabc
+	# line = "(c3) Chris(gvFE)te(gf/ge>) Na(ghg)"
+	words = line.split()
+	clef = words[0]
 
-for word in words[1:]:
-	#print('The word is: ', word)
-	syllables = word.split(')')
-	#print(syllables[:-1])
-	for gabc_syllable in syllables[:-1]:
-		#print(gabc_syllable)
-		syllable_mei = doc.createElement('syllable')
-		layer1.appendChild(syllable_mei)
+	for word in words[1:]:
+		#print('The word is: ', word)
+		syllables = word.split(')')
+		#print(syllables[:-1])
+		for gabc_syllable in syllables[:-1]:
+			#print(gabc_syllable)
+			syllable_mei = doc.createElement('syllable')
+			layer1.appendChild(syllable_mei)
 
-		syl_text, indiv_neumes_list = get_syl_and_neumes(gabc_syllable)
-		#print(syl)
-		#print(indiv_neumes_list)
+			syl_text, indiv_neumes_list = get_syl_and_neumes(gabc_syllable)
+			#print(syl)
+			#print(indiv_neumes_list)
 
-		syl_mei = doc.createElement('syl')
-		text = doc.createTextNode(syl_text)
-		syl_mei.appendChild(text)
-		syllable_mei.appendChild(syl_mei)
-		for gabc_neume in indiv_neumes_list:
-			mei_neume = convert_to_mei_neume(gabc_neume)
-			syllable_mei.appendChild(mei_neume)
+			syl_mei = doc.createElement('syl')
+			text = doc.createTextNode(syl_text)
+			syl_mei.appendChild(text)
+			syllable_mei.appendChild(syl_mei)
+			for gabc_neume in indiv_neumes_list:
+				mei_neume = convert_to_mei_neume(gabc_neume)
+				syllable_mei.appendChild(mei_neume)
 
-
-myfile = open("output.mei", "w")
-myfile.write(doc.toxml())
-myfile.close()
+	myfile = open(args.mei_output, "w")
+	myfile.write(doc.toxml())
+	myfile.close()

@@ -174,10 +174,37 @@ def gabc2mei(gabc_line, mei_file):
     myfile.close()
 
 
+def square(general_mei, clef):
+    # Change @loc to @pname and @oct
+    clef_to_pitch = {
+        'c1': ['g2', 'a2', 'b2', 'c3', 'd3', 'e3', 'f3', 'g3', 'a3', 'b3', 'c4', 'd4', 'e4'], 
+        'c2': ['e2', 'f2', 'g2', 'a2', 'b2', 'c3', 'd3', 'e3', 'f3', 'g3', 'a3', 'b3', 'c4'], 
+        'c3': ['c2', 'd2', 'e2', 'f2', 'g2', 'a2', 'b2', 'c3', 'd3', 'e3', 'f3', 'g3', 'a3'], 
+        'c4': ['a1', 'b1', 'c2', 'd2', 'e2', 'f2', 'g2', 'a2', 'b2', 'c3', 'd3', 'e3', 'f3'], 
+        'f3': ['f2', 'g2', 'a2', 'b2', 'c3', 'd3', 'e3', 'f3', 'g3', 'a3', 'b3', 'c4', 'd4'], 
+        'f4': ['d2', 'e2', 'f2', 'g2', 'a2', 'b2', 'c3', 'd3', 'e3', 'f3', 'g3', 'a3', 'b3'], 
+    } # locs = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    scale = clef_to_pitch(clef)
+
+    neume_components = general_mei.getElementsByTagName("nc")
+    for nc in neume_components:
+        locval = nc.getAttribute('loc')
+        pitch = scale[int(locval) + 3]          # pitch = scale[locs.index(locval)]
+        nc.setAttribute('pname', pitch[0])
+        nc.setAttribute('oct', pitch[1])
+
+
+def aquitanian():
+    # change @loc to @intm (melodic interval)
+    
+    pass
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='GABC file to MEI Neumes file')
     parser.add_argument('gabc', help='GABC line')
     parser.add_argument('mei_output', help='MEI output file')
+    parser.add_argument('-notation', choices=['square', 'aquitanian'], default='aquitanian')
     args = parser.parse_args()
     gabc_file = open(args.gabc, "r")
     gabc2mei(gabc_file.readline(), args.mei_output)

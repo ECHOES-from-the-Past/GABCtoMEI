@@ -199,11 +199,17 @@ def convert_to_aquitanian(general_mei, mei_file):
 # Main program #
 # ------------ #
 def gabc2mei(gabc_line, mei_file, notation_type):
+    # Get the words from gabc
     words = gabc_line.split()
+    
+    # Setting the clef
     clef = words[0]
+    staffDef = doc.getElementsByTagName('staffDef')[0]
+    staffDef.setAttribute('clef.shape', clef[1])
+    staffDef.setAttribute('clef.line', clef[2])
     print(words)
 
-    # Process each gabc token
+    # Process each gabc word
     for word in words[1:]:
         print('\nThe word is: ', word)
         syllables = word.split(')')

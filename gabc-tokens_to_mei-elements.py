@@ -163,7 +163,8 @@ def convert_to_square(general_mei, clef, mei_file):
         nc.setAttribute('oct', pitch[1])
 
     # Still need to remove @loc
-    # TO DO !!!
+    for nc in neume_components:
+        nc.removeAttribute('loc')
 
     # Write the MEI file
     myfile = open(mei_file, "w")
@@ -184,7 +185,9 @@ def convert_to_aquitanian(general_mei, mei_file):
             nc1.setAttribute('intm', str(loc2-loc1))
 
     # Still need to remove @loc
-    # TO DO !!!
+    neume_components = general_mei.getElementsByTagName("nc")
+    for nc in neume_components:
+        nc.removeAttribute('loc')
 
     # Write the MEI file
     myfile = open(mei_file, "w")

@@ -1,0 +1,297 @@
+<?xml version="1.0" ?>
+<?xml-model href="https://music-encoding.org/schema/5.0/mei-Neumes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://music-encoding.org/schema/5.0/mei-Neumes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<mei xmlns="http://www.music-encoding.org/ns/mei" meiversion="5.0">
+	<meiHead>
+		<fileDesc>
+			<titleStmt>
+				<title/>
+			</titleStmt>
+			<pubStmt/>
+		</fileDesc>
+	</meiHead>
+	<music>
+		<body>
+			<mdiv>
+				<score>
+					<scoreDef>
+						<staffGrp>
+							<staffDef n="1" lines="5" notationtype="neume"/>
+						</staffGrp>
+					</scoreDef>
+					<section>
+						<staff n="1">
+							<layer n="1">
+								<syllable>
+									<syl>Be</syl>
+									<neume>
+										<nc/>
+										<nc tilt="se" intm="0"/>
+										<nc intm="1"/>
+									</neume>
+								</syllable>
+								<syllable>
+									<syl>ne</syl>
+									<neume>
+										<nc/>
+										<nc intm="1"/>
+									</neume>
+								</syllable>
+								<syllable>
+									<syl>di</syl>
+									<neume>
+										<nc/>
+										<nc intm="1"/>
+									</neume>
+								</syllable>
+								<syllable>
+									<syl>ci</syl>
+									<neume>
+										<nc/>
+										<nc tilt="se" intm="-2"/>
+									</neume>
+								</syllable>
+								<syllable>
+									<syl>te</syl>
+									<neume>
+										<nc/>
+										<nc intm="0"/>
+										<nc intm="0"/>
+									</neume>
+									<neume>
+										<nc/>
+										<nc intm="1"/>
+										<nc intm="-1"/>
+									</neume>
+								</syllable>
+								<syllable>
+									<syl>om</syl>
+									<neume>
+										<nc/>
+									</neume>
+								</syllable>
+								<syllable>
+									<syl>nes</syl>
+									<neume>
+										<nc/>
+									</neume>
+								</syllable>
+								<syllable>
+									<syl>An</syl>
+									<neume>
+										<nc/>
+										<nc intm="1"/>
+									</neume>
+								</syllable>
+								<syllable>
+									<syl>ge</syl>
+									<neume>
+										<nc/>
+									</neume>
+								</syllable>
+								<syllable>
+									<syl>li</syl>
+									<neume>
+										<nc/>
+									</neume>
+								</syllable>
+								<syllable>
+									<syl>Do</syl>
+									<neume>
+										<nc/>
+									</neume>
+								</syllable>
+								<syllable>
+									<syl>mi</syl>
+									<neume>
+										<nc/>
+									</neume>
+								</syllable>
+								<syllable>
+									<syl>ni</syl>
+									<neume>
+										<nc/>
+									</neume>
+								</syllable>
+								<syllable>
+									<syl>Do</syl>
+									<neume>
+										<nc/>
+										<nc intm="1"/>
+										<nc intm="-1"/>
+									</neume>
+								</syllable>
+								<syllable>
+									<syl>mi</syl>
+									<neume>
+										<nc/>
+										<nc intm="1"/>
+										<nc intm="-1"/>
+									</neume>
+								</syllable>
+								<syllable>
+									<syl>num</syl>
+									<neume>
+										<nc/>
+									</neume>
+								</syllable>
+								<syllable>
+									<syl>hym</syl>
+									<neume>
+										<nc/>
+									</neume>
+								</syllable>
+								<syllable>
+									<syl>num</syl>
+									<neume>
+										<nc/>
+									</neume>
+								</syllable>
+								<syllable>
+									<syl>di</syl>
+									<neume>
+										<nc/>
+										<nc intm="1"/>
+									</neume>
+								</syllable>
+								<syllable>
+									<syl>ci</syl>
+									<neume>
+										<nc/>
+										<nc intm="-1"/>
+									</neume>
+								</syllable>
+								<syllable>
+									<syl>te</syl>
+									<neume>
+										<nc/>
+										<nc intm="1"/>
+										<nc intm="1">
+											<quilisma/>
+										</nc>
+										<nc intm="1"/>
+									</neume>
+									<neume>
+										<nc/>
+										<nc intm="0"/>
+										<nc intm="-1"/>
+									</neume>
+								</syllable>
+								<syllable>
+									<syl>et</syl>
+									<neume>
+										<nc/>
+									</neume>
+								</syllable>
+								<syllable>
+									<syl>su</syl>
+									<neume>
+										<nc/>
+										<nc intm="1"/>
+										<nc intm="-1"/>
+									</neume>
+								</syllable>
+								<syllable>
+									<syl>pe</syl>
+									<neume>
+										<nc/>
+									</neume>
+								</syllable>
+								<syllable>
+									<syl>re</syl>
+									<neume>
+										<nc/>
+									</neume>
+								</syllable>
+								<syllable>
+									<syl>xal</syl>
+									<neume>
+										<nc/>
+									</neume>
+								</syllable>
+								<syllable>
+									<syl>ta</syl>
+									<neume>
+										<nc/>
+										<nc intm="1"/>
+										<nc intm="1"/>
+									</neume>
+								</syllable>
+								<syllable>
+									<syl>te</syl>
+									<neume>
+										<nc/>
+									</neume>
+								</syllable>
+								<syllable>
+									<syl>e</syl>
+									<neume>
+										<nc/>
+										<nc tilt="se" intm="-2"/>
+									</neume>
+									<neume>
+										<nc/>
+										<nc tilt="se" intm="-1"/>
+										<nc intm="-1"/>
+										<nc intm="1"/>
+									</neume>
+								</syllable>
+								<syllable>
+									<syl>um</syl>
+									<neume>
+										<nc/>
+										<nc intm="-1"/>
+									</neume>
+								</syllable>
+								<syllable>
+									<syl>in</syl>
+									<neume>
+										<nc/>
+									</neume>
+									<neume>
+										<nc/>
+										<nc intm="0"/>
+										<nc intm="0"/>
+										<nc intm="-2"/>
+									</neume>
+								</syllable>
+								<syllable>
+									<syl>se</syl>
+									<neume>
+										<nc/>
+										<nc intm="1"/>
+									</neume>
+									<neume>
+										<nc/>
+										<nc intm="-1"/>
+									</neume>
+									<neume>
+										<nc/>
+										<nc intm="1"/>
+										<nc intm="-1"/>
+									</neume>
+								</syllable>
+								<syllable>
+									<syl>cu</syl>
+									<neume>
+										<nc tilt="se"/>
+										<nc intm="2"/>
+										<nc intm="-1"/>
+										<nc intm="0"/>
+									</neume>
+								</syllable>
+								<syllable>
+									<syl>la</syl>
+									<neume>
+										<nc/>
+										<nc tilt="se" intm="-1"/>
+									</neume>
+								</syllable>
+							</layer>
+						</staff>
+					</section>
+				</score>
+			</mdiv>
+		</body>
+	</music>
+</mei>

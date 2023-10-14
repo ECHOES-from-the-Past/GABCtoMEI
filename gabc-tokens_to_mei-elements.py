@@ -205,7 +205,7 @@ def gabc2mei(gabc_line, mei_file, notation_type):
     # Setting the clef
     clef = words[0]
     staffDef = doc.getElementsByTagName('staffDef')[0]
-    staffDef.setAttribute('clef.shape', clef[1])
+    staffDef.setAttribute('clef.shape', clef[1].capitalize())
     staffDef.setAttribute('clef.line', clef[2])
     print(words)
 
@@ -258,3 +258,14 @@ if __name__ == "__main__":
     # python3 gabc-tokens_to_mei-elements.py gabc1_82441.txt aquit1_82441_prettyxml.mei
     # python3 gabc-tokens_to_mei-elements.py gabc10_84614.txt aquit10_84614_prettyxml.mei
     # python3 gabc-tokens_to_mei-elements.py gabc11_84548.txt aquit11_84548_prettyxml.mei
+
+# python3 gabc-tokens_to_mei-elements.py 1Aquit_82441.txt 1Aquit_82441.mei
+# python3 gabc-tokens_to_mei-elements.py 2Square_85041.txt 2Square_85041.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py 3Aquit_56766.txt 3Aquit_56766.mei
+# python3 gabc-tokens_to_mei-elements.py 4Square_84909.txt 4Square_84909.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py 5Aquit_84540.txt 5Aquit_84540.mei
+# python3 gabc-tokens_to_mei-elements.py 6Aquit_84623.txt 6Aquit_84623.mei
+# python3 gabc-tokens_to_mei-elements.py 7Square_84873.txt 7Square_84873.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py 8Aquit_84643.txt 8Aquit_84643.mei
+# python3 gabc-tokens_to_mei-elements.py 10Aquit_84614.txt 10Aquit_84614.mei
+# python3 gabc-tokens_to_mei-elements.py 11Aquit_84548.txt 11Aquit_84548.mei

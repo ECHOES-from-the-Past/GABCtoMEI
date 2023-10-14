@@ -182,7 +182,7 @@ def convert_to_aquitanian(general_mei, mei_file):
             nc2 = neume_components[i+1]
             loc1 = int(nc1.getAttribute('loc'))
             loc2 = int(nc2.getAttribute('loc'))
-            nc1.setAttribute('intm', str(loc2-loc1))
+            nc2.setAttribute('intm', str(loc2-loc1))
 
     # Still need to remove @loc
     neume_components = general_mei.getElementsByTagName("nc")

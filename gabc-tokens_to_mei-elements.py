@@ -149,14 +149,58 @@ def get_syl_and_neumes(gabc_syllable):
     return syl, indiv_neumes_list
 
 
+# ---------------------------------------- #
+#  Flavoring MEI (to square or aquitanian) #
+# ---------------------------------------- #
+def convert_to_square(general_mei, clef, mei_file):
+    # Change @loc to @pname and @oct
+    scale = clef_to_pitch[clef]
+    neume_components = general_mei.getElementsByTagName("nc")
+    for nc in neume_components:
+        locval = nc.getAttribute('loc')
+        pitch = scale[int(locval) + 3]          # pitch = scale[locs.index(locval)]
+        nc.setAttribute('pname', pitch[0])
+        nc.setAttribute('oct', pitch[1])
+
+    # Still need to remove @loc
+    # TO DO !!!
+
+    # Write the MEI file
+    myfile = open(mei_file, "w")
+    myfile.write(doc.toprettyxml())
+    myfile.close()
+
+
+def convert_to_aquitanian(general_mei, mei_file):
+    # Change @loc to @intm (melodic interval)
+    neumes = general_mei.getElementsByTagName("neume")
+    for neume in neumes:
+        neume_components = neume.CHILDREN
+        for i in range(0, len(neume_components)-1):
+            nc1 = neume_components[i]
+            nc2 = neume_components[i+1]
+            loc1 = nc1.getAttribute('loc')
+            loc2 = nc2.getAttribute('loc')
+            nc1.setAttribute('intm', str(loc2-loc1))
+
+    # Still need to remove @loc
+    # TO DO !!!
+
+    # Write the MEI file
+    myfile = open(mei_file, "w")
+    myfile.write(doc.toprettyxml())
+    myfile.close()
+
+
 # ------------ #
 # Main program #
 # ------------ #
-def gabc2mei(gabc_line, mei_file):
+def gabc2mei(gabc_line, mei_file, notation_type):
     words = gabc_line.split()
     clef = words[0]
     print(words)
 
+    # Process each gabc token
     for word in words[1:]:
         print('\nThe word is: ', word)
         syllables = word.split(')')
@@ -178,35 +222,17 @@ def gabc2mei(gabc_line, mei_file):
                 mei_neume = convert_to_mei_neume(gabc_neume)
                 syllable_mei.appendChild(mei_neume)
 
+    # Write the general file (the one with @loc attributes)
     myfile = open(mei_file, "w")
     myfile.write(doc.toprettyxml())
     myfile.close()
 
+    # Write the final files (for square or for aquitanian)
+    if notation_type == 'square':
+        convert_to_square(doc, clef, "Final_SQUARE_" + mei_file)
+    elif notation_type == 'aquitanian':
+        convert_to_aquitanian(doc, "Final" + "Final_AQUIT_" + mei_file)
 
-def convert_to_square(general_mei, clef):
-    # Change @loc to @pname and @oct
-    scale = clef_to_pitch[clef]
-    neume_components = general_mei.getElementsByTagName("nc")
-    for nc in neume_components:
-        locval = nc.getAttribute('loc')
-        pitch = scale[int(locval) + 3]          # pitch = scale[locs.index(locval)]
-        nc.setAttribute('pname', pitch[0])
-        nc.setAttribute('oct', pitch[1])
-    # Still need to remove @loc
-
-
-def convert_to_aquitanian(general_mei):
-    # Change @loc to @intm (melodic interval)
-    neumes = general_mei.getElementsByTagName("neume")
-    for neume in neumes:
-        neume_components = neume.CHILDREN
-        for i in range(0, len(neume_components)-1):
-            nc1 = neume_components[i]
-            nc2 = neume_components[i+1]
-            loc1 = nc1.getAttribute('loc')
-            loc2 = nc2.getAttribute('loc')
-            nc1.setAttribute('intm', str(loc2-loc1))
-    # Still need to remove @loc
 
 
 if __name__ == "__main__":
@@ -216,7 +242,7 @@ if __name__ == "__main__":
     parser.add_argument('-notation', choices=['square', 'aquitanian'], default='aquitanian')
     args = parser.parse_args()
     gabc_file = open(args.gabc, "r")
-    gabc2mei(gabc_file.readline(), args.mei_output)
+    gabc2mei(gabc_file.readline(), args.mei_output, args.notation)
     gabc_file.close()
 
     # python3 gabc-tokens_to_mei-elements.py "(c3) Chris(gvFE)te(gf/ge>) Na(ghg)" out.mei

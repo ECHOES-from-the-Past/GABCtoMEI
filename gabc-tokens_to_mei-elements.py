@@ -174,7 +174,7 @@ def gabc2mei(gabc_line, mei_file):
     myfile.close()
 
 
-def square(general_mei, clef):
+def convert_to_square(general_mei, clef):
     # Change @loc to @pname and @oct
     clef_to_pitch = {
         'c1': ['g2', 'a2', 'b2', 'c3', 'd3', 'e3', 'f3', 'g3', 'a3', 'b3', 'c4', 'd4', 'e4'], 
@@ -196,7 +196,7 @@ def square(general_mei, clef):
     # Still need to remove @loc
 
 
-def aquitanian():
+def convert_to_aquitanian():
     # Change @loc to @intm (melodic interval)
     neumes = general_mei.getElementsByTagName("neume")
     for neume in neumes:

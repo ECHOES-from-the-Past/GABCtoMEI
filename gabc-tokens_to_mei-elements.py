@@ -193,11 +193,21 @@ def square(general_mei, clef):
         nc.setAttribute('pname', pitch[0])
         nc.setAttribute('oct', pitch[1])
 
+    # Still need to remove @loc
+
 
 def aquitanian():
-    # change @loc to @intm (melodic interval)
-    
-    pass
+    # Change @loc to @intm (melodic interval)
+    neumes = general_mei.getElementsByTagName("neume")
+    for neume in neumes:
+        neume_components = neume.CHILDREN
+        for i in range(0, len(neume_components)-1):
+            nc1 = neume_components[i]
+            nc2 = neume_components[i+1]
+            loc1 = nc1.getAttribute('loc')
+            loc2 = nc2.getAttribute('loc')
+            nc1.setAttribute('intm', str(loc2-loc1))
+    # Still need to remove @loc
 
 
 if __name__ == "__main__":

@@ -234,7 +234,7 @@ def gabc2mei(gabc_line, mei_file, notation_type):
     if notation_type == 'square':
         convert_to_square(doc, clef, "Final_SQUARE_" + mei_file)
     elif notation_type == 'aquitanian':
-        convert_to_aquitanian(doc, "Final" + "Final_AQUIT_" + mei_file)
+        convert_to_aquitanian(doc, "Final_AQUIT_" + mei_file)
 
 
 

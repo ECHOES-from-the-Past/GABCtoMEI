@@ -195,7 +195,7 @@ def convert_to_square(general_mei, clef):
     # Still need to remove @loc
 
 
-def convert_to_aquitanian():
+def convert_to_aquitanian(general_mei):
     # Change @loc to @intm (melodic interval)
     neumes = general_mei.getElementsByTagName("neume")
     for neume in neumes:

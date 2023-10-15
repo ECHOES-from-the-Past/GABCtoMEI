@@ -16,58 +16,59 @@
 				<score>
 					<scoreDef>
 						<staffGrp>
-							<staffDef n="1" lines="5" notationtype="neume" clef.shape="C" clef.line="4"/>
+							<staffDef n="1" lines="5" notationtype="neume"/>
 						</staffGrp>
 					</scoreDef>
 					<section>
 						<staff n="1">
 							<layer n="1">
+								<clef shape="F" line="3"/>
 								<syllable>
 									<syl>Di</syl>
 									<neume>
-										<nc pname="f" oct="2"/>
-										<nc pname="a" oct="2"/>
+										<nc pname="d" oct="3"/>
+										<nc pname="f" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>cit</syl>
 									<neume>
-										<nc pname="a" oct="2"/>
+										<nc pname="f" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>do</syl>
 									<neume>
-										<nc pname="a" oct="2"/>
-										<nc pname="b" oct="2"/>
-										<nc tilt="se" pname="a" oct="2"/>
-										<nc tilt="se" pname="g" oct="2"/>
+										<nc pname="f" oct="3"/>
+										<nc pname="g" oct="3"/>
+										<nc tilt="se" pname="f" oct="3"/>
+										<nc tilt="se" pname="e" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>mi</syl>
 									<neume>
-										<nc pname="a" oct="2"/>
-										<nc pname="g" oct="2"/>
+										<nc pname="f" oct="3"/>
+										<nc pname="e" oct="3"/>
 									</neume>
 									<neume>
-										<nc pname="g" oct="2"/>
-										<nc pname="f" oct="2"/>
-										<nc pname="g" oct="2"/>
+										<nc pname="e" oct="3"/>
+										<nc pname="d" oct="3"/>
+										<nc pname="e" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>nus</syl>
 									<neume>
-										<nc pname="f" oct="2"/>
-										<nc pname="g" oct="2"/>
+										<nc pname="d" oct="3"/>
+										<nc pname="e" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>im</syl>
 									<neume>
-										<nc pname="d" oct="2"/>
-										<nc pname="e" oct="2">
+										<nc pname="b" oct="2"/>
+										<nc pname="c" oct="3">
 											<liquescent/>
 										</nc>
 									</neume>
@@ -75,61 +76,61 @@
 								<syllable>
 									<syl>ple</syl>
 									<neume>
-										<nc pname="f" oct="2"/>
+										<nc pname="d" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>te</syl>
 									<neume>
-										<nc pname="d" oct="2"/>
-										<nc pname="f" oct="2"/>
+										<nc pname="b" oct="2"/>
+										<nc pname="d" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>hy</syl>
 									<neume>
-										<nc pname="f" oct="2"/>
+										<nc pname="d" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>dri</syl>
 									<neume>
-										<nc pname="f" oct="2"/>
-										<nc pname="f" oct="2"/>
+										<nc pname="d" oct="3"/>
+										<nc pname="d" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>as</syl>
 									<neume>
-										<nc pname="d" oct="2"/>
-										<nc pname="f" oct="2"/>
+										<nc pname="b" oct="2"/>
+										<nc pname="d" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>a</syl>
 									<neume>
-										<nc pname="f" oct="2"/>
-										<nc pname="g" oct="2"/>
-										<nc pname="f" oct="2"/>
+										<nc pname="d" oct="3"/>
+										<nc pname="e" oct="3"/>
+										<nc pname="d" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>qua</syl>
 									<neume>
-										<nc pname="f" oct="2"/>
+										<nc pname="d" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>et</syl>
 									<neume>
-										<nc pname="f" oct="2"/>
+										<nc pname="d" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>fer</syl>
 									<neume>
-										<nc pname="g" oct="2"/>
-										<nc pname="a" oct="2">
+										<nc pname="e" oct="3"/>
+										<nc pname="f" oct="3">
 											<liquescent/>
 										</nc>
 									</neume>
@@ -137,13 +138,13 @@
 								<syllable>
 									<syl>te</syl>
 									<neume>
-										<nc pname="a" oct="2"/>
+										<nc pname="f" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>ar</syl>
 									<neume>
-										<nc pname="a" oct="2">
+										<nc pname="f" oct="3">
 											<liquescent/>
 										</nc>
 									</neume>
@@ -151,68 +152,68 @@
 								<syllable>
 									<syl>chi</syl>
 									<neume>
-										<nc pname="a" oct="2"/>
+										<nc pname="f" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>tri</syl>
 									<neume>
-										<nc pname="a" oct="2"/>
-										<nc pname="b" oct="2"/>
-										<nc pname="c" oct="3"/>
+										<nc pname="f" oct="3"/>
+										<nc pname="g" oct="3"/>
+										<nc pname="a" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>cli</syl>
 									<neume>
-										<nc pname="g" oct="2"/>
-										<nc pname="a" oct="2"/>
-										<nc tilt="se" pname="g" oct="2"/>
-										<nc tilt="se" pname="f" oct="2"/>
-										<nc pname="g" oct="2"/>
+										<nc pname="e" oct="3"/>
+										<nc pname="f" oct="3"/>
+										<nc tilt="se" pname="e" oct="3"/>
+										<nc tilt="se" pname="d" oct="3"/>
+										<nc pname="e" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>no</syl>
 									<neume>
-										<nc pname="g" oct="2"/>
-										<nc pname="f" oct="2"/>
+										<nc pname="e" oct="3"/>
+										<nc pname="d" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>cum</syl>
 									<neume>
-										<nc pname="f" oct="2"/>
+										<nc pname="d" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>gu</syl>
 									<neume>
-										<nc pname="a" oct="2"/>
-										<nc pname="g" oct="2"/>
+										<nc pname="f" oct="3"/>
+										<nc pname="e" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>stas</syl>
 									<neume>
-										<nc pname="a" oct="2"/>
-										<nc pname="c" oct="3"/>
-										<nc pname="b" oct="2"/>
-										<nc pname="c" oct="3"/>
+										<nc pname="f" oct="3"/>
+										<nc pname="a" oct="3"/>
+										<nc pname="g" oct="3"/>
+										<nc pname="a" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>set</syl>
 									<neume>
-										<nc pname="a" oct="2"/>
-										<nc pname="b" oct="2"/>
+										<nc pname="f" oct="3"/>
+										<nc pname="g" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>ar</syl>
 									<neume>
-										<nc pname="g" oct="2"/>
-										<nc pname="a" oct="2">
+										<nc pname="e" oct="3"/>
+										<nc pname="f" oct="3">
 											<liquescent/>
 										</nc>
 									</neume>
@@ -220,94 +221,94 @@
 								<syllable>
 									<syl>chi</syl>
 									<neume>
-										<nc pname="f" oct="2"/>
+										<nc pname="d" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>tri</syl>
 									<neume>
-										<nc pname="a" oct="2"/>
-										<nc pname="g" oct="2"/>
-										<nc pname="a" oct="2"/>
+										<nc pname="f" oct="3"/>
+										<nc pname="e" oct="3"/>
+										<nc pname="f" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>cli</syl>
 									<neume>
-										<nc pname="g" oct="2"/>
-										<nc pname="a" oct="2"/>
-										<nc tilt="se" pname="g" oct="2"/>
-										<nc tilt="se" pname="f" oct="2"/>
-										<nc pname="g" oct="2"/>
+										<nc pname="e" oct="3"/>
+										<nc pname="f" oct="3"/>
+										<nc tilt="se" pname="e" oct="3"/>
+										<nc tilt="se" pname="d" oct="3"/>
+										<nc pname="e" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>nus</syl>
 									<neume>
-										<nc pname="g" oct="2"/>
-										<nc pname="f" oct="2"/>
+										<nc pname="e" oct="3"/>
+										<nc pname="d" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>a</syl>
 									<neume>
-										<nc pname="a" oct="2"/>
+										<nc pname="f" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>quam</syl>
 									<neume>
-										<nc pname="a" oct="2"/>
-										<nc pname="g" oct="2"/>
+										<nc pname="f" oct="3"/>
+										<nc pname="e" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>vi</syl>
 									<neume>
-										<nc pname="a" oct="2"/>
-										<nc pname="g" oct="2"/>
+										<nc pname="f" oct="3"/>
+										<nc pname="e" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>num</syl>
 									<neume>
-										<nc pname="f" oct="2"/>
-										<nc pname="g" oct="2"/>
+										<nc pname="d" oct="3"/>
+										<nc pname="e" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>fa</syl>
 									<neume>
-										<nc pname="g" oct="2"/>
-										<nc pname="a" oct="2"/>
-										<nc pname="g" oct="2"/>
+										<nc pname="e" oct="3"/>
+										<nc pname="f" oct="3"/>
+										<nc pname="e" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>ctam</syl>
 									<neume>
-										<nc pname="g" oct="2"/>
+										<nc pname="e" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>di</syl>
 									<neume>
-										<nc pname="a" oct="2"/>
-										<nc pname="b" oct="2"/>
+										<nc pname="f" oct="3"/>
+										<nc pname="g" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>cit</syl>
 									<neume>
-										<nc pname="g" oct="2"/>
-										<nc pname="b" oct="2"/>
-										<nc pname="c" oct="3"/>
+										<nc pname="e" oct="3"/>
+										<nc pname="g" oct="3"/>
+										<nc pname="a" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>spon</syl>
 									<neume>
-										<nc pname="a" oct="2">
+										<nc pname="f" oct="3">
 											<liquescent/>
 										</nc>
 									</neume>
@@ -315,20 +316,20 @@
 								<syllable>
 									<syl>so</syl>
 									<neume>
-										<nc pname="f" oct="2"/>
-										<nc pname="g" oct="2"/>
+										<nc pname="d" oct="3"/>
+										<nc pname="e" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>ser</syl>
 									<neume>
-										<nc pname="f" oct="2"/>
+										<nc pname="d" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>va</syl>
 									<neume>
-										<nc pname="a" oct="2">
+										<nc pname="f" oct="3">
 											<liquescent/>
 										</nc>
 									</neume>
@@ -336,182 +337,182 @@
 								<syllable>
 									<syl>sti</syl>
 									<neume>
-										<nc pname="b" oct="2"/>
-										<nc pname="d" oct="3"/>
-										<nc pname="c" oct="3"/>
+										<nc pname="g" oct="3"/>
+										<nc pname="b" oct="3"/>
+										<nc pname="a" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>vi</syl>
 									<neume>
-										<nc pname="a" oct="2"/>
+										<nc pname="f" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>num</syl>
 									<neume>
-										<nc pname="b" oct="2"/>
-										<nc pname="d" oct="3"/>
-										<nc pname="c" oct="3"/>
+										<nc pname="g" oct="3"/>
+										<nc pname="b" oct="3"/>
+										<nc pname="a" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>bo</syl>
 									<neume>
-										<nc pname="b" oct="2"/>
+										<nc pname="g" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>num</syl>
 									<neume>
-										<nc pname="a" oct="2"/>
-										<nc pname="g" oct="2"/>
-										<nc pname="a" oct="2"/>
-										<nc pname="b" oct="2"/>
+										<nc pname="f" oct="3"/>
+										<nc pname="e" oct="3"/>
+										<nc pname="f" oct="3"/>
+										<nc pname="g" oct="3"/>
 									</neume>
 									<neume>
-										<nc pname="g" oct="2"/>
-										<nc pname="f" oct="2"/>
+										<nc pname="e" oct="3"/>
+										<nc pname="d" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>us</syl>
 									<neume>
-										<nc pname="f" oct="2"/>
-										<nc pname="g" oct="2"/>
-										<nc pname="b" oct="2"/>
 										<nc pname="d" oct="3"/>
-										<nc pname="c" oct="3"/>
+										<nc pname="e" oct="3"/>
+										<nc pname="g" oct="3"/>
+										<nc pname="b" oct="3"/>
+										<nc pname="a" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>que</syl>
 									<neume>
-										<nc pname="b" oct="2"/>
+										<nc pname="g" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>a</syl>
 									<neume>
-										<nc pname="g" oct="2"/>
-										<nc pname="b" oct="2"/>
+										<nc pname="e" oct="3"/>
+										<nc pname="g" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>dhuc</syl>
 									<neume>
-										<nc pname="b" oct="2"/>
-										<nc pname="f" oct="2"/>
+										<nc pname="g" oct="3"/>
+										<nc pname="d" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>hoc</syl>
 									<neume>
-										<nc pname="a" oct="2"/>
+										<nc pname="f" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>si</syl>
 									<neume>
-										<nc pname="b" oct="2"/>
+										<nc pname="g" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>gnum</syl>
 									<neume>
-										<nc pname="a" oct="2"/>
+										<nc pname="f" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>fe</syl>
 									<neume>
-										<nc pname="g" oct="2"/>
+										<nc pname="e" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>cit</syl>
 									<neume>
-										<nc pname="f" oct="2"/>
+										<nc pname="d" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>Je</syl>
 									<neume>
-										<nc pname="f" oct="2"/>
+										<nc pname="d" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>sus</syl>
 									<neume>
-										<nc pname="e" oct="2"/>
-										<nc pname="g" oct="2"/>
+										<nc pname="c" oct="3"/>
+										<nc pname="e" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>pri</syl>
 									<neume>
-										<nc pname="e" oct="2"/>
-										<nc pname="f" oct="2"/>
+										<nc pname="c" oct="3"/>
+										<nc pname="d" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>mum</syl>
 									<neume>
-										<nc pname="f" oct="2"/>
+										<nc pname="d" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>co</syl>
 									<neume>
-										<nc pname="a" oct="2"/>
+										<nc pname="f" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>ram</syl>
 									<neume>
-										<nc pname="b" oct="2"/>
+										<nc pname="g" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>di</syl>
 									<neume>
-										<nc pname="c" oct="3"/>
+										<nc pname="a" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>sci</syl>
 									<neume>
-										<nc pname="b" oct="2"/>
+										<nc pname="g" oct="3"/>
 									</neume>
 									<neume>
-										<nc pname="b" oct="2"/>
-										<nc pname="a" oct="2"/>
+										<nc pname="g" oct="3"/>
+										<nc pname="f" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>pu</syl>
 									<neume>
-										<nc pname="g" oct="2"/>
-										<nc pname="f" oct="2"/>
+										<nc pname="e" oct="3"/>
+										<nc pname="d" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>lis</syl>
 									<neume>
-										<nc pname="g" oct="2"/>
-										<nc pname="a" oct="2"/>
+										<nc pname="e" oct="3"/>
+										<nc pname="f" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>su</syl>
 									<neume>
-										<nc pname="f" oct="2"/>
+										<nc pname="d" oct="3"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>is</syl>
 									<neume>
-										<nc pname="f" oct="2"/>
+										<nc pname="d" oct="3"/>
 									</neume>
 								</syllable>
 							</layer>

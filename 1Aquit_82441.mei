@@ -16,12 +16,13 @@
 				<score>
 					<scoreDef>
 						<staffGrp>
-							<staffDef n="1" lines="5" notationtype="neume" clef.shape="F" clef.line="2"/>
+							<staffDef n="1" lines="5" notationtype="neume"/>
 						</staffGrp>
 					</scoreDef>
 					<section>
 						<staff n="1">
 							<layer n="1">
+								<clef shape="F" line="2"/>
 								<syllable>
 									<syl>Be</syl>
 									<neume>

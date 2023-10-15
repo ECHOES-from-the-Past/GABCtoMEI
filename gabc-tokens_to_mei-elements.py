@@ -201,28 +201,32 @@ def convert_to_aquitanian(general_mei, mei_file):
 def gabc2mei(gabc_line, mei_file, notation_type):
     # Get the words from gabc
     words = gabc_line.split()
-    
-    # Setting the clef
-    clef = words[0]
-    staffDef = doc.getElementsByTagName('staffDef')[0]
-    staffDef.setAttribute('clef.shape', clef[1].capitalize())
-    staffDef.setAttribute('clef.line', clef[2])
     print(words)
+    
+    # Setting the clef as the child of layer
+    clef = words[0]
+    clef_mei = doc.createElement('clef')
+    clef_mei.setAttribute('shape', clef[1].capitalize())
+    clef_mei.setAttribute('line', clef[2])
+    layer1.appendChild(clef_mei)
 
     # Process each gabc word
     for word in words[1:]:
         print('\nThe word is: ', word)
         syllables = word.split(')')
-        #print(syllables[:-1])
+        
+        # Process each gabc syllable and add it to the layer
         for gabc_syllable in syllables[:-1]:
             print()
             syllable_mei = doc.createElement('syllable')
             layer1.appendChild(syllable_mei)
-
+            
+            # Extract the syllable text and the list of neumes
             syl_text, indiv_neumes_list = get_syl_and_neumes(gabc_syllable)
             print(syl_text)
             print(indiv_neumes_list)
-
+            
+            # Fill in the syllable with <syl> and <neume> elements
             syl_mei = doc.createElement('syl')
             text = doc.createTextNode(syl_text)
             syl_mei.appendChild(text)

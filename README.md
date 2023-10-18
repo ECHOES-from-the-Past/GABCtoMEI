@@ -1,5 +1,7 @@
 # GABCtoMEI
 
+In addition to the GABC specifications (that can be found [here](https://gregorio-project.github.io/gabc/index.html)), we followed the next encoding guidelines to encode all the features necessary for converting GABC files into MEI Neumes files. This conversion is done with the [gabc-tokens_to_mei-elements.py](https://github.com/martha-thomae/GABCtoMEI/blob/main/gabc-tokens_to_mei-elements.py) script.
+
 ## Encoding Guidelines
 
 - The Aquitanian fragments have a reference line (usually drawn in red ink). We used the second line of the GABC staff (represented by the GABC `f` character) to represent this reference line.

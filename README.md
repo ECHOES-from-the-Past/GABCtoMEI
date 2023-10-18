@@ -25,3 +25,34 @@ In addition to the GABC specifications (that can be found [here](https://gregori
 - We also decided to increase the range of the notes allowed by GABC. GABC allows to encode notes from the space below the first ledger line (represented by `a`) to the space above the fifth line (represented by `m`). We expanded this range by including some characters before `a` (these are `x`, `y`, `z`) and some characters after `m` (these are `n`, `p`, `q`). These extra characters are shown in the image below, where the red background shows the usual range covered by GABC and the extended system is shown by the characters in the blue background. The extra characters would not be rendered on the [GABC Transcription Tool](https://bbloomf.github.io/jgabc/transcriber.html), but they are useful to encode a wider range than the one currently allowed.
   
   ![GABC_x-to-q_edited](https://github.com/martha-thomae/GABCtoMEI/assets/13948831/7e510f0e-50af-4dbc-841b-edb10ee27250)
+
+## Conversion Process (GABC to MEI)
+To use the Python `gabc-tokens_to_mei-elements.py` script, you need to provide the following information:
+- input file (with extension `.txt`)
+- output file (with extension `.mei`)
+- type of notation (`square` or `aquitanian` using the flag `-notation`), if no value is provided, the program will use `aquitanian` notation as the default
+
+These are a few examples of how to run the program:
+
+- For square notation:
+  
+  ```
+  python3 gabc-tokens_to_mei-elements.py <input_file_name>.txt <output_file_name>.mei -notation square
+  ```
+
+- For aquitanian notation:
+  ```
+  python3 gabc-tokens_to_mei-elements.py <input_file_name>.txt <output_file_name>.mei -notation aquitanian
+  ```
+
+  or 
+  ```
+  python3 gabc-tokens_to_mei-elements.py <input_file_name>.txt <output_file_name>.mei
+  ```
+
+The program will produce two types of MEI files:
+
+1. One that encodes the location of the notes in the staff using `@loc` (see the attribute [description](https://music-encoding.org/guidelines/v5/attribute-classes/att.staffLoc.html) and its [values](https://music-encoding.org/guidelines/v5/data-types/data.STAFFLOC.html)).
+2. And one that encodes the final file by substituting the `@loc` value with:
+   1. the melodic intervals (`@intm`), in the case of Aquitanian notation
+   2. the pitch (with `@pname` and `@oct`), in the case of square notation

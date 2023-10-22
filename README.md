@@ -4,7 +4,7 @@ In addition to the GABC specifications (that can be found [here](https://gregori
 
 ## Encoding Guidelines
 
-- The Aquitanian fragments have a reference line (usually drawn in red ink). We used the second line of the GABC staff (represented by the GABC `f` character) to represent this reference line.
+- The Aquitanian fragments have a reference line (usually drawn in red ink and sometimes with drypoint, which can be read as D, F, G, A, or B according to the mode of the chant). We used the second line of the GABC staff (represented by the GABC `f` character) to represent this reference line.
 - We used the slash `/` character to separate the neumes within a syllable.
 - Features kept:
   - square shapes (lowercase letters: `a`, `b`, `c`, `d`, `e`, `f`, `g`, `h`, `i`, `j`, `k`, `l`, `m`)
@@ -15,7 +15,12 @@ In addition to the GABC specifications (that can be found [here](https://gregori
     - oriscus (`o`)
     - quilisma (`w`)
     - strophicus (`s`)
-- Torculus in Aquitanian looks like a punctum followed by a clivis, but since it is a single neume, we encode it as three squares.
+- Torculus in Aquitanian looks like a punctum followed by a clivis ![image](https://github.com/martha-thomae/GABCtoMEI/assets/13948831/72005277-2136-4102-b3a4-d003bd013c4d), but since it is a single neume, we encode it as a single neume consisting of three squares.
+  
+  **Example:** A syllable with just one torculus that starts in the second line (`f`), moves up a third (`h`), and back down a third (`f`).
+  -  This torculus would be encoded as `(fhf)`, which is a single neume
+  -  And not as `(f/hVf)`, because in this case the glyph would be composed of two neumes, as indicated by the `/` (see bullet point two), with these two neumes being a square `f` and a clivis `hVf`
+
 - Only provide a clef in GABC if there is one in the manuscript. Otherwise, we do not encode any clef and just start encoding the notes in GABC as their encoding indicates their position in the staff and has no pitch-related information.
 
   ![GABC_a-to-m_edited](https://github.com/martha-thomae/GABCtoMEI/assets/13948831/e313109d-5894-41f6-9c41-7ed09d9e38a9)

@@ -278,9 +278,9 @@ def gabc2mei(gabc_line, mei_file, notation_type):
 
     # Write the final files (for square or for aquitanian)
     if notation_type == 'square':
-        convert_to_square(doc, clef, "Final_SQUARE_" + mei_file)
+        convert_to_square(doc, clef, mei_file[:-4] + "_SQUARE" + mei_file[-4:])
     elif notation_type == 'aquitanian':
-        convert_to_aquitanian(doc, "Final_AQUIT_" + mei_file)
+        convert_to_aquitanian(doc, mei_file[:-4] + "_AQUIT" + mei_file[-4:])
 
 
 
@@ -295,13 +295,13 @@ if __name__ == "__main__":
     gabc_file.close()
 
 
-# python3 gabc-tokens_to_mei-elements.py 01_Aquit_82441.txt 01_Aquit_82441.mei
-# python3 gabc-tokens_to_mei-elements.py 02_Square_85041.txt 02_Square_85041.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py 03_Aquit_56766.txt 03_Aquit_56766.mei
-# python3 gabc-tokens_to_mei-elements.py 04_Square_84909.txt 04_Square_84909.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py 05_Aquit_84540.txt 05_Aquit_84540.mei
-# python3 gabc-tokens_to_mei-elements.py 06_Aquit_84623.txt 06_Aquit_84623.mei
-# python3 gabc-tokens_to_mei-elements.py 07_Square_84873.txt 07_Square_84873.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py 08_Aquit_84614.txt 08_Aquit_84614.mei
-# python3 gabc-tokens_to_mei-elements.py 09_Aquit_84548.txt 09_Aquit_84548.mei
-# python3 gabc-tokens_to_mei-elements.py 10_Square-84882.txt 10_Square-84882.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py input_GABC_files/01_Aquit_82441.txt output_MEI_files/01_Aquit_82441.mei
+# python3 gabc-tokens_to_mei-elements.py input_GABC_files/02_Square_85041.txt output_MEI_files/02_Square_85041.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py input_GABC_files/03_Aquit_56766.txt output_MEI_files/03_Aquit_56766.mei
+# python3 gabc-tokens_to_mei-elements.py input_GABC_files/04_Square_84909.txt output_MEI_files/04_Square_84909.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py input_GABC_files/05_Aquit_84540.txt output_MEI_files/05_Aquit_84540.mei
+# python3 gabc-tokens_to_mei-elements.py input_GABC_files/06_Aquit_84623.txt output_MEI_files/06_Aquit_84623.mei
+# python3 gabc-tokens_to_mei-elements.py input_GABC_files/07_Square_84873.txt output_MEI_files/07_Square_84873.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py input_GABC_files/08_Aquit_84614.txt output_MEI_files/08_Aquit_84614.mei
+# python3 gabc-tokens_to_mei-elements.py input_GABC_files/09_Aquit_84548.txt output_MEI_files/09_Aquit_84548.mei
+# python3 gabc-tokens_to_mei-elements.py input_GABC_files/10_Square-84882.txt output_MEI_files/10_Square-84882.mei -notation square

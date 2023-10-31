@@ -7,14 +7,25 @@ In addition to the GABC specifications (that can be found [here](https://gregori
 - The Aquitanian fragments have a reference line (usually drawn in red ink and sometimes with drypoint, which can be read as D, F, G, A, or B according to the mode of the chant). We used the second line of the GABC staff (represented by the GABC `f` character) to represent this reference line.
 - We used the slash `/` character to separate the neumes within a syllable.
 - Features kept:
-  - square shapes (lowercase letters: `a`, `b`, `c`, `d`, `e`, `f`, `g`, `h`, `i`, `j`, `k`, `l`, `m`)
-  - rhombus shapes (uppercase letters: `A`, `B`, `C`, `D`, `E`, `F`, `G`, `H`, `I`, `J`, `K`, `L`, `M`)
-  - square with tail on the left (marked with a `V`) or on the right (marked with a `v`)
-  - special ones:
-    - liquescent (`<`, `>`, `~`)
-    - oriscus (`o`)
-    - quilisma (`w`)
-    - strophicus (`s`)
+  - Square shapes (lowercase letters: `a`, `b`, `c`, `d`, `e`, `f`, `g`, `h`, `i`, `j`, `k`, `l`, `m`)
+  - Rhombus shapes (uppercase letters: `A`, `B`, `C`, `D`, `E`, `F`, `G`, `H`, `I`, `J`, `K`, `L`, `M`)
+  - Square with tail on the left (marked with a `V`) or on the right (marked with a `v`)
+
+    **IMPORTANT:** Single notes that are part of the same neume are regarded as graphically joined. Only long tails are signaled, not the pen-strokes that join two squares within a neume.
+    
+  - Special ones:
+    - Oriscus (`o`)
+    - Quilisma (`w`)
+    - Strophicus (`s`)
+    - Liquescent (`<`, `>`, `~`)
+      - The liquescent with two tails up is represented by `<` (in MEI this would be represented with a `@curve=a` in the neume component `<nc>`, plus a child `<liquescent>`)
+      - The liquescent with two tails down is represented by `>` (in MEI this would be represented with a `@curve=c` in the neume component `<nc>`, plus a child `<liquescent>`)
+      - If we want the liquescent to have only one tail (instead of two tails), we additionally provide a `V` for a left tail and a `v` for a right tail
+- Features added:
+  - Use `º` as a prefix to mark the first neume component of the pair of an obliqua ligature.
+
+    **Example:** `(gVºhfj)`,  which means that from the four neume components in this neume (`gV`, `h`, `f`, and `j`), the two neume components in the middle, `h` and `f`, are ligated in oblique motion (in MEI this would be equivalent to both neume components `<nc>` having an attribute `@ligated = obliqua`).
+    
 - Torculus in Aquitanian looks like a punctum followed by a clivis ![image](https://github.com/martha-thomae/GABCtoMEI/assets/13948831/72005277-2136-4102-b3a4-d003bd013c4d), but since it is a single neume, we encode it as a single neume consisting of three squares.
   
   **Example:** A syllable with just one torculus that starts in the second line (`f`), moves up a third (`h`), and back down a third (`f`).
@@ -33,31 +44,32 @@ In addition to the GABC specifications (that can be found [here](https://gregori
 
 ## Conversion Process (GABC to MEI)
 To use the Python `gabc-tokens_to_mei-elements.py` script, you need to provide the following information:
-- input file (with extension `.txt`)
-- output file (with extension `.mei`)
-- type of notation (`square` or `aquitanian` using the flag `-notation`), if no value is provided, the program will use `aquitanian` notation as the default
+- Input file name (with extension `.txt`), saved in the _GABC_infiles_ folder
+- Output file name (with extension `.mei`), which will be saved in the _MEI_outfiles_ folder
+- Type of notation (`square` or `aquitanian` using the flag `-notation`), if no value is provided, the program will use `aquitanian` notation as the default
 
-These are a few examples of how to run the program:
+These are a few examples of how to run the program, provided that the input GABC file is in the **GABC_infiles** folder:
 
 - For square notation:
   
   ```
-  python3 gabc-tokens_to_mei-elements.py <input_file_name>.txt <output_file_name>.mei -notation square
+  python3 gabc-tokens_to_mei-elements.py GABC_infiles/<input_file_name>.txt MEI_outfiles/<output_file_name>.mei -notation square
   ```
 
-- For aquitanian notation:
+- For Aquitanian notation:
   ```
-  python3 gabc-tokens_to_mei-elements.py <input_file_name>.txt <output_file_name>.mei -notation aquitanian
+  python3 gabc-tokens_to_mei-elements.py GABC_infiles/<input_file_name>.txt MEI_outfiles/<output_file_name>.mei -notation aquitanian
   ```
 
   or 
   ```
-  python3 gabc-tokens_to_mei-elements.py <input_file_name>.txt <output_file_name>.mei
+  python3 gabc-tokens_to_mei-elements.py GABC_infiles/<input_file_name>.txt MEI_outfiles/<output_file_name>.mei
   ```
 
 The program will produce two types of MEI files:
 
-1. One that encodes the location of the notes in the staff using `@loc` (see the attribute [description](https://music-encoding.org/guidelines/v5/attribute-classes/att.staffLoc.html) and its [values](https://music-encoding.org/guidelines/v5/data-types/data.STAFFLOC.html)).
-2. And one that encodes the final file by substituting the `@loc` value with:
-   1. the melodic intervals (`@intm`), in the case of Aquitanian notation
-   2. the pitch (with `@pname` and `@oct`), in the case of square notation
+1. One that encodes the location of the notes in the staff using `@loc` (see the attribute [description](https://music-encoding.org/guidelines/v5/attribute-classes/att.staffLoc.html) and its [values](https://music-encoding.org/guidelines/v5/data-types/data.STAFFLOC.html)). These files are found in the **MEI_intermedfiles** folder within the **MEI_outfiles**.
+2. And one that encodes the final file by substituting the `@loc` value by:
+   1. The pitch (with `@pname` and `@oct`), in the case of square notation.
+   2. Recomputing the location value (`@loc`) based on a reference line (`<staffDef lines="1">`), in the case of Aquitanian notation
+   These output files for square and Aquitanian notation can be found in the **MEI_outfiles** folder.

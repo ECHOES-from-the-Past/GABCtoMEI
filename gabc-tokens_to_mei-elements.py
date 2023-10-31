@@ -272,7 +272,9 @@ def gabc2mei(gabc_line, mei_file, notation_type):
     encode_obliqua_ligatures()
 
     # Write the general file (the one with @loc attributes)
-    myfile = open(mei_file, "w")
+    index = mei_file.index('/')
+    filename = mei_file[:index+1] + "MEI_intermedfiles" + mei_file[index:]
+    myfile = open(filename, "w")
     myfile.write(doc.toprettyxml())
     myfile.close()
 
@@ -295,13 +297,13 @@ if __name__ == "__main__":
     gabc_file.close()
 
 
-# python3 gabc-tokens_to_mei-elements.py input_GABC_files/01_Aquit_82441.txt output_MEI_files/01_Aquit_82441.mei
-# python3 gabc-tokens_to_mei-elements.py input_GABC_files/02_Square_85041.txt output_MEI_files/02_Square_85041.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py input_GABC_files/03_Aquit_56766.txt output_MEI_files/03_Aquit_56766.mei
-# python3 gabc-tokens_to_mei-elements.py input_GABC_files/04_Square_84909.txt output_MEI_files/04_Square_84909.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py input_GABC_files/05_Aquit_84540.txt output_MEI_files/05_Aquit_84540.mei
-# python3 gabc-tokens_to_mei-elements.py input_GABC_files/06_Aquit_84623.txt output_MEI_files/06_Aquit_84623.mei
-# python3 gabc-tokens_to_mei-elements.py input_GABC_files/07_Square_84873.txt output_MEI_files/07_Square_84873.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py input_GABC_files/08_Aquit_84614.txt output_MEI_files/08_Aquit_84614.mei
-# python3 gabc-tokens_to_mei-elements.py input_GABC_files/09_Aquit_84548.txt output_MEI_files/09_Aquit_84548.mei
-# python3 gabc-tokens_to_mei-elements.py input_GABC_files/10_Square-84882.txt output_MEI_files/10_Square-84882.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/01_Aquit_82441.txt MEI_outfiles/01_Aquit_82441.mei
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/02_Square_85041.txt MEI_outfiles/02_Square_85041.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/03_Aquit_56766.txt MEI_outfiles/03_Aquit_56766.mei
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/04_Square_84909.txt MEI_outfiles/04_Square_84909.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/05_Aquit_84540.txt MEI_outfiles/05_Aquit_84540.mei
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/06_Aquit_84623.txt MEI_outfiles/06_Aquit_84623.mei
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/07_Square_84873.txt MEI_outfiles/07_Square_84873.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/08_Aquit_84614.txt MEI_outfiles/08_Aquit_84614.mei
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/09_Aquit_84548.txt MEI_outfiles/09_Aquit_84548.mei
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/10_Square-84882.txt MEI_outfiles/10_Square-84882.mei -notation square

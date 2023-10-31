@@ -19,7 +19,7 @@ inclinatum_pitches = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'
 locs = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 pitches = regular_pitches + inclinatum_pitches
 
-prefixes = ['@']
+prefixes = ['@', '°']
 suffixes = ['~', '>', '<', 'o', 'w', 's', 'v', 'V']
 # Missing episema ('_')
 
@@ -75,6 +75,10 @@ def get_nc_qualities(gabc_nc):
         # Prefixes
         elif charitem == '@':
             pass
+        elif charitem == '°':
+            # first nc of the pair with @ligated = true
+            attribute = ('ligated', 'true')
+            features.append(attribute)
         # Suffixes
         elif charitem == '~':
             # liquescent
@@ -160,28 +164,14 @@ def get_syl_and_neumes(gabc_syllable):
 # ---------------------------------------- #
 #  Flavoring MEI (to square or aquitanian) #
 # ---------------------------------------- #
-def prorrectus_to_ligated(square_neume_components):
-    nc0 = square_neume_components[0]
-    nc1 = square_neume_components[1]
-    nc2 = square_neume_components[2]
-
-    loc0 = int(nc0.getAttribute('loc'))
-    loc1 = int(nc1.getAttribute('loc'))
-    loc2 = int(nc2.getAttribute('loc'))
-
-    if ((loc0 - loc1 > 0) and(loc2 - loc1 > 0)):
-        nc0.setAttribute('ligated', 'true')
-        nc1.setAttribute('ligated', 'true')
-
-
 def convert_to_square(general_mei, clef, mei_file):
-    # Change porrectus movement at the start of a neume 
-    # for @ligated=true in its first two neume components
+    # Add the @ligated=true to the second neume component of the pair of obliqua ligated components
     square_neumes = general_mei.getElementsByTagName("neume")
     for sq_neume in square_neumes:
         sq_ncs = sq_neume.childNodes
-        if (len(sq_ncs) >= 3):
-            prorrectus_to_ligated(sq_ncs)
+        for i, sqnc in enumerate(sq_ncs):
+            if (sq_ncs.getAttribute('ligated') and sq_ncs.getAttribute('ligated') == 'true'):
+                sq_ncs[i+1].setAttribute('ligated', 'true')
 
     # Change @loc to @pname and @oct
     scale = clef_to_pitch[clef]

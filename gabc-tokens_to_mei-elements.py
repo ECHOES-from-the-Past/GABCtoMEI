@@ -39,16 +39,31 @@ clef_to_pitch = {
 # --------- #
 def get_gabc_ncs(gabc_token):
     chars_in_token = list(gabc_token)
-
     ncs_in_token = [] # list of the neume components (ncs) in the neume (token)
-    for i, origchar in enumerate(chars_in_token):
-        if ((origchar in pitches) or (origchar in prefixes)):
+    prevchar = '' # initializing variable
+
+    # Evaluate each character to see if they fall in the following categories:
+    for origchar in chars_in_token:
+        # Prefixes
+        if (origchar in prefixes):
             ncs_in_token.append(origchar)
+        # Pitches
+        elif (origchar in pitches):
+            if (prevchar in prefixes):
+                ncs_in_token[-1] = ncs_in_token[-1] + origchar
+            else:
+                ncs_in_token.append(origchar)
+        # Suffixes
         elif (origchar in suffixes):
             ncs_in_token[-1] = ncs_in_token[-1] + origchar
+        # Anything else
         else:
             print('unknown character: ', origchar)
+        
+        # Update previous character
+        prevchar = origchar
 
+    print(ncs_in_token)
     return ncs_in_token
 
 
@@ -168,10 +183,13 @@ def convert_to_square(general_mei, clef, mei_file):
     # Add the @ligated=true to the second neume component of the pair of obliqua ligated components
     square_neumes = general_mei.getElementsByTagName("neume")
     for sq_neume in square_neumes:
+        save = -20
         sq_ncs = sq_neume.childNodes
-        for i, sqnc in enumerate(sq_ncs):
-            if (sqnc.getAttribute('ligated') and sqnc.getAttribute('ligated') == 'true'):
-                sq_ncs[i+1].setAttribute('ligated', 'true')
+        for i, nc in enumerate(sq_ncs):
+            if (nc.getAttribute('ligated') and nc.getAttribute('ligated') == 'true'):
+                save = i+1
+        if (save > 0):
+            sq_ncs[save].setAttribute('ligated', 'true')
 
     # Change @loc to @pname and @oct
     scale = clef_to_pitch[clef]

@@ -294,10 +294,6 @@ if __name__ == "__main__":
     gabc2mei(gabc_file.readline(), args.mei_output, args.notation)
     gabc_file.close()
 
-    # python3 gabc-tokens_to_mei-elements.py "(c3) Chris(gvFE)te(gf/ge>) Na(ghg)" out.mei
-    # python3 gabc-tokens_to_mei-elements.py gabc1_82441.txt aquit1_82441_prettyxml.mei
-    # python3 gabc-tokens_to_mei-elements.py gabc10_84614.txt aquit10_84614_prettyxml.mei
-    # python3 gabc-tokens_to_mei-elements.py gabc11_84548.txt aquit11_84548_prettyxml.mei
 
 # python3 gabc-tokens_to_mei-elements.py 01_Aquit_82441.txt 01_Aquit_82441.mei
 # python3 gabc-tokens_to_mei-elements.py 02_Square_85041.txt 02_Square_85041.mei -notation square

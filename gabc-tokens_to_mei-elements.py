@@ -63,7 +63,7 @@ def get_gabc_ncs(gabc_token):
         # Update previous character
         prevchar = origchar
 
-    print(ncs_in_token)
+    print('ncs in neume token:', ncs_in_token)
     return ncs_in_token
 
 
@@ -179,9 +179,9 @@ def get_syl_and_neumes(gabc_syllable):
 # ---------------------------------------- #
 #  Flavoring MEI (to square or aquitanian) #
 # ---------------------------------------- #
-def convert_to_square(general_mei, clef, mei_file):
+def encode_obliqua_ligatures():
     # Add the @ligated=true to the second neume component of the pair of obliqua ligated components
-    square_neumes = general_mei.getElementsByTagName("neume")
+    square_neumes = doc.getElementsByTagName("neume")
     for sq_neume in square_neumes:
         save = -20
         sq_ncs = sq_neume.childNodes
@@ -191,6 +191,8 @@ def convert_to_square(general_mei, clef, mei_file):
         if (save > 0):
             sq_ncs[save].setAttribute('ligated', 'true')
 
+
+def convert_to_square(general_mei, clef, mei_file):
     # Change @loc to @pname and @oct
     scale = clef_to_pitch[clef]
     neume_components = general_mei.getElementsByTagName("nc")
@@ -266,6 +268,8 @@ def gabc2mei(gabc_line, mei_file, notation_type):
             for gabc_neume in indiv_neumes_list:
                 mei_neume = convert_to_mei_neume(gabc_neume)
                 syllable_mei.appendChild(mei_neume)
+
+    encode_obliqua_ligatures()
 
     # Write the general file (the one with @loc attributes)
     myfile = open(mei_file, "w")

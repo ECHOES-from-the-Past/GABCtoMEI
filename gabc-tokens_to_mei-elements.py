@@ -170,7 +170,7 @@ def convert_to_square(general_mei, clef, mei_file):
     for sq_neume in square_neumes:
         sq_ncs = sq_neume.childNodes
         for i, sqnc in enumerate(sq_ncs):
-            if (sq_ncs.getAttribute('ligated') and sq_ncs.getAttribute('ligated') == 'true'):
+            if (sqnc.getAttribute('ligated') and sqnc.getAttribute('ligated') == 'true'):
                 sq_ncs[i+1].setAttribute('ligated', 'true')
 
     # Change @loc to @pname and @oct

@@ -75,7 +75,7 @@
 								<syllable>
 									<syl>rum</syl>
 									<neume>
-										<nc pname="g" oct="3">
+										<nc curve="c" pname="g" oct="3">
 											<liquescent/>
 										</nc>
 									</neume>
@@ -127,7 +127,7 @@
 								<syllable>
 									<syl>tur</syl>
 									<neume>
-										<nc pname="f" oct="3">
+										<nc curve="c" pname="f" oct="3">
 											<liquescent/>
 										</nc>
 									</neume>
@@ -242,8 +242,8 @@
 										<nc pname="a" oct="3"/>
 									</neume>
 									<neume>
-										<nc tilt="n" ligated="true" pname="a" oct="3"/>
-										<nc ligated="true" pname="g" oct="3"/>
+										<nc tilt="n" pname="a" oct="3"/>
+										<nc pname="g" oct="3"/>
 										<nc tilt="s" pname="a" oct="3"/>
 									</neume>
 								</syllable>
@@ -385,7 +385,7 @@
 								<syllable>
 									<syl>et</syl>
 									<neume>
-										<nc pname="f" oct="3">
+										<nc curve="c" pname="f" oct="3">
 											<liquescent/>
 										</nc>
 									</neume>
@@ -401,8 +401,8 @@
 								<syllable>
 									<syl>nis</syl>
 									<neume>
-										<nc tilt="n" ligated="true" pname="a" oct="3"/>
-										<nc ligated="true" pname="g" oct="3"/>
+										<nc tilt="n" pname="a" oct="3"/>
+										<nc pname="g" oct="3"/>
 										<nc pname="a" oct="3"/>
 										<nc pname="b" oct="3"/>
 										<nc pname="a" oct="3"/>
@@ -440,7 +440,7 @@
 								<syllable>
 									<syl>con</syl>
 									<neume>
-										<nc pname="e" oct="3">
+										<nc curve="c" pname="e" oct="3">
 											<liquescent/>
 										</nc>
 									</neume>

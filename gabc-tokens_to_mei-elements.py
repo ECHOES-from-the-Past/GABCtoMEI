@@ -195,21 +195,15 @@ def convert_to_square(general_mei, clef, mei_file):
 
 
 def convert_to_aquitanian(general_mei, mei_file):
-    # Change @loc to @intm (melodic interval)
-    neumes = general_mei.getElementsByTagName("neume")
-    for neume in neumes:
-        neume_components = neume.childNodes
-        for i in range(0, len(neume_components)-1):
-            nc1 = neume_components[i]
-            nc2 = neume_components[i+1]
-            loc1 = int(nc1.getAttribute('loc'))
-            loc2 = int(nc2.getAttribute('loc'))
-            nc2.setAttribute('intm', str(loc2-loc1))
+    # Create the one reference line
+    staffDef = general_mei.getElementsByTagName("staffDef")[0]
+    staffDef.setAttribute('lines', '1')
 
-    # Still need to remove @loc
-    neume_components = general_mei.getElementsByTagName("nc")
-    for nc in neume_components:
-        nc.removeAttribute('loc')
+    # Change @loc value to be according to the 'reference line'
+    ncomponents = general_mei.getElementsByTagName("nc")
+    for nc in ncomponents:
+        locval = int(nc.getAttribute('loc'))
+        nc.setAttribute('loc', str(locval - 2))
 
     # Write the MEI file
     myfile = open(mei_file, "w")

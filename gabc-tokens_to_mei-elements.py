@@ -19,7 +19,7 @@ inclinatum_pitches = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'
 locs = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 pitches = regular_pitches + inclinatum_pitches
 
-prefixes = ['@', '°']
+prefixes = ['@', 'º']
 suffixes = ['~', '>', '<', 'o', 'w', 's', 'v', 'V']
 # Missing episema ('_')
 
@@ -75,7 +75,7 @@ def get_nc_qualities(gabc_nc):
         # Prefixes
         elif charitem == '@':
             pass
-        elif charitem == '°':
+        elif charitem == 'º':
             # first nc of the pair with @ligated = true
             attribute = ('ligated', 'true')
             features.append(attribute)

@@ -32,13 +32,15 @@ clef_to_pitch = {
     '(f4)': ['d2', 'e2', 'f2', 'g2', 'a2', 'b2', 'c3', 'd3', 'e3', 'f3', 'g3', 'a3', 'b3'],
 } # locs = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
+# token is a neume (so everything separated by '/')
+# get_gabc_ncs(gabc_token or gabc_neume)
 # --------- #
 # Functions #
 # --------- #
 def get_gabc_ncs(gabc_token):
     chars_in_token = list(gabc_token)
 
-    ncs_in_token = []
+    ncs_in_token = [] # list of the neume components (ncs) in the neume (token)
     for i, origchar in enumerate(chars_in_token):
         if ((origchar in pitches) or (origchar in prefixes)):
             ncs_in_token.append(origchar)
@@ -53,17 +55,17 @@ def get_gabc_ncs(gabc_token):
 def get_nc_qualities(gabc_nc):
     characters = list(gabc_nc)
     features = []
-    for item in characters:
+    for charitem in characters:
 
         # Pitches
-        if item in regular_pitches:
+        if charitem in regular_pitches:
             # loc attribute
-            locval = locs[regular_pitches.index(item)]
+            locval = locs[regular_pitches.index(charitem)]
             attribute = ('loc', str(locval))
             features.append(attribute)
-        elif item in inclinatum_pitches:
+        elif charitem in inclinatum_pitches:
             # loc attribute
-            locval = locs[inclinatum_pitches.index(item)]
+            locval = locs[inclinatum_pitches.index(charitem)]
             attribute = ('loc', str(locval))
             features.append(attribute)
             # tilt attribute
@@ -71,38 +73,44 @@ def get_nc_qualities(gabc_nc):
             features.append(attribute)
 
         # Prefixes
-        elif item == '@':
+        elif charitem == '@':
             pass
         # Suffixes
-        elif item == '~':
+        elif charitem == '~':
             # liquescent
             nc_type = doc.createElement('liquescent') # LIBMEI METHOD
             features.append(nc_type)
-        elif item == '>':
+        elif charitem == '>':
+            # nc with @curve = c
+            attribute = ('curve', 'c')
+            features.append(attribute)
             # liquescent
             nc_type = doc.createElement('liquescent') # LIBMEI METHOD
             features.append(nc_type)
-        elif item == '<':
+        elif charitem == '<':
+            # nc with @curve = a
+            attribute = ('curve', 'a')
+            features.append(attribute)
             # liquescent
             nc_type = doc.createElement('liquescent') # LIBMEI METHOD
             features.append(nc_type)
-        elif item == 'o':
+        elif charitem == 'o':
             # oriscus
             nc_type = doc.createElement('oriscus') # LIBMEI METHOD
             features.append(nc_type)
-        elif item == 'w':
+        elif charitem == 'w':
             # quilisma
             nc_type = doc.createElement('quilisma') # LIBMEI METHOD
             features.append(nc_type)
-        elif item == 's':
+        elif charitem == 's':
             # strophicus
             nc_type = doc.createElement('strophicus') # LIBMEI METHOD
             features.append(nc_type)
-        elif item == 'v':
+        elif charitem == 'v':
             # tilt attribute
             attribute = ('tilt', 's')
             features.append(attribute)
-        elif item == 'V':
+        elif charitem == 'V':
             # tilt attribute
             attribute = ('tilt', 'n')
             features.append(attribute)

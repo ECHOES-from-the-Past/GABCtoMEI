@@ -23,7 +23,7 @@ which are simply encoded as shown in entries 6 and 7 of the previous table.
 Or there could be liquescents with just one tail, for example: 
 ```xml
 <nc curve="c" tilt="n">
- <liqescent/>
+ <liquescent/>
 </nc>
 ```
 which represents a liquescent that has just one tail (rather than two); in this case, a left tail (`@tilt = n`). This would be encoded in our "strict" GABC as `>V`.

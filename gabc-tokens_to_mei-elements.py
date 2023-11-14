@@ -222,6 +222,9 @@ def convert_to_aquitanian(general_mei, mei_file):
     for nc in ncomponents:
         locval = int(nc.getAttribute('loc'))
         nc.setAttribute('loc', str(locval - 2))
+        # Change @tilt=n to @tilt=ne
+        if (nc.getAttribute('tilt') and nc.getAttribute('tilt')=='n'):
+            nc.setAttribute('tilt', 'ne')
 
     # Write the MEI file
     myfile = open(mei_file, "w")

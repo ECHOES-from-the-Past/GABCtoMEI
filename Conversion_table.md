@@ -12,6 +12,11 @@
 | 10 | Strophicus                                       | `s` | `<nc>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<strophicus/>`**<br/>`</nc>` |
 | 11 | Obliqua                                          | `º` preceding first neume <br/>component of the two[^1] | `<nc`**`ligated="true"`**`/>`<br/>`<nc`**`ligated="true"`**`/>`|
 | 12 | Separation of neumes                             | `/`<br/>what precedes and follows this <br/>slash are the characters representing <br/>all neume components of one neume, <br/>and the characters of all the neume <br/>components of the following neume, <br/>respectively | **`<neume>`**<br/>&nbsp;&nbsp;&nbsp;&nbsp;`<nc/>...<nc/>`<br/>**`</neume>`<br/>`<neume>`**<br/>&nbsp;&nbsp;&nbsp;&nbsp;`<nc/>...<nc/>`<br/>**`</neume>`** |
+| 13 | Accidental (flat)     | `x` | `<accid`**`accid="f"`**`/>` |
+| 14 | Accidental (natural)  | `y` | `<accid`**`accid="n"`**`/>` |
+| 15 | Accidental (sharp)    | `#` | `<accid`**`accid="s"`**`/>` |
+| 16 | Unclear (empty notes) | `r` | **`<unclear>`**<br/>&nbsp;&nbsp;&nbsp;&nbsp;`<nc/>`<br/>**`</unclear>`** |
+
 
 There could be normal liquescents, with two tails, 
 which are simply encoded as shown in entries 6 and 7 of the previous table. 

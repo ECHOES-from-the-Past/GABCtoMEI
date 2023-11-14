@@ -26,6 +26,6 @@ Or there could be liquescents with just one tail, for example:
  <liqescent/>
 </nc>
 ```
-which represents a liquescent that has just one tail (rather than two); in this case, a left tail (`@tilt = n`).
+which represents a liquescent that has just one tail (rather than two); in this case, a left tail (`@tilt = n`). This would be encoded in our "strict" GABC as `>V`.
 
 [^1]: Not part of GABC

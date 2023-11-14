@@ -20,7 +20,7 @@ locs = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 pitches = regular_pitches + inclinatum_pitches
 
 prefixes = ['@', 'º']
-suffixes = ['~', '>', '<', 'o', 'w', 's', 'v', 'V']
+suffixes = ['~', '>', '<', 'o', 'w', 's', 'v', 'V', 'r', 'x', 'y', '#']
 # Missing episema ('_')
 
 clef_to_pitch = {
@@ -133,6 +133,26 @@ def get_nc_qualities(gabc_nc):
             # tilt attribute
             attribute = ('tilt', 'n')
             features.append(attribute)
+        # Elements that are not children of <nc> 
+        # They are either preceding siblings (like <accid>)
+        # or parents of the <nc> (like <unclear>)
+        elif charitem == 'r':
+            # cavum (empty note) - used for unclear neume components
+            # <unclear> <nc/> </unclear>
+            unclear = doc.createElement('unclear') # LIBMEI METHOD
+            features.append(["unclear", unclear])
+        elif charitem == 'x':
+            # flat: <accid accid="f"/>
+            accid = doc.createElement('accid') # LIBMEI METHOD
+            features.append(["accid", ('accid', 'f')])
+        elif charitem == 'y':
+            # natural: <accid accid="n"/>
+            accid = doc.createElement('accid') # LIBMEI METHOD
+            features.append(["accid", ('accid', 'n')])
+        elif charitem == '#':
+            # sharp: <accid accid="s"/>
+            accid = doc.createElement('accid') # LIBMEI METHOD
+            features.append(["accid", ('accid', 's')])
         else:
             print("this character is not included in the list of processing characters")
 
@@ -148,6 +168,14 @@ def convert_to_mei_nc(gabc_nc):
         if (type(feature) == tuple):
             # Then it is an attribute, and you add it to the <nc>
             mei_nc.setAttribute(feature[0], feature[1]) # LIBMEI METHOD
+        elif (type(feature) == list):
+            if (feature[0] == "accid"):
+                mei_nc.tagName = "accid"
+                mei_nc.setAttribute(feature[1][0], feature[1][1])
+            elif (feature[0] == "unclear"):
+                mei_nc.setAttribute('provisional', 'unclear')
+            else:
+                print("WHAT IS THIS?!\n")
         else:
             # Then it is an element, and you add it as a child of <nc>
             mei_nc.appendChild(feature) # LIBMEI METHOD
@@ -190,6 +218,17 @@ def encode_obliqua_ligatures():
                 save = i+1
         if (save > 0):
             sq_ncs[save].setAttribute('ligated', 'true')
+
+
+def encode_unclear():
+    ncomponents = doc.getElementsByTagName("nc")
+    for nc in ncomponents:
+        if (nc.getAttribute('provisional') and nc.getAttribute('provisional')=='unclear'):
+            nc_parent = nc.parentNode
+            unclear_elem = doc.createElement('unclear')
+            nc_parent.insertBefore(unclear_elem, nc)
+            unclear_elem.appendChild(nc)
+            nc_parent.removeChild(nc)
 
 
 def convert_to_square(general_mei, clef, mei_file):
@@ -273,6 +312,7 @@ def gabc2mei(gabc_line, mei_file, notation_type):
                 syllable_mei.appendChild(mei_neume)
 
     encode_obliqua_ligatures()
+    encode_unclear()
 
     # Write the general file (the one with @loc attributes)
     index = mei_file.index('/')

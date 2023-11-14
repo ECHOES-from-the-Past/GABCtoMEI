@@ -10,6 +10,7 @@ In addition to the GABC specifications (that can be found [here](https://gregori
   - Square shapes (lowercase letters: `a`, `b`, `c`, `d`, `e`, `f`, `g`, `h`, `i`, `j`, `k`, `l`, `m`)
   - Rhombus shapes (uppercase letters: `A`, `B`, `C`, `D`, `E`, `F`, `G`, `H`, `I`, `J`, `K`, `L`, `M`)
   - Square with tail on the left (marked with a `V`) or on the right (marked with a `v`)
+  - Accidentals (flats with `x`, naturals with `y`, and sharps with `#`)
 
     **IMPORTANT:** Single notes that are part of the same neume are regarded as graphically joined. Only long tails are signaled, not the pen-strokes that join two squares within a neume.
     
@@ -38,9 +39,10 @@ In addition to the GABC specifications (that can be found [here](https://gregori
 
 
 - Given that GABC can only display a 4-line staff, and we are working with square-notation manuscripts with 5-line staves, we decided on allowing for encoding `c5` clefs as well (even though they do not render correctly on [GABC's Transcription Tool](https://bbloomf.github.io/jgabc/transcriber.html)).
-- We also decided to increase the range of the notes allowed by GABC. GABC allows to encode notes from the space below the first ledger line (represented by `a`) to the space above the fifth line (represented by `m`). We expanded this range by including some characters before `a` (these are `x`, `y`, `z`) and some characters after `m` (these are `n`, `p`, `q`). These extra characters are shown in the image below, where the red background shows the usual range covered by GABC and the extended system is shown by the characters in the blue background. The extra characters would not be rendered on the [GABC Transcription Tool](https://bbloomf.github.io/jgabc/transcriber.html), but they are useful to encode a wider range than the one currently allowed.
+- We also decided to increase the range of the notes allowed by GABC. GABC allows to encode notes from the space below the first ledger line (represented by `a`) to the space above the fifth line (represented by `m`). We expanded this range by including some characters before `a` (these are `t`, `u`, `z`) and some characters after `m` (these are `n`, `p`, `q`). These extra characters are shown in the image below, where the red background shows the usual range covered by GABC and the extended system is shown by the characters in the blue background. The extra characters would not be rendered on the [GABC Transcription Tool](https://bbloomf.github.io/jgabc/transcriber.html), but they are useful to encode a wider range than the one currently allowed.
   
-  ![GABC_x-to-q_edited](https://github.com/martha-thomae/GABCtoMEI/assets/13948831/7e510f0e-50af-4dbc-841b-edb10ee27250)
+  ![extended_gabc_scale](https://github.com/martha-thomae/GABCtoMEI/assets/13948831/78b3e4ea-6f61-4d76-88f7-f21251c704bf)
+
 
 ## Conversion Process (GABC to MEI)
 To use the Python `gabc-tokens_to_mei-elements.py` script, you need to provide the following information:

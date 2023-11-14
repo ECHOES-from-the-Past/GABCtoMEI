@@ -26,10 +26,10 @@ In addition to the GABC specifications (that can be found [here](https://gregori
 
     **Example:** `(gVºhfj)`,  which means that from the four neume components in this neume (`gV`, `h`, `f`, and `j`), the two neume components in the middle, `h` and `f`, are ligated in oblique motion (in MEI this would be equivalent to both neume components `<nc>` having an attribute `@ligated = obliqua`).
     
-- Torculus in Aquitanian looks like a punctum followed by a clivis ![image](https://github.com/martha-thomae/GABCtoMEI/assets/13948831/72005277-2136-4102-b3a4-d003bd013c4d), but since it is a single neume, we encode it as a single neume consisting of three squares.
+- Torculus in Aquitanian looks like a punctum followed by a clivis ![image](https://github.com/martha-thomae/GABCtoMEI/assets/13948831/72005277-2136-4102-b3a4-d003bd013c4d), but since it is a single neume, we encode it as a single neume consisting of three squares with the upper pitch having a tail on the left.
   
-  **Example:** A syllable with just one torculus that starts in the second line (`f`), moves up a third (`h`), and back down a third (`f`).
-  -  This torculus would be encoded as `(fhf)`, which is a single neume
+  **Example:** A syllable with just one torculus that starts in the second line (`f`), moves up a third (`h`) with a stem on the left pointing to a 'north-east' direction (`hV`), and back down a third (`f`).
+  -  This torculus would be encoded as `(fhVf)`, which is a single neume
   -  And not as `(f/hVf)`, because in this case the glyph would be composed of two neumes, as indicated by the `/` (see bullet point two), with these two neumes being a square `f` and a clivis `hVf`
 
 - Only provide a clef in GABC if there is one in the manuscript. Otherwise, we do not encode any clef and just start encoding the notes in GABC as their encoding indicates their position in the staff and has no pitch-related information.

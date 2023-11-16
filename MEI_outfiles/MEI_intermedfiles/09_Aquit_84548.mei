@@ -33,14 +33,14 @@
 									<syl>ce</syl>
 									<neume>
 										<nc loc="0"/>
-										<nc loc="2"/>
+										<nc loc="2" tilt="n"/>
 										<nc loc="1"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>vir</syl>
 									<neume>
-										<nc loc="2"/>
+										<nc loc="2" curve="a"/>
 										<nc loc="3">
 											<liquescent/>
 										</nc>
@@ -56,14 +56,14 @@
 									<syl>con</syl>
 									<neume>
 										<nc loc="-1"/>
-										<nc loc="1" tilt="s"/>
+										<nc loc="1" tilt="n"/>
 									</neume>
 								</syllable>
 								<syllable>
 									<syl>ci</syl>
 									<neume>
 										<nc loc="3"/>
-										<nc loc="4" tilt="s"/>
+										<nc loc="4" tilt="n"/>
 									</neume>
 								</syllable>
 								<syllable>
@@ -78,7 +78,7 @@
 									<neume>
 										<nc loc="2"/>
 										<nc loc="1"/>
-										<nc loc="2"/>
+										<nc loc="2" tilt="n"/>
 										<nc loc="0"/>
 									</neume>
 								</syllable>
@@ -86,7 +86,7 @@
 									<syl>et</syl>
 									<neume>
 										<nc loc="-1"/>
-										<nc loc="1" tilt="s"/>
+										<nc loc="1" tilt="n"/>
 									</neume>
 								</syllable>
 								<syllable>
@@ -94,11 +94,11 @@
 									<neume>
 										<nc loc="3"/>
 										<nc loc="4"/>
-										<nc loc="6" tilt="s"/>
+										<nc loc="6" tilt="n"/>
 									</neume>
 									<neume>
 										<nc loc="6"/>
-										<nc loc="7"/>
+										<nc loc="7" tilt="n"/>
 										<nc loc="4"/>
 									</neume>
 								</syllable>
@@ -106,7 +106,7 @@
 									<syl>ri</syl>
 									<neume>
 										<nc loc="3"/>
-										<nc loc="4" tilt="s"/>
+										<nc loc="4" tilt="n"/>
 									</neume>
 								</syllable>
 								<syllable>
@@ -126,11 +126,11 @@
 									<neume>
 										<nc loc="4"/>
 										<nc loc="3"/>
-										<nc loc="4" tilt="s"/>
+										<nc loc="4" tilt="n"/>
 									</neume>
 									<neume>
 										<nc loc="5"/>
-										<nc loc="6"/>
+										<nc loc="6" tilt="n"/>
 										<nc loc="4"/>
 									</neume>
 								</syllable>
@@ -144,8 +144,8 @@
 									<syl>et</syl>
 									<neume>
 										<nc loc="4"/>
-										<nc loc="5"/>
-										<nc loc="4">
+										<nc loc="5" tilt="n"/>
+										<nc loc="4" curve="c">
 											<liquescent/>
 										</nc>
 									</neume>
@@ -169,7 +169,7 @@
 									<neume>
 										<nc loc="5" tilt="se"/>
 										<nc loc="4"/>
-										<nc loc="5" tilt="s"/>
+										<nc loc="5" tilt="n"/>
 									</neume>
 								</syllable>
 								<syllable>
@@ -177,7 +177,7 @@
 									<neume>
 										<nc loc="3"/>
 										<nc loc="4"/>
-										<nc loc="5" tilt="s"/>
+										<nc loc="5" tilt="n"/>
 									</neume>
 									<neume>
 										<nc loc="5">
@@ -197,7 +197,7 @@
 									<syl>men</syl>
 									<neume>
 										<nc loc="3"/>
-										<nc loc="1">
+										<nc loc="1" curve="c">
 											<liquescent/>
 										</nc>
 									</neume>
@@ -206,7 +206,7 @@
 									<syl>ej</syl>
 									<neume>
 										<nc loc="2"/>
-										<nc loc="4" tilt="s"/>
+										<nc loc="4" tilt="n"/>
 									</neume>
 									<neume>
 										<nc loc="5"/>
@@ -225,7 +225,7 @@
 									<syl>he</syl>
 									<neume>
 										<nc loc="2"/>
-										<nc loc="3"/>
+										<nc loc="3" tilt="n"/>
 										<nc loc="1"/>
 									</neume>
 									<neume>
@@ -241,7 +241,7 @@
 										<nc loc="0"/>
 										<nc loc="2"/>
 										<nc loc="3"/>
-										<nc loc="4" tilt="s"/>
+										<nc loc="4" tilt="n"/>
 									</neume>
 								</syllable>
 								<syllable>

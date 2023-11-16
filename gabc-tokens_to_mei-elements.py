@@ -3,6 +3,7 @@
 # https://lxml.de/xpathxslt.html#regular-expressions-in-xpath
 # https://towardsdatascience.com/xpath-for-python-89f4423415e0
 import argparse
+import uuid
 from xml.dom import minidom
 
 doc = minidom.parse("template.mei")
@@ -344,6 +345,10 @@ def gabc2mei(gabc_line, mei_file, notation_type):
     encode_liquescent_curve_for_tilde()
     encode_obliqua_ligatures()
     encode_unclear()
+
+    # Assign UUID @xml:ids for all elements
+    for elem in doc.getElementsByTagName("*"):
+        elem.setAttribute('xml:id', str(uuid.uuid1()))
 
     # Write the general file (the one with @loc attributes)
     index = mei_file.index('/')

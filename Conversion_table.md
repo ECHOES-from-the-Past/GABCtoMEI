@@ -4,7 +4,10 @@
 | 2  | Rhombus                                          | uppercase characters <br/>from `A` to `M`   | `<nc`**`tilt="se"`**`/>` |
 | 3  | \[downward\] Stem <br/>&nbsp;_Right side of note (a virga)_  | `v` | `<nc`**`tilt="s"`**`/>` |
 | 4  | \[downward\] Stem <br/>&nbsp;_Left side of note_             | `V` | `<nc`**`tilt="n"`**`/>` (Square notation) <br/>`<nc`**`tilt="ne"`**`/>` (Aquitanian notation) |
-| 5  | Liquescent                                       | `~` | `<nc>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<liquescent/>`**<br/>`</nc>` |
+| 5  | Liquescent                                       | `~` | `<nc>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<liquescent/>`**<br/>`</nc>`<br/>depending on the melodic contour of <br/>the neume, add a `@curve` attribute  |
+|    | (Rising melody)                    | Example `gh~`  | `<nc`**`curve="a"`**`/>`<br/>`<nc>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<liquescent/>`**<br/>`</nc>` |
+|    | (Rising melody <br/>with stem `V`) | Example `ghV~` | `<nc/>`<br/>`<nc tilt="ne"`**`curve="c"`**`>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<liquescent/>`**<br/>`</nc>` |
+|    | (Falling melody)                   | Example `hg~`  | `<nc/>`<br/>`<nc`**`curve="c"`**`>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<liquescent/>`**<br/>`</nc>` |
 | 6  | Liquescent (two tails down)                      | `>` | `<nc`**`curve="c"`**`>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<liquescent/>`**<br/>`</nc>` |
 | 7  | Liquescent (two tails up)                        | `<` | `<nc`**`curve="a"`**`>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<liquescent/>`**<br/>`</nc>` |
 | 8  | Oriscus                                          | `o` | `<nc>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<oriscus/>`**<br/>`</nc>`  |

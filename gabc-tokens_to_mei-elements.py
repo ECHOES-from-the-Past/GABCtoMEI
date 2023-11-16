@@ -348,7 +348,7 @@ def gabc2mei(gabc_line, mei_file, notation_type):
 
     # Assign UUID @xml:ids for all elements
     for elem in doc.getElementsByTagName("*"):
-        elem.setAttribute('xml:id', str(uuid.uuid1()))
+        elem.setAttribute('xml:id', 'm-' + str(uuid.uuid1()))
 
     # Write the general file (the one with @loc attributes)
     index = mei_file.index('/')

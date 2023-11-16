@@ -97,7 +97,7 @@ def get_nc_qualities(gabc_nc):
         # Suffixes
         elif charitem == '~':
             # liquescent
-            nc_type = doc.createElement('liquescent') # LIBMEI METHOD
+            nc_type = doc.createElement('liquescent_type_tilde') # LIBMEI METHOD
             features.append(nc_type)
         elif charitem == '>':
             # nc with @curve = c
@@ -207,10 +207,11 @@ def get_syl_and_neumes(gabc_syllable):
 # ---------------------------------------- #
 #  Flavoring MEI (to square or aquitanian) #
 # ---------------------------------------- #
-def encode_liquescent_curve():
-    liquescent_elems = doc.getElementsByTagName("liquescent")
-    for liquescent in liquescent_elems:
-        nc2 = liquescent.parentNode
+def encode_liquescent_curve_for_tilde():
+    liquescent_tilde_elems = doc.getElementsByTagName("liquescent_type_tilde")
+
+    for liquescent_tilde in liquescent_tilde_elems:
+        nc2 = liquescent_tilde.parentNode
         nc1 = nc2.previousSibling
 
         loc1 = int(nc1.getAttribute('loc'))
@@ -231,6 +232,9 @@ def encode_liquescent_curve():
         else:
             # nc1 has nothing AND nc2 (with the <liquescent> child) has the @curve = c
             nc2.setAttribute('curve', 'c')
+
+        # Change to a regular <liquescent> element
+        liquescent_tilde.tagName = 'liquescent'
 
 
 def encode_obliqua_ligatures():
@@ -337,7 +341,7 @@ def gabc2mei(gabc_line, mei_file, notation_type):
                 mei_neume = convert_to_mei_neume(gabc_neume)
                 syllable_mei.appendChild(mei_neume)
 
-    encode_liquescent_curve()
+    encode_liquescent_curve_for_tilde()
     encode_obliqua_ligatures()
     encode_unclear()
 

@@ -207,6 +207,32 @@ def get_syl_and_neumes(gabc_syllable):
 # ---------------------------------------- #
 #  Flavoring MEI (to square or aquitanian) #
 # ---------------------------------------- #
+def encode_liquescent_curve():
+    liquescent_elems = doc.getElementsByTagName("liquescent")
+    for liquescent in liquescent_elems:
+        nc2 = liquescent.parentNode
+        nc1 = nc2.previousSibling
+
+        loc1 = int(nc1.getAttribute('loc'))
+        loc2 = int(nc2.getAttribute('loc'))
+
+        # PES = Melody goes Up, ASCENDING pair of neume componentes
+        if(loc2 > loc1):
+            # If the second nc (the one with the liquescent) is a virga
+            if((nc2.getAttribute('tilt')) and ('n' in nc2.getAttribute('tilt'))):
+                # Then nc2 has @cuve=c (in addition to the @tilt="ne" and the <liquescent> child)
+                nc2.setAttribute('curve', 'c')
+            # Default
+            else:
+                # nc1 with @curve = a (while nc2 has the <liquescent> child)
+                nc1.setAttribute('curve', 'a')
+
+        # CLIVIS = Melody goes Down, DESCENDING pair of neume componentes
+        else:
+            # nc1 has nothing AND nc2 (with the <liquescent> child) has the @curve = c
+            nc2.setAttribute('curve', 'c')
+
+
 def encode_obliqua_ligatures():
     # Add the @ligated=true to the second neume component of the pair of obliqua ligated components
     square_neumes = doc.getElementsByTagName("neume")
@@ -311,6 +337,7 @@ def gabc2mei(gabc_line, mei_file, notation_type):
                 mei_neume = convert_to_mei_neume(gabc_neume)
                 syllable_mei.appendChild(mei_neume)
 
+    encode_liquescent_curve()
     encode_obliqua_ligatures()
     encode_unclear()
 
@@ -320,6 +347,7 @@ def gabc2mei(gabc_line, mei_file, notation_type):
     myfile = open(filename, "w")
     myfile.write(doc.toprettyxml())
     myfile.close()
+
 
     # Write the final files (for square or for aquitanian)
     if notation_type == 'square':

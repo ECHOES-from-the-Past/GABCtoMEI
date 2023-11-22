@@ -259,7 +259,7 @@ def encode_unclear():
             unclear_elem = doc.createElement('unclear')
             nc_parent.insertBefore(unclear_elem, nc)
             unclear_elem.appendChild(nc)
-            #nc_parent.removeChild(nc)
+            #nc.removeAttribute('provisional') --> add this line
 
 
 def convert_to_square(general_mei, clef, mei_file):

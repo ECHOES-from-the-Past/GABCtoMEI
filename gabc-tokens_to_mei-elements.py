@@ -387,6 +387,9 @@ if __name__ == "__main__":
 # python3 gabc-tokens_to_mei-elements.py GABC_infiles/08_Aquit_84614.txt MEI_outfiles/08_Aquit_84614.mei
 # python3 gabc-tokens_to_mei-elements.py GABC_infiles/09_Aquit_84548.txt MEI_outfiles/09_Aquit_84548.mei
 # python3 gabc-tokens_to_mei-elements.py GABC_infiles/10_Square-84882.txt MEI_outfiles/10_Square-84882.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/13_Aquit_84630.txt MEI_outfiles/13_Aquit_84630.mei
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/14_Square_84881.txt MEI_outfiles/14_Square_84881.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/15_Aquit_84534.txt MEI_outfiles/15_Aquit_84534.mei
 
 # python3 gabc-tokens_to_mei-elements.py GABC_infiles/trial_14_liqpes.txt MEI_outfiles/trial_14_liqpes.mei
 # python3 gabc-tokens_to_mei-elements.py GABC_infiles/trial_3_emptysyllables.txt MEI_outfiles/trial_3_emptysyllables.mei

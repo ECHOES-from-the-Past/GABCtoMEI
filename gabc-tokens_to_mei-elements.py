@@ -25,12 +25,13 @@ suffixes = ['~', '>', '<', 'o', 'w', 's', 'v', 'V', 'r', 'x', 'y', '#']
 # Missing episema ('_')
 
 clef_to_pitch = {
-    '(c1)': ['g2', 'a2', 'b2', 'c3', 'd3', 'e3', 'f3', 'g3', 'a3', 'b3', 'c4', 'd4', 'e4'],
-    '(c2)': ['e2', 'f2', 'g2', 'a2', 'b2', 'c3', 'd3', 'e3', 'f3', 'g3', 'a3', 'b3', 'c4'],
-    '(c3)': ['c2', 'd2', 'e2', 'f2', 'g2', 'a2', 'b2', 'c3', 'd3', 'e3', 'f3', 'g3', 'a3'],
-    '(c4)': ['a1', 'b1', 'c2', 'd2', 'e2', 'f2', 'g2', 'a2', 'b2', 'c3', 'd3', 'e3', 'f3'],
-    '(f3)': ['f2', 'g2', 'a2', 'b2', 'c3', 'd3', 'e3', 'f3', 'g3', 'a3', 'b3', 'c4', 'd4'],
-    '(f4)': ['d2', 'e2', 'f2', 'g2', 'a2', 'b2', 'c3', 'd3', 'e3', 'f3', 'g3', 'a3', 'b3'],
+    'C1': ['g2', 'a2', 'b2', 'c3', 'd3', 'e3', 'f3', 'g3', 'a3', 'b3', 'c4', 'd4', 'e4'],
+    'C2': ['e2', 'f2', 'g2', 'a2', 'b2', 'c3', 'd3', 'e3', 'f3', 'g3', 'a3', 'b3', 'c4'],
+    'C3': ['c2', 'd2', 'e2', 'f2', 'g2', 'a2', 'b2', 'c3', 'd3', 'e3', 'f3', 'g3', 'a3'],
+    'C4': ['a1', 'b1', 'c2', 'd2', 'e2', 'f2', 'g2', 'a2', 'b2', 'c3', 'd3', 'e3', 'f3'],
+    'F2': ['a2', 'b2', 'c3', 'd3', 'e3', 'f3', 'g3', 'a3', 'b3', 'c4', 'd4', 'e4', 'f4'],
+    'F3': ['f2', 'g2', 'a2', 'b2', 'c3', 'd3', 'e3', 'f3', 'g3', 'a3', 'b3', 'c4', 'd4'],
+    'F4': ['d2', 'e2', 'f2', 'g2', 'a2', 'b2', 'c3', 'd3', 'e3', 'f3', 'g3', 'a3', 'b3'],
 } # locs = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 # token is a neume (so everything separated by '/')
@@ -262,31 +263,23 @@ def encode_unclear():
             #nc.removeAttribute('provisional') --> add this line
 
 
-def convert_to_square(general_mei, clef, mei_file):
+def convert_to_square(general_mei, clef, neume_components):
     # Change @loc to @pname and @oct
     scale = clef_to_pitch[clef]
-    neume_components = general_mei.getElementsByTagName("nc")
     for nc in neume_components:
         locval = nc.getAttribute('loc')
         pitch = scale[int(locval) + 3]          # pitch = scale[locs.index(locval)]
         nc.setAttribute('pname', pitch[0])
         nc.setAttribute('oct', pitch[1])
-
     # Still need to remove @loc
     for nc in neume_components:
         nc.removeAttribute('loc')
 
-    # Write the MEI file
-    myfile = open(mei_file, "w")
-    myfile.write(doc.toprettyxml())
-    myfile.close()
 
-
-def convert_to_aquitanian(general_mei, mei_file):
+def convert_to_aquitanian(general_mei):
     # Create the one reference line
     staffDef = general_mei.getElementsByTagName("staffDef")[0]
     staffDef.setAttribute('lines', '1')
-
     # Change @loc value to be according to the 'reference line'
     ncomponents = general_mei.getElementsByTagName("nc")
     for nc in ncomponents:
@@ -296,11 +289,6 @@ def convert_to_aquitanian(general_mei, mei_file):
         if (nc.getAttribute('tilt') and nc.getAttribute('tilt')=='n'):
             nc.setAttribute('tilt', 'ne')
 
-    # Write the MEI file
-    myfile = open(mei_file, "w")
-    myfile.write(doc.toprettyxml())
-    myfile.close()
-
 
 # ------------ #
 # Main program #
@@ -309,38 +297,41 @@ def gabc2mei(gabc_line, mei_file, notation_type):
     # Get the words from gabc
     words = gabc_line.split()
     print(words)
-    
-    # Setting the clef as the child of layer
-    clef = words[0]
-    clef_mei = doc.createElement('clef')
-    clef_mei.setAttribute('shape', clef[1].capitalize())
-    clef_mei.setAttribute('line', clef[2])
-    layer1.appendChild(clef_mei)
 
     # Process each gabc word
-    for word in words[1:]:
+    for word in words:
         print('\nThe word is: ', word)
         syllables = word.split(')')
         
         # Process each gabc syllable and add it to the layer
         for gabc_syllable in syllables[:-1]:
             print()
-            syllable_mei = doc.createElement('syllable')
-            layer1.appendChild(syllable_mei)
-            
-            # Extract the syllable text and the list of neumes
-            syl_text, indiv_neumes_list = get_syl_and_neumes(gabc_syllable)
-            print(syl_text)
-            print(indiv_neumes_list)
-            
-            # Fill in the syllable with <syl> and <neume> elements
-            syl_mei = doc.createElement('syl')
-            text = doc.createTextNode(syl_text)
-            syl_mei.appendChild(text)
-            syllable_mei.appendChild(syl_mei)
-            for gabc_neume in indiv_neumes_list:
-                mei_neume = convert_to_mei_neume(gabc_neume)
-                syllable_mei.appendChild(mei_neume)
+            print(gabc_syllable)
+            # Setting the clef as the child of layer
+            if gabc_syllable in ['(c1', '(c2', '(c3', '(c4', '(f2', '(f3', '(f4']:
+                clef_mei = doc.createElement('clef')
+                clef_mei.setAttribute('shape', gabc_syllable[1].capitalize())
+                clef_mei.setAttribute('line', gabc_syllable[2])
+                layer1.appendChild(clef_mei)
+                print('clef:', gabc_syllable[1].capitalize() + gabc_syllable[2])
+            # Encoding the syllable
+            else:
+                syllable_mei = doc.createElement('syllable')
+                layer1.appendChild(syllable_mei)
+                
+                # Extract the syllable text and the list of neumes
+                syl_text, indiv_neumes_list = get_syl_and_neumes(gabc_syllable)
+                print(syl_text)
+                print(indiv_neumes_list)
+                
+                # Fill in the syllable with <syl> and <neume> elements
+                syl_mei = doc.createElement('syl')
+                text = doc.createTextNode(syl_text)
+                syl_mei.appendChild(text)
+                syllable_mei.appendChild(syl_mei)
+                for gabc_neume in indiv_neumes_list:
+                    mei_neume = convert_to_mei_neume(gabc_neume)
+                    syllable_mei.appendChild(mei_neume)
 
     encode_liquescent_curve_for_tilde()
     encode_obliqua_ligatures()
@@ -359,11 +350,65 @@ def gabc2mei(gabc_line, mei_file, notation_type):
 
 
     # Write the final files (for square or for aquitanian)
-    if notation_type == 'square':
-        convert_to_square(doc, clef, mei_file[:-4] + "_SQUARE" + mei_file[-4:])
-    elif notation_type == 'aquitanian':
-        convert_to_aquitanian(doc, mei_file[:-4] + "_AQUIT" + mei_file[-4:])
 
+    # For Square notation:
+    if notation_type == 'square':
+        clefs = doc.getElementsByTagName('clef')
+        clef0_elem = clefs[0]
+        clef0_val = clef0_elem.getAttribute('shape') + clef0_elem.getAttribute('line') 
+        mei_file = mei_file[:-4] + "_SQUARE" + mei_file[-4:]
+        if clefs.length == 1:
+            neume_components = doc.getElementsByTagName("nc")
+            convert_to_square(doc, clef0_val, neume_components)
+        else:
+            # Initializing the clef_value with the value of the first clef
+            clef_val = clef0_val
+            print('\n'+clef_val)
+            # Initializing the dictionary of syllabes_to_clefs_dict, 
+            # which has as keys the clefs and as values the list of syllables_after_clef
+            syllables_to_clefs_dict = {clef0_val: []}
+            syllables_after_clef = []
+            # Initializing the first element of the while cycle
+            elem = clef0_elem.nextSibling
+            # Iterating over elements 
+            while(elem):
+                print(elem)
+                # Identifying syllables
+                if(elem.tagName and elem.tagName == "syllable"):
+                    syllables_after_clef.append(elem)
+                # And clefs
+                elif(elem.tagName and elem.tagName == "clef"):
+                    # Update dictionary of syllables pertaining to the clef given until this moment
+                    syllables_to_clefs_dict[clef_val] = syllables_after_clef
+                    # Getting the new clef
+                    clef_val = elem.getAttribute('shape') + elem.getAttribute('line') 
+                    print('\n'+clef_val)
+                    # And initializing the list of syllables related to that clef
+                    syllables_after_clef = []
+                else:
+                    pass
+                # Continue to the next iteration of elements
+                elem = elem.nextSibling
+            # Update the dictionary of the syllables per clef for the last time (so, for the last clef)
+            syllables_to_clefs_dict[clef_val] = syllables_after_clef
+            print()
+            print(syllables_to_clefs_dict)
+
+            for clef_val in syllables_to_clefs_dict:
+                syllables_after_clef = syllables_to_clefs_dict[clef_val]
+                for syllable in syllables_after_clef:
+                    neume_components = syllable.getElementsByTagName("nc")
+                    convert_to_square(doc, clef_val, neume_components)
+
+    # For Aquitanian notation:
+    elif notation_type == 'aquitanian':
+        convert_to_aquitanian(doc)
+        mei_file = mei_file[:-4] + "_AQUIT" + mei_file[-4:]
+
+    # Write the MEI file
+    myfile = open(mei_file, "w")
+    myfile.write(doc.toprettyxml())
+    myfile.close()
 
 
 if __name__ == "__main__":
@@ -393,3 +438,4 @@ if __name__ == "__main__":
 
 # python3 gabc-tokens_to_mei-elements.py GABC_infiles/trial_14_liqpes.txt MEI_outfiles/trial_14_liqpes.mei
 # python3 gabc-tokens_to_mei-elements.py GABC_infiles/trial_3_emptysyllables.txt MEI_outfiles/trial_3_emptysyllables.mei
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/2Aquit_twoclefs.txt MEI_outfiles/2Aquit_twoclefs.mei -notation square

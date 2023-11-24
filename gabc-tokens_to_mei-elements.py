@@ -366,7 +366,7 @@ def gabc2mei(gabc_line, mei_file, notation_type):
             print('\n'+clef_val)
             # Initializing the dictionary of syllabes_to_clefs_dict, 
             # which has as keys the clefs and as values the list of syllables_after_clef
-            syllables_to_clefs_dict = {clef0_val: []}
+            syllables_to_clefs_dict = {'C1': [], 'C2': [], 'C3': [], 'C4': [], 'F2': [], 'F3': [], 'F4': []}
             syllables_after_clef = []
             # Initializing the first element of the while cycle
             elem = clef0_elem.nextSibling
@@ -379,7 +379,11 @@ def gabc2mei(gabc_line, mei_file, notation_type):
                 # And clefs
                 elif(elem.tagName and elem.tagName == "clef"):
                     # Update dictionary of syllables pertaining to the clef given until this moment
-                    syllables_to_clefs_dict[clef_val] = syllables_after_clef
+                    # We are not updating by simply doing dict[clef_val] = values, 
+                    # but by doing dict[clef_val] = dict[clef_val] + values, 
+                    # in case the clef has been found before and it already 
+                    # contains a set of notes from a previous passage (this happens in Piece 07)
+                    syllables_to_clefs_dict[clef_val] = syllables_to_clefs_dict[clef_val] + syllables_after_clef
                     # Getting the new clef
                     clef_val = elem.getAttribute('shape') + elem.getAttribute('line') 
                     print('\n'+clef_val)
@@ -390,7 +394,10 @@ def gabc2mei(gabc_line, mei_file, notation_type):
                 # Continue to the next iteration of elements
                 elem = elem.nextSibling
             # Update the dictionary of the syllables per clef for the last time (so, for the last clef)
-            syllables_to_clefs_dict[clef_val] = syllables_after_clef
+            # We are not updating by simply doing dict[clef_val] = values, 
+            # but by doing dict[clef_val] = dict[clef_val] + values, 
+            # in case the clef has been found before and it already
+            syllables_to_clefs_dict[clef_val] = syllables_to_clefs_dict[clef_val] + syllables_after_clef
             print()
             print(syllables_to_clefs_dict)
 

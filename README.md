@@ -73,5 +73,6 @@ The program will produce two types of MEI files:
 1. One that encodes the location of the notes in the staff using `@loc` (see the attribute [description](https://music-encoding.org/guidelines/v5/attribute-classes/att.staffLoc.html) and its [values](https://music-encoding.org/guidelines/v5/data-types/data.STAFFLOC.html)). These files are found in the **MEI_intermedfiles** folder within the **MEI_outfiles**.
 2. And one that encodes the final file by substituting the `@loc` value by:
    1. The pitch (with `@pname` and `@oct`), in the case of square notation.
-   2. Recomputing the location value (`@loc`) based on a reference line (`<staffDef lines="1">`), in the case of Aquitanian notation
+   2. Recomputing the location value (`@loc`) based on a reference line (`<staffDef lines="1">`), in the case of Aquitanian notation.
+
    These output files for square and Aquitanian notation can be found in the **MEI_outfiles** folder.

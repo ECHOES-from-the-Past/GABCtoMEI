@@ -18,7 +18,7 @@
 | 13 | Accidental (flat)     | `x` | `<accid`**`accid="f"`**`/>` |
 | 14 | Accidental (natural)  | `y` | `<accid`**`accid="n"`**`/>` |
 | 15 | Accidental (sharp)    | `#` | `<accid`**`accid="s"`**`/>` |
-| 16 | Unclear (empty notes) | `r` | **`<unclear>`**<br/>&nbsp;&nbsp;&nbsp;&nbsp;`<nc/>`<br/>**`</unclear>`** |
+| 16 | Unclear               | `r` | **`<unclear>`**<br/>&nbsp;&nbsp;&nbsp;&nbsp;`<nc/>`<br/>**`</unclear>`** |
 
 
 There could be normal liquescents, with two tails, 

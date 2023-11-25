@@ -457,6 +457,12 @@ if __name__ == "__main__":
 # python3 gabc-tokens_to_mei-elements.py GABC_infiles/32_Square_84874.txt MEI_outfiles/32_Square_84874.mei -notation square
 # python3 gabc-tokens_to_mei-elements.py GABC_infiles/35_Square_84924.txt MEI_outfiles/35_Square_84924.mei -notation square
 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/37_Square_85065.txt MEI_outfiles/37_Square_85065.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/39_Square_85073.txt MEI_outfiles/39_Square_85073.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/41_Square_84946.txt MEI_outfiles/41_Square_84946.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/43_Square_85037.txt MEI_outfiles/43_Square_85037.mei -notation square
+
+
 # python3 gabc-tokens_to_mei-elements.py GABC_infiles/trial_14_liqpes.txt MEI_outfiles/trial_14_liqpes.mei
 # python3 gabc-tokens_to_mei-elements.py GABC_infiles/trial_3_emptysyllables.txt MEI_outfiles/trial_3_emptysyllables.mei
 # python3 gabc-tokens_to_mei-elements.py GABC_infiles/2Aquit_twoclefs.txt MEI_outfiles/2Aquit_twoclefs.mei -notation square

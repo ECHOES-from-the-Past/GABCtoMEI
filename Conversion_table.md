@@ -1,3 +1,35 @@
+# GABC to MEI Neume Conversion
+
+### MEI Neume Encoding: An Example
+The following code block shows an example of the MEI encoding for the neumes in the word ("gloria"). The code shows one clef (`C3`) and two syllables ("glo" and "ria"), each with one neume above. The image below shows the rendering of the MEI code in Verovio.
+```xml
+<staff n="1">
+   <layer n="1">
+      <clef shape="C" line="3"/>
+      <syllable>
+         <syl>glo</syl>
+         <neume>
+            <nc loc="2"/>
+         </neume>
+      </syllable>
+      <syllable>
+         <syl>ria</syl>
+         <neume>
+            <nc loc="3" tilt="s"/>
+            <nc loc="2" tilt="se" />
+            <nc loc="1" tilt="se" />
+        </neume>
+      </syllable>
+   </layer>
+</staff>
+```
+
+<img width="250" alt="example_mei_neumes_gloria" src="https://github.com/ECHOES-from-the-Past/GABCtoMEI/assets/13948831/695f111b-d3dd-4753-9302-5638a95e8f23">
+
+For more information on how to encode chants using MEI Neumes, please consult the [MEI Guidelines - Chapter 6](https://music-encoding.org/guidelines/v5/content/neumes.html)
+
+### Conversion Table from GABC to MEI
+
 |    |   Class  | Strict GABC | Neumes MEI |
 |----|----------|-------------|------------|
 | 1  | Square (note head)                               | lowercase characters <br/>from `a` to `m` | `<nc>` |
@@ -18,9 +50,10 @@
 | 13 | Accidental (flat)     | `x` | `<accid`**`accid="f"`**`/>` |
 | 14 | Accidental (natural)  | `y` | `<accid`**`accid="n"`**`/>` |
 | 15 | Accidental (sharp)    | `#` | `<accid`**`accid="s"`**`/>` |
-| 16 | Unclear               | `r` | **`<unclear>`**<br/>&nbsp;&nbsp;&nbsp;&nbsp;`<nc/>`<br/>**`</unclear>`** |
+| 16 | Uncertain reading <br/>unclear neume components   | `r` | **`<unclear>`**<br/>&nbsp;&nbsp;&nbsp;&nbsp;`<nc/>`<br/>**`</unclear>`** |
+| 17 | Completely illegible / lacuna: <br/>we do not provide notation <br/>in the transcription                | `xx()`<br/>no content inside the pair of <br/>parentheses | `<syllable>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`<syl>xx</syl>`<br/>`</syllable>` <br/><br/>**no child `<neume>`** inside of `<syllable>` |
 
-
+#### Notes:
 There could be normal liquescents, with two tails, 
 which are simply encoded as shown in entries 6 and 7 of the previous table. 
 Or there could be liquescents with just one tail, for example: 

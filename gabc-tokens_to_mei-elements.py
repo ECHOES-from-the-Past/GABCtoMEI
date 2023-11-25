@@ -330,8 +330,11 @@ def gabc2mei(gabc_line, mei_file, notation_type):
                 syl_mei.appendChild(text)
                 syllable_mei.appendChild(syl_mei)
                 for gabc_neume in indiv_neumes_list:
-                    mei_neume = convert_to_mei_neume(gabc_neume)
-                    syllable_mei.appendChild(mei_neume)
+                    if gabc_neume == '':
+                        pass
+                    else:
+                        mei_neume = convert_to_mei_neume(gabc_neume)
+                        syllable_mei.appendChild(mei_neume)
 
     encode_liquescent_curve_for_tilde()
     encode_obliqua_ligatures()

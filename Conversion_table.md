@@ -1,7 +1,7 @@
 # GABC to MEI Neume Conversion
 
 ### MEI Neume Encoding: An Example
-The following code block shows an example of the MEI encoding for the neumes in the word ("gloria"). The code shows one clef (`C3`) and two syllables ("glo" and "ria"), each with one neume above. The image below shows the rendering of the MEI code in Verovio.
+The following code block shows an example of the MEI encoding for the neumes in the word ("gloria"). The code shows one clef (`C3`) and two syllables ("glo" and "ria"), the first one ("glo") with one neume, and the second one ("ria") with two neumes. The image below shows the rendering of this MEI code in Verovio.
 ```xml
 <staff n="1">
    <layer n="1">
@@ -15,16 +15,20 @@ The following code block shows an example of the MEI encoding for the neumes in 
       <syllable>
          <syl>ria</syl>
          <neume>
+            <nc loc="5" tilt="n"/>
+            <nc loc="3"/>
+         </neume>
+         <neume>
             <nc loc="3" tilt="s"/>
-            <nc loc="2" tilt="se" />
-            <nc loc="1" tilt="se" />
+            <nc loc="2" tilt="se"/>
+            <nc loc="1" tilt="se"/>
         </neume>
       </syllable>
    </layer>
 </staff>
 ```
 
-<img width="200" alt="example_mei_neumes_gloria" src="https://github.com/ECHOES-from-the-Past/GABCtoMEI/assets/13948831/695f111b-d3dd-4753-9302-5638a95e8f23">
+<img width="270" alt="example_mei_neumes_gloria" src="https://github.com/ECHOES-from-the-Past/GABCtoMEI/assets/13948831/26d7ef11-61a6-40a9-a9e3-6bae34f17bbf">
 
 For more information on how to encode chants using MEI Neumes, please consult the [MEI Guidelines - Chapter 6](https://music-encoding.org/guidelines/v5/content/neumes.html)
 

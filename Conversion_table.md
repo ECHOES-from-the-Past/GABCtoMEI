@@ -24,7 +24,7 @@ The following code block shows an example of the MEI encoding for the neumes in 
 </staff>
 ```
 
-<img width="250" alt="example_mei_neumes_gloria" src="https://github.com/ECHOES-from-the-Past/GABCtoMEI/assets/13948831/695f111b-d3dd-4753-9302-5638a95e8f23">
+<img width="200" alt="example_mei_neumes_gloria" src="https://github.com/ECHOES-from-the-Past/GABCtoMEI/assets/13948831/695f111b-d3dd-4753-9302-5638a95e8f23">
 
 For more information on how to encode chants using MEI Neumes, please consult the [MEI Guidelines - Chapter 6](https://music-encoding.org/guidelines/v5/content/neumes.html)
 

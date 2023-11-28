@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<?xml-model href="https://music-encoding.org/schema/5.0/mei-Neumes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://music-encoding.org/schema/5.0/mei-Neumes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<mei xmlns="http://www.music-encoding.org/ns/mei" meiversion="5.0">
+	<meiHead>
+		<fileDesc>
+			<titleStmt>
+				<title/>
+			</titleStmt>
+			<pubStmt/>
+		</fileDesc>
+	</meiHead>
+	<music>
+		<body>
+			<mdiv xml:id="m-3c615454-8de6-11ee-9d38-f2b2e3f0b574">
+				<score xml:id="m-3c615526-8de6-11ee-9d38-f2b2e3f0b574">
+					<scoreDef xml:id="m-3c6155d0-8de6-11ee-9d38-f2b2e3f0b574">
+						<staffGrp xml:id="m-3c615616-8de6-11ee-9d38-f2b2e3f0b574">
+							<staffDef n="1" lines="5" notationtype="neume" xml:id="m-3c61567a-8de6-11ee-9d38-f2b2e3f0b574"/>
+						</staffGrp>
+					</scoreDef>
+					<section xml:id="m-3c6156c0-8de6-11ee-9d38-f2b2e3f0b574">
+						<staff n="1" xml:id="m-3c6156fc-8de6-11ee-9d38-f2b2e3f0b574">
+							<layer n="1" xml:id="m-3c615742-8de6-11ee-9d38-f2b2e3f0b574">
+								<clef shape="C" line="4" xml:id="m-3c615788-8de6-11ee-9d38-f2b2e3f0b574"/>
+								<syllable xml:id="m-3c6157c4-8de6-11ee-9d38-f2b2e3f0b574">
+									<syl xml:id="m-3c6157f6-8de6-11ee-9d38-f2b2e3f0b574">lis</syl>
+									<neume xml:id="m-3c615832-8de6-11ee-9d38-f2b2e3f0b574">
+										<accid loc="5" accid="f" xml:id="m-3c615864-8de6-11ee-9d38-f2b2e3f0b574"/>
+										<nc xml:id="m-3c6158a0-8de6-11ee-9d38-f2b2e3f0b574" pname="c" oct="3"/>
+										<nc xml:id="m-3c6158d2-8de6-11ee-9d38-f2b2e3f0b574" pname="b" oct="2"/>
+									</neume>
+								</syllable>
+							</layer>
+						</staff>
+					</section>
+				</score>
+			</mdiv>
+		</body>
+	</music>
+</mei>

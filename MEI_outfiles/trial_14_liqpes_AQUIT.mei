@@ -1,34 +1,34 @@
 <?xml version="1.0" ?>
 <?xml-model href="https://music-encoding.org/schema/5.0/mei-Neumes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="https://music-encoding.org/schema/5.0/mei-Neumes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<mei xmlns="http://www.music-encoding.org/ns/mei" meiversion="5.0" xml:id="m-6e882da0-8bba-11ee-9225-3645f29ecd15">
-	<meiHead xml:id="m-6e882e36-8bba-11ee-9225-3645f29ecd15">
-		<fileDesc xml:id="m-6e882ecc-8bba-11ee-9225-3645f29ecd15">
-			<titleStmt xml:id="m-6e882f12-8bba-11ee-9225-3645f29ecd15">
-				<title xml:id="m-6e882f6c-8bba-11ee-9225-3645f29ecd15"/>
+<mei xmlns="http://www.music-encoding.org/ns/mei" meiversion="5.0">
+	<meiHead>
+		<fileDesc>
+			<titleStmt>
+				<title/>
 			</titleStmt>
-			<pubStmt xml:id="m-6e882fa8-8bba-11ee-9225-3645f29ecd15"/>
+			<pubStmt/>
 		</fileDesc>
 	</meiHead>
-	<music xml:id="m-6e882fda-8bba-11ee-9225-3645f29ecd15">
-		<body xml:id="m-6e883016-8bba-11ee-9225-3645f29ecd15">
-			<mdiv xml:id="m-6e883052-8bba-11ee-9225-3645f29ecd15">
-				<score xml:id="m-6e883084-8bba-11ee-9225-3645f29ecd15">
-					<scoreDef xml:id="m-6e8830b6-8bba-11ee-9225-3645f29ecd15">
-						<staffGrp xml:id="m-6e8830de-8bba-11ee-9225-3645f29ecd15">
-							<staffDef n="1" lines="1" notationtype="neume" xml:id="m-6e883110-8bba-11ee-9225-3645f29ecd15"/>
+	<music>
+		<body>
+			<mdiv xml:id="m-65e54eae-8de4-11ee-8b0c-f2b2e3f0b574">
+				<score xml:id="m-65e54fc6-8de4-11ee-8b0c-f2b2e3f0b574">
+					<scoreDef xml:id="m-65e5507a-8de4-11ee-8b0c-f2b2e3f0b574">
+						<staffGrp xml:id="m-65e550e8-8de4-11ee-8b0c-f2b2e3f0b574">
+							<staffDef n="1" lines="1" notationtype="neume" xml:id="m-65e55160-8de4-11ee-8b0c-f2b2e3f0b574"/>
 						</staffGrp>
 					</scoreDef>
-					<section xml:id="m-6e883142-8bba-11ee-9225-3645f29ecd15">
-						<staff n="1" xml:id="m-6e883174-8bba-11ee-9225-3645f29ecd15">
-							<layer n="1" xml:id="m-6e8831a6-8bba-11ee-9225-3645f29ecd15">
-								<clef shape="C" line="4" xml:id="m-6e8831ce-8bba-11ee-9225-3645f29ecd15"/>
-								<syllable xml:id="m-6e883200-8bba-11ee-9225-3645f29ecd15">
-									<syl xml:id="m-6e883232-8bba-11ee-9225-3645f29ecd15">lis</syl>
-									<neume xml:id="m-6e883264-8bba-11ee-9225-3645f29ecd15">
-										<nc loc="1" xml:id="m-6e883296-8bba-11ee-9225-3645f29ecd15"/>
-										<nc loc="2" tilt="ne" curve="c" xml:id="m-6e8832c8-8bba-11ee-9225-3645f29ecd15">
-											<liquescent xml:id="m-6e8832f0-8bba-11ee-9225-3645f29ecd15"/>
+					<section xml:id="m-65e551ba-8de4-11ee-8b0c-f2b2e3f0b574">
+						<staff n="1" xml:id="m-65e551f6-8de4-11ee-8b0c-f2b2e3f0b574">
+							<layer n="1" xml:id="m-65e55246-8de4-11ee-8b0c-f2b2e3f0b574">
+								<clef shape="C" line="4" xml:id="m-65e55296-8de4-11ee-8b0c-f2b2e3f0b574"/>
+								<syllable xml:id="m-65e552d2-8de4-11ee-8b0c-f2b2e3f0b574">
+									<syl xml:id="m-65e5530e-8de4-11ee-8b0c-f2b2e3f0b574">lis</syl>
+									<neume xml:id="m-65e55354-8de4-11ee-8b0c-f2b2e3f0b574">
+										<nc loc="1" xml:id="m-65e55390-8de4-11ee-8b0c-f2b2e3f0b574"/>
+										<nc loc="2" tilt="ne" curve="c" xml:id="m-65e553cc-8de4-11ee-8b0c-f2b2e3f0b574">
+											<liquescent xml:id="m-65e55408-8de4-11ee-8b0c-f2b2e3f0b574"/>
 										</nc>
 									</neume>
 								</syllable>

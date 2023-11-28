@@ -327,7 +327,8 @@ def gabc2mei(gabc_line, mei_file, notation_type):
     encode_obliqua_ligatures()
 
     # Assign UUID @xml:ids for all elements
-    for elem in doc.getElementsByTagName("*"):
+    body = doc.getElementsByTagName('body')[0]
+    for elem in body.getElementsByTagName("*"):
         elem.setAttribute('xml:id', 'm-' + str(uuid.uuid1()))
 
     # Write the general file (the one with @loc attributes)

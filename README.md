@@ -29,7 +29,7 @@ In addition to the GABC specifications (that can be found [here](https://gregori
 
 
 
-  The GABC encoding of the previously mentioned features (square, rhombus, virga, oriscus, quilisma, strophicus, liquescent, obliqua ligatures, and accidentals) and others (e.g., neume groupings, uncertain readings, and lacunas) and their corresponding MEI Neumes encoding is given in the [Conversion Table from GABC to MEI Neumes](./Conversion%20Table%20(GABC%20to%20MEI%20Neumes).md), together with a simple example of an MEI Neumes encoding file.
+  The GABC encoding of the previously mentioned features (square, rhombus, virga, oriscus, quilisma, strophicus, liquescent, obliqua ligatures, and accidentals) and others (neume groupings, uncertain readings, and lacunas) and their corresponding MEI Neumes encoding is given in the [Conversion Table from GABC to MEI Neumes](./Conversion%20Table%20(GABC%20to%20MEI%20Neumes).md).
 
 
 

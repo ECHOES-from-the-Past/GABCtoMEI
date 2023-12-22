@@ -5,9 +5,7 @@ The same chant is encoded in at least two versions. For example, the first chant
 - One in aquitanian notation, with the filename `01_benedicte-omnes_pem82441_aquit`
 - And one in square notation, with the filename `02_benedicte-omnes_pem85041_square`
 
-Sometimes, the same chant can have two different versions in the same notation. For example, the three versions of the "o crux" chant, all of them in square notation: `05_o-crux_pem85972_square`, `06_o-crux_pem86078_square`, and `07_o-crux_pem85023_square`.
-
-The files containing different versions of the same chant (as the ones mentioned before) share the same chant number in the "Chant No." column.
+Sometimes, the same chant can have two different versions in the same notation. For example, the three versions of the "o crux" chant, all of them in square notation: `05_o-crux_pem85972_square`, `06_o-crux_pem86078_square`, and `07_o-crux_pem85023_square`. The files containing different versions of the same chant, as the ones mentioned before), share the same chant number in the "Chant No." column of the following tables.
 
 ### Antiphonae ad communionem
 

@@ -453,5 +453,5 @@ if __name__ == "__main__":
 
 # python3 gabc-tokens_to_mei-elements.py GABC_infiles/trial_14_liqpes.gabc MEI_outfiles/trial_14_liqpes.mei
 # python3 gabc-tokens_to_mei-elements.py GABC_infiles/trial_3_emptysyllables.gabc MEI_outfiles/trial_3_emptysyllables.mei
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/2Aquit_twoclefs.gabc MEI_outfiles/2Aquit_twoclefs.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/Aquit2_twoclefs.gabc MEI_outfiles/Aquit2_twoclefs.mei -notation square
 # python3 gabc-tokens_to_mei-elements.py GABC_infiles/trial_accid.gabc MEI_outfiles/trial_accid.mei -notation square

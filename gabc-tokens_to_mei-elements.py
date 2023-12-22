@@ -419,39 +419,39 @@ if __name__ == "__main__":
     gabc_file.close()
 
 
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/01_Aquit_82441.txt MEI_outfiles/01_Aquit_82441.mei
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/02_Square_85041.txt MEI_outfiles/02_Square_85041.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/03_Aquit_56766.txt MEI_outfiles/03_Aquit_56766.mei
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/04_Square_84909.txt MEI_outfiles/04_Square_84909.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/05_Aquit_84540.txt MEI_outfiles/05_Aquit_84540.mei
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/06_Aquit_84623.txt MEI_outfiles/06_Aquit_84623.mei
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/07_Square_84873.txt MEI_outfiles/07_Square_84873.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/08_Aquit_84614.txt MEI_outfiles/08_Aquit_84614.mei
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/09_Aquit_84548.txt MEI_outfiles/09_Aquit_84548.mei
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/10_Square-84882.txt MEI_outfiles/10_Square-84882.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/13_Aquit_84630.txt MEI_outfiles/13_Aquit_84630.mei
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/14_Square_84881.txt MEI_outfiles/14_Square_84881.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/15_Aquit_84534.txt MEI_outfiles/15_Aquit_84534.mei
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/16_Square_84863.txt MEI_outfiles/16_Square_84863.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/17_Aquit_83892.txt MEI_outfiles/17_Aquit_83892.mei
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/18_Square_85059.txt MEI_outfiles/18_Square_85059.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/19_Aquit_84600.txt MEI_outfiles/19_Aquit_84600.mei
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/20_Aquit_83880.txt MEI_outfiles/20_Aquit_83880.mei
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/21_Square_84880.txt MEI_outfiles/21_Square_84880.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/23_Square_85056.txt MEI_outfiles/23_Square_85056.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/26_Square_84905.txt MEI_outfiles/26_Square_84905.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/28_Square_84919.txt MEI_outfiles/28_Square_84919.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/30_Square_84872.txt MEI_outfiles/30_Square_84872.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/32_Square_84874.txt MEI_outfiles/32_Square_84874.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/35_Square_84924.txt MEI_outfiles/35_Square_84924.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/01_benedicte-omnes_pem82441_aquit.gabc MEI_outfiles/01_benedicte-omnes_pem82441_aquit.mei
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/02_benedicte-omnes_pem85041_square.gabc MEI_outfiles/02_benedicte-omnes_pem85041_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/03_de-fructu-operum_pem56766_aquit.gabc MEI_outfiles/03_de-fructu-operum_pem56766_aquit.mei
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/04_de-fructu-operum_pem84909_square.gabc MEI_outfiles/04_de-fructu-operum_pem84909_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/05_dicit-dominus_pem84540_aquit.gabc MEI_outfiles/05_dicit-dominus_pem84540_aquit.mei
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/06_dicit-dominus_pem84623_aquit.gabc MEI_outfiles/06_dicit-dominus_pem84623_aquit.mei
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/07_dicit-dominus_pem84873_square.gabc MEI_outfiles/07_dicit-dominus_pem84873_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/08_ecce-virgo_pem84614_aquit.gabc MEI_outfiles/08_ecce-virgo_pem84614_aquit.mei
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/09_ecce-virgo_pem84548_aquit.gabc MEI_outfiles/09_ecce-virgo_pem84548_aquit.mei
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/10_ecce-virgo_pem84882_square.gabc MEI_outfiles/10_ecce-virgo_pem84882_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/13_factus-est-repente_pem84630_aquit.gabc MEI_outfiles/13_factus-est-repente_pem84630_aquit.mei
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/14_factus-est-repente_pem84881_square.gabc MEI_outfiles/14_factus-est-repente_pem84881_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/15_fili-quid_pem84534_aquit.gabc MEI_outfiles/15_fili-quid_pem84534_aquit.mei
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/16_fili-quid_pem84863_square.gabc MEI_outfiles/16_fili-quid_pem84863_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/17_justorum-animae_pem83892_aquit.gabc MEI_outfiles/17_justorum-animae_pem83892_aquit.mei
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/18_justorum-animae_pem85059_square.gabc MEI_outfiles/18_justorum-animae_pem85059_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/19_manducaverunt_pem84600_aquit.gabc MEI_outfiles/19_manducaverunt_pem84600_aquit.mei
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/20_manducaverunt_pem83880_aquit.gabc MEI_outfiles/20_manducaverunt_pem83880_aquit.mei
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/21_manducaverunt_pem84880_square.gabc MEI_outfiles/21_manducaverunt_pem84880_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/23_martinus-abrahe_pem85056_square.gabc MEI_outfiles/23_martinus-abrahe_pem85056_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/26_mitte-manum_pem84905_square.gabc MEI_outfiles/26_mitte-manum_pem84905_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/28_panem-de-caelo_pem84919_square.gabc MEI_outfiles/28_panem-de-caelo_pem84919_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/30_pater-si-non_pem84872_square.gabc MEI_outfiles/30_pater-si-non_pem84872_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/32_psallite-domino_pem84874_square.gabc MEI_outfiles/32_psallite-domino_pem84874_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/35_qui-manducat_pem84924_square.gabc MEI_outfiles/35_qui-manducat_pem84924_square.mei -notation square
 
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/37_Square_85065.txt MEI_outfiles/37_Square_85065.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/39_Square_85073.txt MEI_outfiles/39_Square_85073.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/41_Square_84946.txt MEI_outfiles/41_Square_84946.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/43_Square_85037.txt MEI_outfiles/43_Square_85037.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/37_qui-vult_pem85065_square.gabc MEI_outfiles/37_qui-vult_pem85065_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/39_tu-es-petrus_pem85073_square.gabc MEI_outfiles/39_tu-es-petrus_pem85073_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/41_tu-mandasti_pem84946_square.gabc MEI_outfiles/41_tu-mandasti_pem84946_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/43_vos-qui-secuti_pem85037_square.gabc MEI_outfiles/43_vos-qui-secuti_pem85037_square.mei -notation square
 
 
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/trial_14_liqpes.txt MEI_outfiles/trial_14_liqpes.mei
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/trial_3_emptysyllables.txt MEI_outfiles/trial_3_emptysyllables.mei
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/2Aquit_twoclefs.txt MEI_outfiles/2Aquit_twoclefs.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/trial_accid.txt MEI_outfiles/trial_accid.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/trial_14_liqpes.gabc MEI_outfiles/trial_14_liqpes.mei
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/trial_3_emptysyllables.gabc MEI_outfiles/trial_3_emptysyllables.mei
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/2Aquit_twoclefs.gabc MEI_outfiles/2Aquit_twoclefs.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/trial_accid.gabc MEI_outfiles/trial_accid.mei -notation square

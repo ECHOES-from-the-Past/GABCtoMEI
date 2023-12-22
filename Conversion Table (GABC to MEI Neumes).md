@@ -42,7 +42,7 @@ For more information on how to encode chants using MEI Neumes, please consult th
 | 4  | \[downward\] Stem <br/>&nbsp;_Left side of note_             | `V` | `<nc`**`tilt="n"`**`/>` (Square notation) <br/>`<nc`**`tilt="ne"`**`/>` (Aquitanian notation) |
 | 5  | Liquescent                                       | `~` | `<nc>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<liquescent/>`**<br/>`</nc>`<br/>depending on the melodic contour of <br/>the neume, add a `@curve` attribute  |
 |    | (Rising melody)                    | Example `gh~`  | `<nc`**`curve="a"`**`/>`<br/>`<nc>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<liquescent/>`**<br/>`</nc>` |
-|    | (Rising melody <br/>with stem `V`) | Example `ghV~` | `<nc/>`<br/>`<nc tilt="ne"`**`curve="c"`**`>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<liquescent/>`**<br/>`</nc>` |
+|    | (Rising melody <br/>with stem `V`) | Example `ghV~` | `<nc/>`<br/>`<nc tilt="ne"`**`curve="c"`**`>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<liquescent/>`**<br/>`</nc>`<br/>This only happens in Aquitanian notation |
 |    | (Falling melody)                   | Example `hg~`  | `<nc/>`<br/>`<nc`**`curve="c"`**`>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<liquescent/>`**<br/>`</nc>` |
 | 6  | Liquescent (two tails down)                      | `>` | `<nc`**`curve="c"`**`>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<liquescent/>`**<br/>`</nc>` |
 | 7  | Liquescent (two tails up)                        | `<` | `<nc`**`curve="a"`**`>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<liquescent/>`**<br/>`</nc>` |
@@ -66,6 +66,7 @@ Or there could be liquescents with just one tail, for example:
  <liquescent/>
 </nc>
 ```
-which represents a liquescent that has just one tail (rather than two); in this case, a left tail (`@tilt = n`). This would be encoded in our "strict" GABC as `>V`.
+which represents a liquescent that has just one tail (rather than two) in square notation; in this case, a left tail (`@tilt = n`). This neume is called "cephalicus" (liquescent punctum) and would be encoded in our "strict" GABC as `>V`.
+<!--(Only happens in square?)-->
 
 [^1]: Not part of GABC

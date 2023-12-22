@@ -26,7 +26,13 @@ In addition to the GABC specifications (that can be found [here](https://gregori
   - Use `º` as a prefix to mark the first neume component of the pair of an obliqua ligature.
 
     **Example:** `(gVºhfj)`,  which means that from the four neume components in this neume (`gV`, `h`, `f`, and `j`), the two neume components in the middle, `h` and `f`, are ligated in oblique motion (in MEI this would be equivalent to both neume components `<nc>` having an attribute `@ligated = obliqua`).
-    
+
+
+
+  The GABC encoding of the previously mentioned features (square, rhombus, virga, oriscus, quilisma, strophicus, liquescent, obliqua ligatures, and accidentals) and others (e.g., neume groupings, uncertain readings, and lacunas) and their corresponding MEI Neumes encoding is given in the [Conversion Table from GABC to MEI Neumes](./Conversion%20Table%20(GABC%20to%20MEI%20Neumes).md), together with a simple example of an MEI Neumes encoding file.
+
+
+
 - Torculus in Aquitanian looks like a punctum followed by a clivis ![image](https://github.com/martha-thomae/GABCtoMEI/assets/13948831/72005277-2136-4102-b3a4-d003bd013c4d), but since it is a single neume, we encode it as a single neume consisting of three squares with the upper pitch having a tail on the left.
   
   **Example:** A syllable with just one torculus that starts in the second line (`f`), moves up a third (`h`) with a stem on the left pointing to a 'north-east' direction (`hV`), and back down a third (`f`).

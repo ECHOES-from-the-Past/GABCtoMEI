@@ -120,6 +120,6 @@ Sometimes, the same chant can have two different versions in the same notation. 
 | 31_laudabo_pem80159_aquit                  | 45 |
 | 32_laudabo_pem71013_square                 | 45 |
 | 33_deo-nostro_pem80159_aquit               | 46 |
-| 34_eo-nostro_pem71013_square               | 46 |
+| 34_deo-nostro_pem71013_square              | 46 |
 | 35_benedixit_pem80159_aquit                | 47 |
 | 36_benedixit_pem71013_square               | 47 |

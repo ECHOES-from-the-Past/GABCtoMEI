@@ -1,0 +1,110 @@
+<?xml version="1.0" ?>
+<?xml-model href="https://music-encoding.org/schema/5.0/mei-Neumes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://music-encoding.org/schema/5.0/mei-Neumes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<mei xmlns="http://www.music-encoding.org/ns/mei" meiversion="5.0">
+	<meiHead>
+		<fileDesc>
+			<titleStmt>
+				<title/>
+			</titleStmt>
+			<pubStmt/>
+		</fileDesc>
+	</meiHead>
+	<music>
+		<body>
+			<mdiv xml:id="m-f7f604bc-c478-11ee-9a26-f2b2e3f0b574">
+				<score xml:id="m-f7f605e8-c478-11ee-9a26-f2b2e3f0b574">
+					<scoreDef xml:id="m-f7f60642-c478-11ee-9a26-f2b2e3f0b574">
+						<staffGrp xml:id="m-f7f60688-c478-11ee-9a26-f2b2e3f0b574">
+							<staffDef n="1" lines="5" notationtype="neume" xml:id="m-f7f60700-c478-11ee-9a26-f2b2e3f0b574"/>
+						</staffGrp>
+					</scoreDef>
+					<section xml:id="m-f7f60746-c478-11ee-9a26-f2b2e3f0b574">
+						<staff n="1" xml:id="m-f7f6078c-c478-11ee-9a26-f2b2e3f0b574">
+							<layer n="1" xml:id="m-f7f607d2-c478-11ee-9a26-f2b2e3f0b574">
+								<clef shape="F" line="3" xml:id="m-f7f60822-c478-11ee-9a26-f2b2e3f0b574"/>
+								<syllable xml:id="m-f7f6085e-c478-11ee-9a26-f2b2e3f0b574">
+									<syl xml:id="m-f7f608c2-c478-11ee-9a26-f2b2e3f0b574">Do</syl>
+									<neume xml:id="m-f7f608fe-c478-11ee-9a26-f2b2e3f0b574">
+										<nc xml:id="m-f7f6093a-c478-11ee-9a26-f2b2e3f0b574" pname="f" oct="3"/>
+									</neume>
+								</syllable>
+								<syllable xml:id="m-f7f60976-c478-11ee-9a26-f2b2e3f0b574">
+									<syl xml:id="m-f7f609b2-c478-11ee-9a26-f2b2e3f0b574">mi</syl>
+									<neume xml:id="m-f7f609ee-c478-11ee-9a26-f2b2e3f0b574">
+										<nc xml:id="m-f7f60a20-c478-11ee-9a26-f2b2e3f0b574" pname="g" oct="3"/>
+									</neume>
+								</syllable>
+								<syllable xml:id="m-f7f60a7a-c478-11ee-9a26-f2b2e3f0b574">
+									<syl xml:id="m-f7f60aac-c478-11ee-9a26-f2b2e3f0b574">ne</syl>
+									<neume xml:id="m-f7f60ae8-c478-11ee-9a26-f2b2e3f0b574">
+										<nc xml:id="m-f7f60b24-c478-11ee-9a26-f2b2e3f0b574" pname="a" oct="3"/>
+									</neume>
+								</syllable>
+								<syllable xml:id="m-f7f60b60-c478-11ee-9a26-f2b2e3f0b574">
+									<syl xml:id="m-f7f60b92-c478-11ee-9a26-f2b2e3f0b574">re</syl>
+									<neume xml:id="m-f7f60bce-c478-11ee-9a26-f2b2e3f0b574">
+										<nc xml:id="m-f7f60c0a-c478-11ee-9a26-f2b2e3f0b574" pname="f" oct="3"/>
+									</neume>
+								</syllable>
+								<syllable xml:id="m-f7f60c3c-c478-11ee-9a26-f2b2e3f0b574">
+									<syl xml:id="m-f7f60c78-c478-11ee-9a26-f2b2e3f0b574">fu</syl>
+									<neume xml:id="m-f7f60cb4-c478-11ee-9a26-f2b2e3f0b574">
+										<nc xml:id="m-f7f60ce6-c478-11ee-9a26-f2b2e3f0b574" pname="g" oct="3"/>
+									</neume>
+								</syllable>
+								<syllable xml:id="m-f7f60d22-c478-11ee-9a26-f2b2e3f0b574">
+									<syl xml:id="m-f7f60d72-c478-11ee-9a26-f2b2e3f0b574">gi</syl>
+									<neume xml:id="m-f7f60dae-c478-11ee-9a26-f2b2e3f0b574">
+										<nc xml:id="m-f7f60dea-c478-11ee-9a26-f2b2e3f0b574" pname="f" oct="3"/>
+									</neume>
+								</syllable>
+								<syllable xml:id="m-f7f60e1c-c478-11ee-9a26-f2b2e3f0b574">
+									<syl xml:id="m-f7f60e58-c478-11ee-9a26-f2b2e3f0b574">um</syl>
+									<neume xml:id="m-f7f60e94-c478-11ee-9a26-f2b2e3f0b574">
+										<nc curve="c" tilt="n" xml:id="m-f7f60ec6-c478-11ee-9a26-f2b2e3f0b574" pname="f" oct="3">
+											<liquescent xml:id="m-f7f60f02-c478-11ee-9a26-f2b2e3f0b574"/>
+										</nc>
+									</neume>
+								</syllable>
+								<syllable xml:id="m-f7f60f3e-c478-11ee-9a26-f2b2e3f0b574">
+									<syl xml:id="m-f7f60f70-c478-11ee-9a26-f2b2e3f0b574">fa</syl>
+									<neume xml:id="m-f7f60fac-c478-11ee-9a26-f2b2e3f0b574">
+										<nc tilt="n" xml:id="m-f7f60fde-c478-11ee-9a26-f2b2e3f0b574" pname="d" oct="3"/>
+										<nc xml:id="m-f7f6101a-c478-11ee-9a26-f2b2e3f0b574" pname="c" oct="3"/>
+									</neume>
+								</syllable>
+								<syllable xml:id="m-f7f61056-c478-11ee-9a26-f2b2e3f0b574">
+									<syl xml:id="m-f7f61092-c478-11ee-9a26-f2b2e3f0b574">ctus</syl>
+									<neume xml:id="m-f7f610c4-c478-11ee-9a26-f2b2e3f0b574">
+										<nc xml:id="m-f7f61100-c478-11ee-9a26-f2b2e3f0b574" pname="f" oct="3"/>
+									</neume>
+								</syllable>
+								<syllable xml:id="m-f7f6113c-c478-11ee-9a26-f2b2e3f0b574">
+									<syl xml:id="m-f7f6116e-c478-11ee-9a26-f2b2e3f0b574">es</syl>
+									<neume xml:id="m-f7f611aa-c478-11ee-9a26-f2b2e3f0b574">
+										<nc xml:id="m-f7f611dc-c478-11ee-9a26-f2b2e3f0b574" pname="g" oct="3"/>
+										<nc tilt="s" xml:id="m-f7f61218-c478-11ee-9a26-f2b2e3f0b574" pname="a" oct="3"/>
+									</neume>
+								</syllable>
+								<syllable xml:id="m-f7f61254-c478-11ee-9a26-f2b2e3f0b574">
+									<syl xml:id="m-f7f61286-c478-11ee-9a26-f2b2e3f0b574">no</syl>
+									<neume xml:id="m-f7f612c2-c478-11ee-9a26-f2b2e3f0b574">
+										<nc tilt="n" xml:id="m-f7f61312-c478-11ee-9a26-f2b2e3f0b574" pname="g" oct="3"/>
+										<nc xml:id="m-f7f6134e-c478-11ee-9a26-f2b2e3f0b574" pname="f" oct="3"/>
+									</neume>
+								</syllable>
+								<syllable xml:id="m-f7f61380-c478-11ee-9a26-f2b2e3f0b574">
+									<syl xml:id="m-f7f613bc-c478-11ee-9a26-f2b2e3f0b574">bis</syl>
+									<neume xml:id="m-f7f613f8-c478-11ee-9a26-f2b2e3f0b574">
+										<nc xml:id="m-f7f6142a-c478-11ee-9a26-f2b2e3f0b574" pname="f" oct="3"/>
+									</neume>
+								</syllable>
+							</layer>
+						</staff>
+					</section>
+				</score>
+			</mdiv>
+		</body>
+	</music>
+</mei>

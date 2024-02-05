@@ -44,7 +44,7 @@ Sometimes, the same chant can have two different versions in the same notation. 
 | 31_psallite-domino_pem84666_aquit          | 14 |
 | 32_psallite-domino_pem84874_square         | 14 |
 | 33_qui-manducat--carnem_pem76616_aquit     | 15 |
-| 34_qui-manducat--panem_pem119191_aquit     | 15 |
+| 34_qui-manducat--panem_pem11919_aquit      | 15 |
 | 35_qui-manducat_pem84924_square            | 15 |
 | 36_qui-vult_pem84057_aquit                 | 16 |
 | 37_qui-vult_pem85065_square                | 16 |

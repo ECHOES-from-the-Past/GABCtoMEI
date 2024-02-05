@@ -419,37 +419,108 @@ if __name__ == "__main__":
     gabc_file.close()
 
 
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/01_benedicte-omnes_pem82441_aquit.gabc MEI_outfiles/01_benedicte-omnes_pem82441_aquit.mei
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/02_benedicte-omnes_pem85041_square.gabc MEI_outfiles/02_benedicte-omnes_pem85041_square.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/03_de-fructu-operum_pem56766_aquit.gabc MEI_outfiles/03_de-fructu-operum_pem56766_aquit.mei
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/04_de-fructu-operum_pem84909_square.gabc MEI_outfiles/04_de-fructu-operum_pem84909_square.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/05_dicit-dominus_pem84540_aquit.gabc MEI_outfiles/05_dicit-dominus_pem84540_aquit.mei
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/06_dicit-dominus_pem84623_aquit.gabc MEI_outfiles/06_dicit-dominus_pem84623_aquit.mei
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/07_dicit-dominus_pem84873_square.gabc MEI_outfiles/07_dicit-dominus_pem84873_square.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/08_ecce-virgo_pem84614_aquit.gabc MEI_outfiles/08_ecce-virgo_pem84614_aquit.mei
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/09_ecce-virgo_pem84548_aquit.gabc MEI_outfiles/09_ecce-virgo_pem84548_aquit.mei
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/10_ecce-virgo_pem84882_square.gabc MEI_outfiles/10_ecce-virgo_pem84882_square.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/13_factus-est-repente_pem84630_aquit.gabc MEI_outfiles/13_factus-est-repente_pem84630_aquit.mei
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/14_factus-est-repente_pem84881_square.gabc MEI_outfiles/14_factus-est-repente_pem84881_square.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/15_fili-quid_pem84534_aquit.gabc MEI_outfiles/15_fili-quid_pem84534_aquit.mei
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/16_fili-quid_pem84863_square.gabc MEI_outfiles/16_fili-quid_pem84863_square.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/17_justorum-animae_pem83892_aquit.gabc MEI_outfiles/17_justorum-animae_pem83892_aquit.mei
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/18_justorum-animae_pem85059_square.gabc MEI_outfiles/18_justorum-animae_pem85059_square.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/19_manducaverunt_pem84600_aquit.gabc MEI_outfiles/19_manducaverunt_pem84600_aquit.mei
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/20_manducaverunt_pem83880_aquit.gabc MEI_outfiles/20_manducaverunt_pem83880_aquit.mei
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/21_manducaverunt_pem84880_square.gabc MEI_outfiles/21_manducaverunt_pem84880_square.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/23_martinus-abrahe_pem85056_square.gabc MEI_outfiles/23_martinus-abrahe_pem85056_square.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/26_mitte-manum_pem84905_square.gabc MEI_outfiles/26_mitte-manum_pem84905_square.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/28_panem-de-caelo_pem84919_square.gabc MEI_outfiles/28_panem-de-caelo_pem84919_square.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/30_pater-si-non_pem84872_square.gabc MEI_outfiles/30_pater-si-non_pem84872_square.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/32_psallite-domino_pem84874_square.gabc MEI_outfiles/32_psallite-domino_pem84874_square.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/35_qui-manducat_pem84924_square.gabc MEI_outfiles/35_qui-manducat_pem84924_square.mei -notation square
-
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/37_qui-vult_pem85065_square.gabc MEI_outfiles/37_qui-vult_pem85065_square.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/39_tu-es-petrus_pem85073_square.gabc MEI_outfiles/39_tu-es-petrus_pem85073_square.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/41_tu-mandasti_pem84946_square.gabc MEI_outfiles/41_tu-mandasti_pem84946_square.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/43_vos-qui-secuti_pem85037_square.gabc MEI_outfiles/43_vos-qui-secuti_pem85037_square.mei -notation square
-
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/01_benedicte-omnes_pem82441_aquit.gabc MEI_outfiles/antiphonae_ad_communionem/001_C01_benedicte-omnes_pem82441_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/02_benedicte-omnes_pem85041_square.gabc MEI_outfiles/antiphonae_ad_communionem/002_C02_benedicte-omnes_pem85041_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/03_de-fructu-operum_pem56766_aquit.gabc MEI_outfiles/antiphonae_ad_communionem/003_C03_de-fructu-operum_pem56766_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/04_de-fructu-operum_pem84909_square.gabc MEI_outfiles/antiphonae_ad_communionem/004_C04_de-fructu-operum_pem84909_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/05_dicit-dominus_pem84540_aquit.gabc MEI_outfiles/antiphonae_ad_communionem/005_C05_dicit-dominus_pem84540_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/06_dicit-dominus_pem84623_aquit.gabc MEI_outfiles/antiphonae_ad_communionem/006_C06_dicit-dominus_pem84623_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/07_dicit-dominus_pem84873_square.gabc MEI_outfiles/antiphonae_ad_communionem/007_C07_dicit-dominus_pem84873_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/08_ecce-virgo_pem84614_aquit.gabc MEI_outfiles/antiphonae_ad_communionem/008_C08_ecce-virgo_pem84614_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/09_ecce-virgo_pem84548_aquit.gabc MEI_outfiles/antiphonae_ad_communionem/009_C09_ecce-virgo_pem84548_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/10_ecce-virgo_pem84882_square.gabc MEI_outfiles/antiphonae_ad_communionem/010_C10_ecce-virgo_pem84882_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/11_jerusalem-surge_pem84878_square.gabc MEI_outfiles/antiphonae_ad_communionem/011_C11_jerusalem-surge_pem84878_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/12_jerusalem-surge_pem86239_square.gabc MEI_outfiles/antiphonae_ad_communionem/012_C12_jerusalem-surge_pem86239_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/13_factus-est-repente_pem84630_aquit.gabc MEI_outfiles/antiphonae_ad_communionem/013_C13_factus-est-repente_pem84630_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/14_factus-est-repente_pem84881_square.gabc MEI_outfiles/antiphonae_ad_communionem/014_C14_factus-est-repente_pem84881_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/15_fili-quid_pem84534_aquit.gabc MEI_outfiles/antiphonae_ad_communionem/015_C15_fili-quid_pem84534_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/16_fili-quid_pem84863_square.gabc MEI_outfiles/antiphonae_ad_communionem/016_C16_fili-quid_pem84863_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/17_justorum-animae_pem83892_aquit.gabc MEI_outfiles/antiphonae_ad_communionem/017_C17_justorum-animae_pem83892_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/18_justorum-animae_pem85059_square.gabc MEI_outfiles/antiphonae_ad_communionem/018_C18_justorum-animae_pem85059_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/19_manducaverunt_pem84600_aquit.gabc MEI_outfiles/antiphonae_ad_communionem/019_C19_manducaverunt_pem84600_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/20_manducaverunt_pem83880_aquit.gabc MEI_outfiles/antiphonae_ad_communionem/020_C20_manducaverunt_pem83880_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/21_manducaverunt_pem84880_square.gabc MEI_outfiles/antiphonae_ad_communionem/021_C21_manducaverunt_pem84880_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/22_martinus-abrahe_pem84580_aquit.gabc MEI_outfiles/antiphonae_ad_communionem/022_C22_martinus-abrahe_pem84580_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/23_martinus-abrahe_pem85056_square.gabc MEI_outfiles/antiphonae_ad_communionem/023_C23_martinus-abrahe_pem85056_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/24_mitte-manum_pem83911_aquit.gabc MEI_outfiles/antiphonae_ad_communionem/024_C24_mitte-manum_pem83911_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/25_mitte-manum_pem84665_aquit.gabc MEI_outfiles/antiphonae_ad_communionem/025_C25_mitte-manum_pem84665_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/26_mitte-manum_pem84905_square.gabc MEI_outfiles/antiphonae_ad_communionem/026_C26_mitte-manum_pem84905_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/27_panem-de-caelo_pem84532_aquit.gabc MEI_outfiles/antiphonae_ad_communionem/027_C27_panem-de-caelo_pem84532_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/28_panem-de-caelo_pem84919_square.gabc MEI_outfiles/antiphonae_ad_communionem/028_C28_panem-de-caelo_pem84919_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/29_pater-si-non_pem84595_aquit.gabc MEI_outfiles/antiphonae_ad_communionem/029_C29_pater-si-non_pem84595_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/30_pater-si-non_pem84872_square.gabc MEI_outfiles/antiphonae_ad_communionem/030_C30_pater-si-non_pem84872_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/31_psallite-domino_pem84666_aquit.gabc MEI_outfiles/antiphonae_ad_communionem/031_C31_psallite-domino_pem84666_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/32_psallite-domino_pem84874_square.gabc MEI_outfiles/antiphonae_ad_communionem/032_C32_psallite-domino_pem84874_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/33_qui-manducat--carnem_pem76616_aquit.gabc MEI_outfiles/antiphonae_ad_communionem/033_C33_qui-manducat--carnem_pem76616_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/34_qui-manducat--panem_pem119191_aquit.gabc MEI_outfiles/antiphonae_ad_communionem/034_C34_qui-manducat--panem_pem119191_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/35_qui-manducat_pem84924_square.gabc MEI_outfiles/antiphonae_ad_communionem/035_C35_qui-manducat_pem84924_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/36_qui-vult_pem84057_aquit.gabc MEI_outfiles/antiphonae_ad_communionem/036_C36_qui-vult_pem84057_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/37_qui-vult_pem85065_square.gabc MEI_outfiles/antiphonae_ad_communionem/037_C37_qui-vult_pem85065_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/38_tu-es-petrus_pem83876_aquit.gabc MEI_outfiles/antiphonae_ad_communionem/038_C38_tu-es-petrus_pem83876_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/39_tu-es-petrus_pem85073_square.gabc MEI_outfiles/antiphonae_ad_communionem/039_C39_tu-es-petrus_pem85073_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/40_tu-mandasti_pem83869_aquit.gabc MEI_outfiles/antiphonae_ad_communionem/040_C40_tu-mandasti_pem83869_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/41_tu-mandasti_pem84946_square.gabc MEI_outfiles/antiphonae_ad_communionem/041_C41_tu-mandasti_pem84946_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/42_vos-qui-secuti_pem84570_aquit.gabc MEI_outfiles/antiphonae_ad_communionem/042_C42_vos-qui-secuti_pem84570_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/43_vos-qui-secuti_pem85037_square.gabc MEI_outfiles/antiphonae_ad_communionem/043_C43_vos-qui-secuti_pem85037_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_magnificat/01_nemo-te_pem85014_aquit.gabc MEI_outfiles/antiphonae_ad_magnificat/044_M01_nemo-te_pem85014_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_magnificat/02_nemo-te_pem71059_square.gabc MEI_outfiles/antiphonae_ad_magnificat/045_M02_nemo-te_pem71059_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_magnificat/03_serve-nequam_pem85026_aquit.gabc MEI_outfiles/antiphonae_ad_magnificat/046_M03_serve-nequam_pem85026_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_magnificat/04_serve-nequam_pem71210_square.gabc MEI_outfiles/antiphonae_ad_magnificat/047_M04_serve-nequam_pem71210_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_magnificat/05_o-crux_pem85972_square.gabc MEI_outfiles/antiphonae_ad_magnificat/048_M05_o-crux_pem85972_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_magnificat/06_o-crux_pem86078_square.gabc MEI_outfiles/antiphonae_ad_magnificat/049_M06_o-crux_pem86078_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_magnificat/07_o-crux_pem85023_square.gabc MEI_outfiles/antiphonae_ad_magnificat/050_M07_o-crux_pem85023_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_magnificat/08_ihesum_pem80113_aquit.gabc MEI_outfiles/antiphonae_ad_magnificat/051_M08_ihesum_pem80113_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_magnificat/09_ihesum_pem71112_square.gabc MEI_outfiles/antiphonae_ad_magnificat/052_M09_ihesum_pem71112_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_magnificat/10_tunc-invocabis_pem80209_aquit.gabc MEI_outfiles/antiphonae_ad_magnificat/053_M10_tunc-invocabis_pem80209_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_magnificat/11_tunc-invocabis_pem71032_square.gabc MEI_outfiles/antiphonae_ad_magnificat/054_M11_tunc-invocabis_pem71032_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_magnificat/12_si-offers_pem80148-80149_aquit.gabc MEI_outfiles/antiphonae_ad_magnificat/055_M12_si-offers_pem80148-80149_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_magnificat/13_si-offers_pem71205_square.gabc MEI_outfiles/antiphonae_ad_magnificat/056_M13_si-offers_pem71205_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_magnificat/14_isti-sunt_pem86046_aquit.gabc MEI_outfiles/antiphonae_ad_magnificat/057_M14_isti-sunt_pem86046_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_magnificat/15_isti-sunt_pem85997_square.gabc MEI_outfiles/antiphonae_ad_magnificat/058_M15_isti-sunt_pem85997_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_magnificat/16_mercennarius_pem80028_aquit.gabc MEI_outfiles/antiphonae_ad_magnificat/059_M16_mercennarius_pem80028_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_magnificat/17_mercennarius_pem71128_square.gabc MEI_outfiles/antiphonae_ad_magnificat/060_M17_mercennarius_pem71128_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_magnificat/18_o-lux_pem85921_square.gabc MEI_outfiles/antiphonae_ad_magnificat/061_M18_o-lux_pem85921_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_magnificat/19_o-lux_pem86009_square.gabc MEI_outfiles/antiphonae_ad_magnificat/062_M19_o-lux_pem86009_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_magnificat/20_o-lux_pem84967_square.gabc MEI_outfiles/antiphonae_ad_magnificat/063_M20_o-lux_pem84967_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_magnificat/21_vespere_pem84633_aquit.gabc MEI_outfiles/antiphonae_ad_magnificat/064_M21_vespere_pem84633_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_magnificat/22_vespere_pem85642_square.gabc MEI_outfiles/antiphonae_ad_magnificat/065_M22_vespere_pem85642_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_magnificat/23_vespere_pem71108_square.gabc MEI_outfiles/antiphonae_ad_magnificat/066_M23_vespere_pem71108_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/01_tibi-soli-peccavi_pem92154_aquit.gabc MEI_outfiles/antiphonae_feriale/067_F01_tibi-soli-peccavi_pem92154_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/02_tibi-soli-peccavi_pem71010_square.gabc MEI_outfiles/antiphonae_feriale/068_F02_tibi-soli-peccavi_pem71010_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/03_domine-refugium_pem92154_aquit.gabc MEI_outfiles/antiphonae_feriale/069_F03_domine-refugium_pem92154_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/04_domine-refugium_pem71010_square.gabc MEI_outfiles/antiphonae_feriale/070_F04_domine-refugium_pem71010_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/05_in-matutinis_pem92154_aquit.gabc MEI_outfiles/antiphonae_feriale/071_F05_in-matutinis_pem92154_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/06_in-matutinis_pem71010_square.gabc MEI_outfiles/antiphonae_feriale/072_F06_in-matutinis_pem71010_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/07_cantemus-domino_pem92154_aquit.gabc MEI_outfiles/antiphonae_feriale/073_F07_cantemus-domino_pem92154_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/08_cantemus-domino_pem71010_square.gabc MEI_outfiles/antiphonae_feriale/074_F08_cantemus-domino_pem71010_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/09_in-sanctis-ejus_pem92154_aquit.gabc MEI_outfiles/antiphonae_feriale/075_F09_in-sanctis-ejus_pem92154_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/10_in-sanctis-ejus_pem71010_square.gabc MEI_outfiles/antiphonae_feriale/076_F10_in-sanctis-ejus_pem71010_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/11_in-sanctitate-serviamus_pem92154_aquit.gabc MEI_outfiles/antiphonae_feriale/077_F11_in-sanctitate-serviamus_pem92154_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/12_in-sanctitate-serviamus_pem71010_square.gabc MEI_outfiles/antiphonae_feriale/078_F12_in-sanctitate-serviamus_pem71010_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/13_et-omnis_pem92154_aquit.gabc MEI_outfiles/antiphonae_feriale/079_F13_et-omnis_pem92154_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/14_et-omnis_pem71010_square.gabc MEI_outfiles/antiphonae_feriale/080_F14_et-omnis_pem71010_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/15_ecce-quam-bonum_pem92154_aquit.gabc MEI_outfiles/antiphonae_feriale/081_F15_ecce-quam-bonum_pem92154_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/16_ecce-quam-bonum_pem71010_square.gabc MEI_outfiles/antiphonae_feriale/082_F16_ecce-quam-bonum_pem71010_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/17_laudate-nomen_pem92154_aquit.gabc MEI_outfiles/antiphonae_feriale/083_F17_laudate-nomen_pem92154_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/18_laudate-nomen_pem71010_square.gabc MEI_outfiles/antiphonae_feriale/084_F18_laudate-nomen_pem71010_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/19_metuant-dominum_pem80159_aquit.gabc MEI_outfiles/antiphonae_feriale/085_F19_metuant-dominum_pem80159_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/20_metuant-dominum_pem71012_square.gabc MEI_outfiles/antiphonae_feriale/086_F20_metuant-dominum_pem71012_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/21_et-in-servis_pem80159_aquit.gabc MEI_outfiles/antiphonae_feriale/087_F21_et-in-servis_pem80159_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/22_et-in-servis_pem71012_square.gabc MEI_outfiles/antiphonae_feriale/088_F22_et-in-servis_pem71012_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/23_in-cimbalis_pem80159_aquit.gabc MEI_outfiles/antiphonae_feriale/089_F23_in-cimbalis_pem80159_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/24_in-cimbalis_pem71012_square.gabc MEI_outfiles/antiphonae_feriale/090_F24_in-cimbalis_pem71012_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/25_in-viam_pem80159_aquit.gabc MEI_outfiles/antiphonae_feriale/091_F25_in-viam_pem80159_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/26_in-viam_pem71012_square.gabc MEI_outfiles/antiphonae_feriale/092_F26_in-viam_pem71012_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/27_benedictus_pem80159_aquit.gabc MEI_outfiles/antiphonae_feriale/093_F27_benedictus_pem80159_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/28_benedictus_pem71013_square.gabc MEI_outfiles/antiphonae_feriale/094_F28_benedictus_pem71013_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/29_per-singulos_pem80159_aquit.gabc MEI_outfiles/antiphonae_feriale/095_F29_per-singulos_pem80159_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/30_per-singulos_pem71013_square.gabc MEI_outfiles/antiphonae_feriale/096_F30_per-singulos_pem71013_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/31_laudabo_pem80159_aquit.gabc MEI_outfiles/antiphonae_feriale/097_F31_laudabo_pem80159_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/32_laudabo_pem71013_square.gabc MEI_outfiles/antiphonae_feriale/098_F32_laudabo_pem71013_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/33_deo-nostro_pem80159_aquit.gabc MEI_outfiles/antiphonae_feriale/099_F33_deo-nostro_pem80159_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/34_deo-nostro_pem71013_square.gabc MEI_outfiles/antiphonae_feriale/100_F34_deo-nostro_pem71013_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/35_benedixit_pem80159_aquit.gabc MEI_outfiles/antiphonae_feriale/101_F35_benedixit_pem80159_aquit.mei 
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/36_benedixit_pem71013_square.gabc MEI_outfiles/antiphonae_feriale/102_F36_benedixit_pem71013_square.mei -notation square
 
 # python3 gabc-tokens_to_mei-elements.py GABC_infiles/trial_14_liqpes.gabc MEI_outfiles/trial_14_liqpes.mei
 # python3 gabc-tokens_to_mei-elements.py GABC_infiles/trial_3_emptysyllables.gabc MEI_outfiles/trial_3_emptysyllables.mei

@@ -21,7 +21,8 @@ locs = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 pitches = regular_pitches + inclinatum_pitches
 
 prefixes = ['@', 'º']
-suffixes = ['~', '>', '<', 'o', 'w', 's', 'v', 'V', 'r', 'x', 'y', '#']
+suffixes = ['~', '>', '<', 'o', 'w', 's', 'v', 'V', 'r'] 
+# The suffixes for marking accidentals ('x', 'y', '#') are considered later
 # Missing episema ('_')
 
 clef_to_pitch = {
@@ -72,7 +73,7 @@ def get_gabc_ncs(gabc_token):
 def get_nc_qualities(gabc_nc):
     characters = list(gabc_nc)
     features = []
-    for charitem in characters:
+    for i, charitem in enumerate(characters):
 
         # Pitches
         if charitem in regular_pitches:
@@ -140,21 +141,9 @@ def get_nc_qualities(gabc_nc):
             # <nc> <unclear/> </nc>
             nc_type = doc.createElement('unclear') # LIBMEI METHOD
             features.append(nc_type)
-        # Elements that are not children of <nc>
-        # They are either preceding siblings (like <accid>)
-        # or parents of the <nc> (none at the moment)
-        elif charitem == 'x':
-            # flat: <accid accid="f"/>
-            accid = doc.createElement('accid') # LIBMEI METHOD
-            features.append(["accid", ('accid', 'f')])
-        elif charitem == 'y':
-            # natural: <accid accid="n"/>
-            accid = doc.createElement('accid') # LIBMEI METHOD
-            features.append(["accid", ('accid', 'n')])
-        elif charitem == '#':
-            # sharp: <accid accid="s"/>
-            accid = doc.createElement('accid') # LIBMEI METHOD
-            features.append(["accid", ('accid', 's')])
+        # Elements that are not children of <nc> (but siblings or parents) -> none at the moment
+        # <accid> are not siblings nor parents, they have the same hierarcy as <neume> elements
+        # and are, therefore, considered on another function working at neume-level
         else:
             print("this character is not included in the list of processing characters")
 
@@ -183,16 +172,48 @@ def convert_to_mei_nc(gabc_nc):
     return mei_nc
 
 
-def convert_to_mei_neume(gabc_token):
-    # DEFINE (EMPTY) NEUME ELEMENT IN MEI
-    mei_neume = doc.createElement('neume') # LIBMEI METHOD
-    # FILL IT WITH <NC> CHILDREN
-    gabc_ncs_of_neume = get_gabc_ncs(gabc_token)
-    for gabc_nc in gabc_ncs_of_neume:
-        mei_nc = convert_to_mei_nc(gabc_nc)
-        mei_neume.appendChild(mei_nc) # LIBMEI METHOD
+def convert_to_mei_neume_or_accid(gabc_token):
+    
+    # EVALUATE THE KIND OF GABC TOKEN RECEIVED 
+    # (whether it corresponds to an <accid> or <neume> element
+    # These two have the same hierarchy within a <syllable>)
 
-    return mei_neume
+    # 1) IS THIS AN ACCIDENTAL?
+
+    flatflag_list = ['x' in item for item in gabc_ncs_of_neume]
+    naturflag_list = ['y' in item for item in gabc_ncs_of_neume]
+    sharpflag_list = ['#' in item for item in gabc_ncs_of_neume]
+    accidflag_list = flatflag_list + naturflag_list + sharpflag_list
+
+    if any(accidflag_list):
+        mei_accid = doc.createElement('accid')
+
+        if any(flatflag_list):
+            mei_accid.setAttribute('accid', 'f')
+        elif any(naturflag_list):
+            mei_accid.setAttribute('accid', 'n')
+        else: #any(sharpflag_list)
+            mei_accid.setAttribute('accid', 's')
+        gabc_accid = gabc_ncs_of_neume[0]   # Under the assumption that it is the first 'neume component' of the list
+        gabc_pos = gabc_accid[0]            # The 'note gabc letter' precedes the accidental specification ('x', 'y', '#'): 'ix' or 'kx'. So I am assuming it is the first character
+        locval_accid = locs[regular_pitches.index(gabc_pos)]
+        mei_accid.setAttribute('loc',str(locval_accid))
+
+        return mei_accid
+
+    # 2) OR IS THIS A NEUME?
+
+    else:
+        # DEFINE (EMPTY) NEUME ELEMENT IN MEI
+        mei_neume = doc.createElement('neume') # LIBMEI METHOD
+
+        # FILL IT WITH <NC> CHILDREN
+        gabc_ncs_of_neume = get_gabc_ncs(gabc_token)
+        for gabc_nc in gabc_ncs_of_neume:
+            mei_nc = convert_to_mei_nc(gabc_nc)
+            mei_neume.appendChild(mei_nc) # LIBMEI METHOD
+
+        return mei_neume
 
 def get_syl_and_neumes(gabc_syllable):
     syl_neumes_pair = gabc_syllable.split('(')
@@ -320,7 +341,7 @@ def gabc2mei(gabc_line, mei_file, notation_type):
                     if gabc_neume == '':
                         pass
                     else:
-                        mei_neume = convert_to_mei_neume(gabc_neume)
+                        mei_neume = convert_to_mei_neume_or_accid(gabc_neume)
                         syllable_mei.appendChild(mei_neume)
 
     encode_liquescent_curve_for_tilde()

@@ -172,48 +172,16 @@ def convert_to_mei_nc(gabc_nc):
     return mei_nc
 
 
-def convert_to_mei_neume_or_accid(gabc_token):
-    
-    # EVALUATE THE KIND OF GABC TOKEN RECEIVED 
-    # (whether it corresponds to an <accid> or <neume> element
-    # These two have the same hierarchy within a <syllable>)
+def convert_to_mei_neume(gabc_token):
+    # DEFINE (EMPTY) NEUME ELEMENT IN MEI
+    mei_neume = doc.createElement('neume') # LIBMEI METHOD
+    # FILL IT WITH <NC> CHILDREN
+    gabc_ncs_of_neume = get_gabc_ncs(gabc_token)
+    for gabc_nc in gabc_ncs_of_neume:
+        mei_nc = convert_to_mei_nc(gabc_nc)
+        mei_neume.appendChild(mei_nc) # LIBMEI METHOD
 
-    # 1) IS THIS AN ACCIDENTAL?
-
-    flatflag_list = ['x' in item for item in gabc_ncs_of_neume]
-    naturflag_list = ['y' in item for item in gabc_ncs_of_neume]
-    sharpflag_list = ['#' in item for item in gabc_ncs_of_neume]
-    accidflag_list = flatflag_list + naturflag_list + sharpflag_list
-
-    if any(accidflag_list):
-        mei_accid = doc.createElement('accid')
-
-        if any(flatflag_list):
-            mei_accid.setAttribute('accid', 'f')
-        elif any(naturflag_list):
-            mei_accid.setAttribute('accid', 'n')
-        else: #any(sharpflag_list)
-            mei_accid.setAttribute('accid', 's')
-        gabc_accid = gabc_ncs_of_neume[0]   # Under the assumption that it is the first 'neume component' of the list
-        gabc_pos = gabc_accid[0]            # The 'note gabc letter' precedes the accidental specification ('x', 'y', '#'): 'ix' or 'kx'. So I am assuming it is the first character
-        locval_accid = locs[regular_pitches.index(gabc_pos)]
-        mei_accid.setAttribute('loc',str(locval_accid))
-
-        return mei_accid
-
-    # 2) OR IS THIS A NEUME?
-
-    else:
-        # DEFINE (EMPTY) NEUME ELEMENT IN MEI
-        mei_neume = doc.createElement('neume') # LIBMEI METHOD
-
-        # FILL IT WITH <NC> CHILDREN
-        gabc_ncs_of_neume = get_gabc_ncs(gabc_token)
-        for gabc_nc in gabc_ncs_of_neume:
-            mei_nc = convert_to_mei_nc(gabc_nc)
-            mei_neume.appendChild(mei_nc) # LIBMEI METHOD
-
-        return mei_neume
+    return mei_neume
 
 def get_syl_and_neumes(gabc_syllable):
     syl_neumes_pair = gabc_syllable.split('(')
@@ -341,7 +309,32 @@ def gabc2mei(gabc_line, mei_file, notation_type):
                     if gabc_neume == '':
                         pass
                     else:
-                        mei_neume = convert_to_mei_neume_or_accid(gabc_neume)
+                        # Evaluate if the neume GABC token has an accident
+                        # <accid> is a child of <syllable> and sibling of <neume>
+                        if 'x' in gabc_neume or 'y' in gabc_neume or '#' in gabc_neume:
+                            # Create element
+                            accid_mei = doc.createElement('accid')
+                            # Add attributes:
+                             # Assuming that the accident is at the beginning of the neume, 
+                             # and that the accidental type is the second character of the neume
+                            if 'x' == gabc_neume[1]: #flat
+                                accid_mei.setAttribute('accid', 'f')
+                            elif 'y' == gabc_neume[1]: #natural
+                                accid_mei.setAttribute('accid', 'n')
+                            elif '#' == gabc_neume[1]: #sharp
+                                accid_mei.setAttribute('accid', 's')
+                            else:
+                                print("ERROR! WHERE IS THE ACCIDENTAL?")
+                             # while its location (gabc letter) is given by the the previous character (i.e., the first character of the neume)
+                            gabc_posaccid = gabc_neume[0] # The 'note gabc letter' precedes the accidental specification ('x', 'y', '#'): 'ix' or 'kx'. So I am assuming it is the first character
+                            locval_accid = locs[regular_pitches.index(gabc_posaccid)]
+                            accid_mei.setAttribute('loc',str(locval_accid))
+                            # Add element as child of <syllable>
+                            syllable_mei.appendChild(accid_mei)
+                            # Then add the <neume> elements (with its corresponding neume-components <nc>) if there are any neumes after the accid
+                            gabc_neume = gabc_neume[:2]
+                        # Process the neumes
+                        mei_neume = convert_to_mei_neume(gabc_neume)
                         syllable_mei.appendChild(mei_neume)
 
     encode_liquescent_curve_for_tilde()

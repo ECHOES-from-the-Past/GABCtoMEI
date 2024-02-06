@@ -331,8 +331,9 @@ def gabc2mei(gabc_line, mei_file, notation_type):
                             accid_mei.setAttribute('loc',str(locval_accid))
                             # Add element as child of <syllable>
                             syllable_mei.appendChild(accid_mei)
+                            print('accid in neume token:', gabc_neume[0:2])
                             # Then add the <neume> elements (with its corresponding neume-components <nc>) if there are any neumes after the accid
-                            gabc_neume = gabc_neume[:2]
+                            gabc_neume = gabc_neume[2:]
                         # Process the neumes
                         mei_neume = convert_to_mei_neume(gabc_neume)
                         syllable_mei.appendChild(mei_neume)

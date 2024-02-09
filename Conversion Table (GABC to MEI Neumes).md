@@ -55,7 +55,7 @@ For more information on how to encode chants using MEI Neumes, please consult th
 | 14 | Accidental (natural)  | `y` | `<accid`**`accid="n"`**`/>` |
 | 15 | Accidental (sharp)    | `#` | `<accid`**`accid="s"`**`/>` |
 | 16 | Uncertain reading <br/>unclear neume components   | `r` | **`<unclear>`**<br/>&nbsp;&nbsp;&nbsp;&nbsp;`<nc/>`<br/>**`</unclear>`** |
-| 17 | Completely illegible / lacuna: <br/>we do not provide notation <br/>in the transcription                | `xx()`<br/>no content inside the pair of <br/>parentheses | `<syllable>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`<syl>xx</syl>`<br/>`</syllable>` <br/><br/>**no child `<neume>`** inside of `<syllable>` |
+| 17 | Completely illegible / lacuna: <br/>we do not provide notation <br/>in the transcription                | `text()`<br/>no content inside the pair of <br/>parentheses | `<syllable>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`<syl>text</syl>`<br/>`</syllable>` <br/><br/>**no child `<neume>`** inside of `<syllable>` |
 
 #### Notes:
 There could be normal liquescents, with two tails, 

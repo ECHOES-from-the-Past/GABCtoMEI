@@ -8,7 +8,7 @@ In addition to the GABC specifications (that can be found [here](https://gregori
 - We restricted the characters used (we did not use separation bars, text formatting or special characters, custos, “special” spacing, or accents and attachments).
 - We used the slash `/` character to separate the neumes within a syllable ("neumatic cut"). And we used the regular space ` ` character to separate the words in the chant ("word space"). We did consider any other kind of "space"-related characters (no `@` to indicate connection between notes, no exclamation mark `!` to indicate no connection between the notes, no double slash `//` to indicate large neumatic cuts, no half-space `/0` character, and no mix of slash with bracketed numbers `/[factor]` to scale the neumatic cut).
   
- **IMPORTANT:** Single notes that are part of the same neume are regarded as graphically joined. Only long tails are signaled, not the pen-strokes that join two squares within a neume.
+  **IMPORTANT:** Single notes that are part of the same neume are regarded as graphically joined. Only long tails are signaled, not the pen-strokes that join two squares within a neume.
 
 - Features kept:
   - Square shapes (lowercase letters: `a`, `b`, `c`, `d`, `e`, `f`, `g`, `h`, `i`, `j`, `k`, `l`, `m`)

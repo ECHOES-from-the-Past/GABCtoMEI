@@ -281,7 +281,7 @@ def gabc2mei(gabc_line, mei_file, notation_type):
         syllables = word.split(')')
         
         # Process each gabc syllable and add it to the layer
-        for gabc_syllable in syllables[:-1]:
+        for i, gabc_syllable in enumerate(syllables[:-1]):
             print()
             print(gabc_syllable)
             # Setting the clef as the child of layer
@@ -302,10 +302,25 @@ def gabc2mei(gabc_line, mei_file, notation_type):
                 print(indiv_neumes_list)
                 
                 # Fill in the syllable with <syl> and <neume> elements
+
+                # 1. <syl> element definition
                 syl_mei = doc.createElement('syl')
+                # + Attributes
+                if i == 0 and i == (len(syllables[:-1]) - 1):
+                    syl_mei.setAttribute('wordpos', 's') # single
+                elif i == 0:
+                    syl_mei.setAttribute('wordpos', 'i') # initial
+                elif i == (len(syllables[:-1]) - 1):
+                    syl_mei.setAttribute('wordpos', 't') # terminal
+                else:
+                    syl_mei.setAttribute('wordpos', 'm') # middle
+                # + Text
                 text = doc.createTextNode(syl_text)
+                # Append
                 syl_mei.appendChild(text)
                 syllable_mei.appendChild(syl_mei)
+
+                # 2. <neume> element definition
                 for gabc_neume in indiv_neumes_list:
                     if gabc_neume == '':
                         pass

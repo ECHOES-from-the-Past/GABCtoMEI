@@ -310,10 +310,12 @@ def gabc2mei(gabc_line, mei_file, notation_type):
                     syl_mei.setAttribute('wordpos', 's') # single
                 elif i == 0:
                     syl_mei.setAttribute('wordpos', 'i') # initial
+                    syl_mei.setAttribute('con', 'd') # connection = dash
                 elif i == (len(syllables[:-1]) - 1):
                     syl_mei.setAttribute('wordpos', 't') # terminal
                 else:
                     syl_mei.setAttribute('wordpos', 'm') # middle
+                    syl_mei.setAttribute('con', 'd') # connection = dash
                 # + Text
                 text = doc.createTextNode(syl_text)
                 # Append

@@ -5,15 +5,16 @@ In addition to the GABC specifications (that can be found [here](https://gregori
 ## Encoding Guidelines
 
 - The Aquitanian fragments have a reference line (usually drawn in red ink and sometimes with drypoint, which can be read as D, F, G, A, or B according to the mode of the chant). We used the second line of the GABC staff (represented by the GABC `f` character) to represent this reference line.
-- We used the slash `/` character to separate the neumes within a syllable.
+- We used the slash `/` character to separate the neumes within a syllable ("neumatic cut"). And we used the regular space ` ` character to separate the words in the chant ("word space"). We did consider any other kind of "space"-related characters (no `@` to indicate connection between notes, no exclamation mark `!` to indicate no connection between the notes, no double slash `//` to indicate large neumatic cuts, no half-space `/0` character, and no mix of slash with bracketed numbers `/[factor]` to scale the neumatic cut).
+ **IMPORTANT:** Single notes that are part of the same neume are regarded as graphically joined. Only long tails are signaled, not the pen-strokes that join two squares within a neume.
+
 - Features kept:
   - Square shapes (lowercase letters: `a`, `b`, `c`, `d`, `e`, `f`, `g`, `h`, `i`, `j`, `k`, `l`, `m`)
   - Rhombus shapes (uppercase letters: `A`, `B`, `C`, `D`, `E`, `F`, `G`, `H`, `I`, `J`, `K`, `L`, `M`)
   - Square with tail on the left (marked with a `V`) or on the right (marked with a `v`)
+    - **Note:** Because we were explicit about the presence of stems at the beginning (`V`) and end (`v`) of a neume, we did not use the `@` character to indicate the "abscence" of a stem.
   - Accidentals (flats with `x`, naturals with `y`, and sharps with `#`)
 
-    **IMPORTANT:** Single notes that are part of the same neume are regarded as graphically joined. Only long tails are signaled, not the pen-strokes that join two squares within a neume.
-    
   - Special ones:
     - Oriscus (`o`)
     - Quilisma (`w`)

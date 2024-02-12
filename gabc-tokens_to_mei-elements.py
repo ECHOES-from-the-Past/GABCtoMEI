@@ -92,8 +92,8 @@ def get_nc_qualities(gabc_nc):
             features.append(attribute)
 
         # Prefixes
-        elif charitem == '@':
-            pass
+        #elif charitem == '@':
+        #    pass
         elif charitem == 'º':
             # first nc of the pair with @ligated = true
             attribute = ('ligated', 'true')

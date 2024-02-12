@@ -15,9 +15,9 @@ layer1 = layer_elems[0]
 # ----------- #
 # Definitions #
 # ----------- #
-regular_pitches = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm']
-inclinatum_pitches = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M']
-locs = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+regular_pitches = ['t', 'u', 'z'] + ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm'] + ['n', 'p', 'q']
+inclinatum_pitches = ['T', 'U', 'Z'] + ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M'] + ['N', 'P', 'Q']
+locs = [-6, -5, -4] + [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9] + [10, 11, 12]
 pitches = regular_pitches + inclinatum_pitches
 
 prefixes = ['@', 'º']
@@ -26,13 +26,14 @@ suffixes = ['~', '>', '<', 'o', 'w', 's', 'v', 'V', 'r']
 # Missing episema ('_')
 
 clef_to_pitch = {
-    'C1': ['g2', 'a2', 'b2', 'c3', 'd3', 'e3', 'f3', 'g3', 'a3', 'b3', 'c4', 'd4', 'e4'],
-    'C2': ['e2', 'f2', 'g2', 'a2', 'b2', 'c3', 'd3', 'e3', 'f3', 'g3', 'a3', 'b3', 'c4'],
-    'C3': ['c2', 'd2', 'e2', 'f2', 'g2', 'a2', 'b2', 'c3', 'd3', 'e3', 'f3', 'g3', 'a3'],
-    'C4': ['a1', 'b1', 'c2', 'd2', 'e2', 'f2', 'g2', 'a2', 'b2', 'c3', 'd3', 'e3', 'f3'],
-    'F2': ['a2', 'b2', 'c3', 'd3', 'e3', 'f3', 'g3', 'a3', 'b3', 'c4', 'd4', 'e4', 'f4'],
-    'F3': ['f2', 'g2', 'a2', 'b2', 'c3', 'd3', 'e3', 'f3', 'g3', 'a3', 'b3', 'c4', 'd4'],
-    'F4': ['d2', 'e2', 'f2', 'g2', 'a2', 'b2', 'c3', 'd3', 'e3', 'f3', 'g3', 'a3', 'b3'],
+    'C1': ['d2', 'e2', 'f2'] + ['g2', 'a2', 'b2', 'c3', 'd3', 'e3', 'f3', 'g3', 'a3', 'b3', 'c4', 'd4', 'e4'] + ['f4', 'g4', 'a4'],
+    'C2': ['b1', 'c2', 'd2'] + ['e2', 'f2', 'g2', 'a2', 'b2', 'c3', 'd3', 'e3', 'f3', 'g3', 'a3', 'b3', 'c4'] + ['d4', 'e4', 'f4'],
+    'C3': ['g1', 'a1', 'b1'] + ['c2', 'd2', 'e2', 'f2', 'g2', 'a2', 'b2', 'c3', 'd3', 'e3', 'f3', 'g3', 'a3'] + ['b3', 'c4', 'd4'],
+    'C4': ['e1', 'f1', 'g1'] + ['a1', 'b1', 'c2', 'd2', 'e2', 'f2', 'g2', 'a2', 'b2', 'c3', 'd3', 'e3', 'f3'] + ['g3', 'a3', 'b3'],
+    'C5': ['c1', 'd1', 'e1'] + ['f1', 'g1', 'a1', 'b1', 'c2', 'd2', 'e2', 'f2', 'g2', 'a2', 'b2', 'c3', 'd3'] + ['e3', 'f3', 'g3'],
+    'F2': ['e2', 'f2', 'g2'] + ['a2', 'b2', 'c3', 'd3', 'e3', 'f3', 'g3', 'a3', 'b3', 'c4', 'd4', 'e4', 'f4'] + ['g4', 'a4', 'b4'],
+    'F3': ['c2', 'd2', 'e2'] + ['f2', 'g2', 'a2', 'b2', 'c3', 'd3', 'e3', 'f3', 'g3', 'a3', 'b3', 'c4', 'd4'] + ['e4', 'f4', 'g4'],
+    'F4': ['a1', 'b1', 'c2'] + ['d2', 'e2', 'f2', 'g2', 'a2', 'b2', 'c3', 'd3', 'e3', 'f3', 'g3', 'a3', 'b3'] + ['c4', 'd4', 'e4'],
 } # locs = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 # token is a neume (so everything separated by '/')
@@ -244,7 +245,7 @@ def convert_to_square(general_mei, clef, neume_components):
     scale = clef_to_pitch[clef]
     for nc in neume_components:
         locval = nc.getAttribute('loc')
-        pitch = scale[int(locval) + 3]          # pitch = scale[locs.index(locval)]
+        pitch = scale[int(locval) + 6]          # pitch = scale[locs.index(locval)]
         nc.setAttribute('pname', pitch[0])
         nc.setAttribute('oct', pitch[1])
     # Still need to remove @loc
@@ -284,7 +285,7 @@ def gabc2mei(gabc_line, mei_file, notation_type):
             print()
             print(gabc_syllable)
             # Setting the clef as the child of layer
-            if gabc_syllable in ['(c1', '(c2', '(c3', '(c4', '(f2', '(f3', '(f4']:
+            if gabc_syllable in ['(c1', '(c2', '(c3', '(c4', '(c5', '(f2', '(f3', '(f4']:
                 clef_mei = doc.createElement('clef')
                 clef_mei.setAttribute('shape', gabc_syllable[1].capitalize())
                 clef_mei.setAttribute('line', gabc_syllable[2])
@@ -371,7 +372,7 @@ def gabc2mei(gabc_line, mei_file, notation_type):
             print('\n'+clef_val)
             # Initializing the dictionary of syllabes_to_clefs_dict, 
             # which has as keys the clefs and as values the list of syllables_after_clef
-            syllables_to_clefs_dict = {'C1': [], 'C2': [], 'C3': [], 'C4': [], 'F2': [], 'F3': [], 'F4': []}
+            syllables_to_clefs_dict = {'C1': [], 'C2': [], 'C3': [], 'C4': [], 'C5': [], 'F2': [], 'F3': [], 'F4': []}
             syllables_after_clef = []
             # Initializing the first element of the while cycle
             elem = clef0_elem.nextSibling

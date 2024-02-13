@@ -554,8 +554,3 @@ if __name__ == "__main__":
 # python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/34_deo-nostro_pem71013_square.gabc MEI_outfiles/antiphonae_feriale/100_F34_deo-nostro_pem71013_square.mei -notation square
 # python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/35_benedixit_pem80159_aquit.gabc MEI_outfiles/antiphonae_feriale/101_F35_benedixit_pem80159_aquit.mei 
 # python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/36_benedixit_pem71013_square.gabc MEI_outfiles/antiphonae_feriale/102_F36_benedixit_pem71013_square.mei -notation square
-
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/trial_14_liqpes.gabc MEI_outfiles/trial_14_liqpes.mei
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/trial_3_emptysyllables.gabc MEI_outfiles/trial_3_emptysyllables.mei
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/Aquit2_twoclefs.gabc MEI_outfiles/Aquit2_twoclefs.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/trial_accid.gabc MEI_outfiles/trial_accid.mei -notation square

@@ -562,7 +562,9 @@ if __name__ == "__main__":
 # python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/35_benedixit_pem80159_aquit.gabc MEI_outfiles/antiphonae_feriale/101_F35_benedixit_pem80159_aquit.mei 
 # python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_feriale/36_benedixit_pem71013_square.gabc MEI_outfiles/antiphonae_feriale/102_F36_benedixit_pem71013_square.mei -notation square
 
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/trial_14_liqpes.gabc MEI_outfiles/trial_14_liqpes.mei
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/trial_3_emptysyllables.gabc MEI_outfiles/trial_3_emptysyllables.mei
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/Aquit2_twoclefs.gabc MEI_outfiles/Aquit2_twoclefs.mei -notation square
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/trial_accid.gabc MEI_outfiles/trial_accid.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/testfiles/trial_14_liqpes.gabc MEI_outfiles/testfiles/trial_14_liqpes.mei
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/testfiles/trial_3_emptysyllables.gabc MEI_outfiles/testfiles/trial_3_emptysyllables.mei
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/testfiles/trial_accid.gabc MEI_outfiles/testfiles/trial_accid.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/testfiles/twoclefsA_spaces-with-syllables.gabc MEI_outfiles/testfiles/twoclefsA_spaces-with-syllables.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/testfiles/twoclefsB-nospace-with-following-syllable.gabc MEI_outfiles/testfiles/twoclefsB-nospace-with-following-syllable.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/testfiles/twoclefsC-nospace-in-the-change-of-clefs-at-all.gabc MEI_outfiles/testfiles/twoclefsC-nospace-in-the-change-of-clefs-at-all.mei -notation square

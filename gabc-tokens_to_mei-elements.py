@@ -281,11 +281,13 @@ def gabc2mei(gabc_line, mei_file, notation_type):
         syllables = word.split(')')
         
         # Process each gabc syllable and add it to the layer
+        clef_flag = False
         for i, gabc_syllable in enumerate(syllables[:-1]):
             print()
             print(gabc_syllable)
             # Setting the clef as the child of layer
             if gabc_syllable in ['(c1', '(c2', '(c3', '(c4', '(c5', '(f2', '(f3', '(f4']:
+                clef_flag = True
                 clef_mei = doc.createElement('clef')
                 clef_mei.setAttribute('shape', gabc_syllable[1].capitalize())
                 clef_mei.setAttribute('line', gabc_syllable[2])
@@ -308,7 +310,12 @@ def gabc2mei(gabc_line, mei_file, notation_type):
                 # + Attributes
                 if i == 0 and i == (len(syllables[:-1]) - 1):
                     syl_mei.setAttribute('wordpos', 's') # single
+                elif (i == 1 and clef_flag == True) and i == (len(syllables[:-1]) - 1):
+                    syl_mei.setAttribute('wordpos', 's') # single
                 elif i == 0:
+                    syl_mei.setAttribute('wordpos', 'i') # initial
+                    syl_mei.setAttribute('con', 'd') # connection = dash
+                elif (i == 1 and clef_flag == True):
                     syl_mei.setAttribute('wordpos', 'i') # initial
                     syl_mei.setAttribute('con', 'd') # connection = dash
                 elif i == (len(syllables[:-1]) - 1):

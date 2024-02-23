@@ -66,7 +66,7 @@ Or there could be liquescents with just one tail, for example:
  <liquescent/>
 </nc>
 ```
-which represents a liquescent that has just one tail (rather than two) in square notation; in this case, a left tail (`@tilt = n`). This neume is called "cephalicus" (liquescent punctum) and would be encoded in our "strict" GABC as `>V`.
+which represents a liquescent that has just one tail (rather than two) in square notation; in this case, a left tail (`@tilt = n`). This neume is called "liquescent punctum" and would be encoded in our "strict" GABC as `>V`.
 <!--(Only happens in square?)-->
 
 [^1]: Not part of GABC

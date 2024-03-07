@@ -267,6 +267,44 @@ def convert_to_aquitanian(general_mei):
             nc.setAttribute('tilt', 'ne')
 
 
+def postproc_clef_inside_syllable(doc):
+    # Look for syllables interrupted by clef changes (probably because of a system break)
+    allclefs = doc.getElementsByTagName('clef')
+    # If there is a clef change
+    if allclefs.length > 1:
+        # For all the clefs after the first one (so, for all clefs that signify a clef change)
+        for clefchange in allclefs[1:]:
+            # We find the previous and next siblings
+            element_prevclefchange = clefchange.previousSibling
+            element_nextclefchange = clefchange.nextSibling
+            # These syblings should be syllable elements
+            if (element_prevclefchange.tagName == "syllable" and element_nextclefchange.tagName == "syllable"):
+                # If the previus syllable element (the one preceding the clef change) has text 
+                # and the next syllable element (following the clef change) does not
+                if (element_prevclefchange.getElementsByTagName('syl')[0].lastChild.nodeValue != ""
+                    and element_nextclefchange.getElementsByTagName('syl')[0].lastChild.nodeValue == ""):
+                    # We will include both the clef and the neumes of the next syllable's neumes into the previous syllable
+                    element_prevclefchange.appendChild(clefchange)
+                    for neume in element_nextclefchange.getElementsByTagName('neume'):
+                        element_prevclefchange.appendChild(neume)
+                    # Does the @wordpos of the <syl> in that element_prevclefchange changes?
+                    # Only if the coming <syl> (the one from element_nextclefchange) is @wordpos = t
+                    syl_afterclef = element_nextclefchange.getElementsByTagName('syl')[0]
+                    wordpos_afterclef = syl_afterclef.getAttribute('wordpos')
+                    syl_beforeclef = element_prevclefchange.getElementsByTagName('syl')[0]
+                    wordpos_beforeclef = syl_beforeclef.getAttribute('wordpos')
+                    # Only two cases worth considering 
+                    # (the other cases two cases are not relevant: "i"+"m" = "i" and "m"+"m" = "m")
+                    if wordpos_afterclef == "t":
+                        if wordpos_beforeclef == "i":
+                            syl_beforeclef.setAttribute('wordpos', 's')
+                        elif wordpos_beforeclef == "m":
+                            syl_beforeclef.setAttribute('wordpos', 't')
+                    # And then we remove the next syllable completely as all its contents, together with the clef change,
+                    # are now in the previous one (as it should)
+                    parent = element_nextclefchange.parentNode
+                    parent.removeChild(element_nextclefchange)
+
 # ------------ #
 # Main program #
 # ------------ #
@@ -442,42 +480,9 @@ def gabc2mei(gabc_line, mei_file, notation_type):
         convert_to_aquitanian(doc)
         mei_file = mei_file[:-4] + "_AQUIT" + mei_file[-4:]
 
-    # Look for syllables interrupted by clef changes (probably because of a system break)
-    allclefs = doc.getElementsByTagName('clef')
-    # If there is a clef change
-    if allclefs.length > 1:
-        # For all the clefs after the first one (so, for all clefs that signify a clef change)
-        for clefchange in allclefs[1:]:
-            # We find the previous and next siblings
-            element_prevclefchange = clefchange.previousSibling
-            element_nextclefchange = clefchange.nextSibling
-            # These syblings should be syllable elements
-            if (element_prevclefchange.tagName == "syllable" and element_nextclefchange.tagName == "syllable"):
-                # If the previus syllable element (the one preceding the clef change) has text 
-                # and the next syllable element (following the clef change) does not
-                if (element_prevclefchange.getElementsByTagName('syl')[0].lastChild.nodeValue != ""
-                    and element_nextclefchange.getElementsByTagName('syl')[0].lastChild.nodeValue == ""):
-                    # We will include both the clef and the neumes of the next syllable's neumes into the previous syllable
-                    element_prevclefchange.appendChild(clefchange)
-                    for neume in element_nextclefchange.getElementsByTagName('neume'):
-                        element_prevclefchange.appendChild(neume)
-                    # Does the @wordpos of the <syl> in that element_prevclefchange changes?
-                    # Only if the coming <syl> (the one from element_nextclefchange) is @wordpos = t
-                    syl_afterclef = element_nextclefchange.getElementsByTagName('syl')[0]
-                    wordpos_afterclef = syl_afterclef.getAttribute('wordpos')
-                    syl_beforeclef = element_prevclefchange.getElementsByTagName('syl')[0]
-                    wordpos_beforeclef = syl_beforeclef.getAttribute('wordpos')
-                    # Only two cases worth considering 
-                    # (the other cases two cases are not relevant: "i"+"m" = "i" and "m"+"m" = "m")
-                    if wordpos_afterclef == "t":
-                        if wordpos_beforeclef == "i":
-                            syl_beforeclef.setAttribute('wordpos', 's')
-                        elif wordpos_beforeclef == "m":
-                            syl_beforeclef.setAttribute('wordpos', 't')
-                    # And then we remove the next syllable completely as all its contents, together with the clef change,
-                    # are now in the previous one (as it should)
-                    parent = element_nextclefchange.parentNode
-                    parent.removeChild(element_nextclefchange)
+    # Look for syllables interrupted by clef changes 
+    # and move the clef and following neumes into the preceding <syllable>
+    postproc_clef_inside_syllable(doc)
 
     # Write the MEI file
     myfile = open(mei_file, "w")

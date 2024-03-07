@@ -461,6 +461,19 @@ def gabc2mei(gabc_line, mei_file, notation_type):
                     element_prevclefchange.appendChild(clefchange)
                     for neume in element_nextclefchange.getElementsByTagName('neume'):
                         element_prevclefchange.appendChild(neume)
+                    # Does the @wordpos of the <syl> in that element_prevclefchange changes?
+                    # Only if the coming <syl> (the one from element_nextclefchange) is @wordpos = t
+                    syl_afterclef = element_nextclefchange.getElementsByTagName('syl')[0]
+                    wordpos_afterclef = syl_afterclef.getAttribute('wordpos')
+                    syl_beforeclef = element_prevclefchange.getElementsByTagName('syl')[0]
+                    wordpos_beforeclef = syl_beforeclef.getAttribute('wordpos')
+                    # Only two cases worth considering 
+                    # (the other cases two cases are not relevant: "i"+"m" = "i" and "m"+"m" = "m")
+                    if wordpos_afterclef == "t":
+                        if wordpos_beforeclef == "i":
+                            syl_beforeclef.setAttribute('wordpos', 's')
+                        elif wordpos_beforeclef == "m":
+                            syl_beforeclef.setAttribute('wordpos', 't')
                     # And then we remove the next syllable completely as all its contents, together with the clef change,
                     # are now in the previous one (as it should)
                     parent = element_nextclefchange.parentNode

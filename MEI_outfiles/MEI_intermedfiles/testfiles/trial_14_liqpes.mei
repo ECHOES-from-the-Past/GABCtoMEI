@@ -5,30 +5,45 @@
 	<meiHead>
 		<fileDesc>
 			<titleStmt>
-				<title/>
+				<title>title</title>
 			</titleStmt>
 			<pubStmt/>
 		</fileDesc>
+		<encodingDesc>
+			<projectDesc>
+				<head>ECHOES Project</head>
+				<p>Encoded in GABC by Vicente Urones Sanchez. Converted into MEI with https://github.com/ECHOES-from-the-Past/GABCtoMEI/blob/main/gabc-tokens_to_mei-elements.py script.</p>
+			</projectDesc>
+		</encodingDesc>
+		<manifestationList>
+			<manifestation>
+				<itemList>
+					<item targettype="url" target="link">
+						<identifier>siglum</identifier>
+					</item>
+				</itemList>
+			</manifestation>
+		</manifestationList>
 	</meiHead>
 	<music>
 		<body>
-			<mdiv xml:id="m-23a44952-dca7-11ee-b431-f2b2e3f0b573">
-				<score xml:id="m-23a449fc-dca7-11ee-b431-f2b2e3f0b573">
-					<scoreDef xml:id="m-23a44a6a-dca7-11ee-b431-f2b2e3f0b573">
-						<staffGrp xml:id="m-23a44a9c-dca7-11ee-b431-f2b2e3f0b573">
-							<staffDef n="1" lines="5" notationtype="neume" xml:id="m-23a44ae2-dca7-11ee-b431-f2b2e3f0b573"/>
+			<mdiv xml:id="m-1a85ff28-ddc4-11ee-ae56-f2b2e3f0b574">
+				<score xml:id="m-1a85fffa-ddc4-11ee-ae56-f2b2e3f0b574">
+					<scoreDef xml:id="m-1a8600ae-ddc4-11ee-ae56-f2b2e3f0b574">
+						<staffGrp xml:id="m-1a8600f4-ddc4-11ee-ae56-f2b2e3f0b574">
+							<staffDef n="1" lines="5" notationtype="neume" xml:id="m-1a86016c-ddc4-11ee-ae56-f2b2e3f0b574"/>
 						</staffGrp>
 					</scoreDef>
-					<section xml:id="m-23a44b14-dca7-11ee-b431-f2b2e3f0b573">
-						<staff n="1" xml:id="m-23a44b3c-dca7-11ee-b431-f2b2e3f0b573">
-							<layer n="1" xml:id="m-23a44b6e-dca7-11ee-b431-f2b2e3f0b573">
-								<clef shape="C" line="4" xml:id="m-23a44ba0-dca7-11ee-b431-f2b2e3f0b573"/>
-								<syllable xml:id="m-23a44bc8-dca7-11ee-b431-f2b2e3f0b573">
-									<syl wordpos="s" xml:id="m-23a44bf0-dca7-11ee-b431-f2b2e3f0b573">lis</syl>
-									<neume xml:id="m-23a44c18-dca7-11ee-b431-f2b2e3f0b573">
-										<nc loc="3" xml:id="m-23a44c4a-dca7-11ee-b431-f2b2e3f0b573"/>
-										<nc loc="4" tilt="n" curve="c" xml:id="m-23a44c72-dca7-11ee-b431-f2b2e3f0b573">
-											<liquescent xml:id="m-23a44c90-dca7-11ee-b431-f2b2e3f0b573"/>
+					<section xml:id="m-1a8601da-ddc4-11ee-ae56-f2b2e3f0b574">
+						<staff n="1" xml:id="m-1a860220-ddc4-11ee-ae56-f2b2e3f0b574">
+							<layer n="1" xml:id="m-1a860270-ddc4-11ee-ae56-f2b2e3f0b574">
+								<clef shape="C" line="4" xml:id="m-1a8602b6-ddc4-11ee-ae56-f2b2e3f0b574"/>
+								<syllable xml:id="m-1a8602f2-ddc4-11ee-ae56-f2b2e3f0b574">
+									<syl wordpos="s" xml:id="m-1a86032e-ddc4-11ee-ae56-f2b2e3f0b574">lis</syl>
+									<neume xml:id="m-1a86036a-ddc4-11ee-ae56-f2b2e3f0b574">
+										<nc loc="3" xml:id="m-1a8603a6-ddc4-11ee-ae56-f2b2e3f0b574"/>
+										<nc loc="4" tilt="n" curve="c" xml:id="m-1a8603e2-ddc4-11ee-ae56-f2b2e3f0b574">
+											<liquescent xml:id="m-1a86041e-ddc4-11ee-ae56-f2b2e3f0b574"/>
 										</nc>
 									</neume>
 								</syllable>

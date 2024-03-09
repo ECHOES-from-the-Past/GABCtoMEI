@@ -308,7 +308,21 @@ def postproc_clef_inside_syllable(doc):
 # ------------ #
 # Main program #
 # ------------ #
-def gabc2mei(gabc_line, mei_file, notation_type):
+def gabc2mei(gabc_line, mei_file, notation_type, metadata_dict):
+
+    # Metadata
+
+    mei_title = doc.getElementsByTagName("title")[0]
+    mei_title.nodeValue = metadata_dict['name']
+
+    mei_item = doc.getElementsByTagName("item")[0]
+    mei_item.setAttribute("targettype", "url")
+    mei_item.setAttribute("target", '"' + metadata_dict['manuscript-storage-place'] + '"')
+    mei_itemID = mei_item.getElementsByTagName("identifier")[0]
+    mei_itemID.nodeValue = metadata_dict['manuscript']
+
+    # Content
+
     # Get the words from gabc
     words = gabc_line.split()
     print(words)
@@ -499,9 +513,16 @@ if __name__ == "__main__":
     gabc_file = open(args.gabc, "r")
     gabc_file_content = gabc_file.read()
     gabc_list_lines = gabc_file_content.split("\n")
-    gabc_content = gabc_list_lines[ gabc_list_lines.index("%%")+1 ]
+    index_endmetadata = gabc_list_lines.index("%%")
+    gabc_content = gabc_list_lines[index_endmetadata + 1]
+
+    metadata_dict = {}
+    for metadata_line in gabc_list_lines[:index_endmetadata]:
+        [key, value] = metadata_line.split(": ")
+        metadata_dict[key] = value[:-1]
+
     # gabc_content = gabc_list_lines[-1]
-    gabc2mei(gabc_content, args.mei_output, args.notation)
+    gabc2mei(gabc_content, args.mei_output, args.notation, metadata_dict)
     gabc_file.close()
 
 

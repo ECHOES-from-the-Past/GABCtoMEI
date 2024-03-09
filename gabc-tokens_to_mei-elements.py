@@ -505,8 +505,8 @@ if __name__ == "__main__":
     gabc_file.close()
 
 
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/001_C01_benedicte-omnes_pem82441_aquit.gabc MEI_outfiles/antiphonae_ad_communionem/001_C01_benedicte-omnes_pem82441_aquit.mei 
-# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/002_C02_benedicte-omnes_pem85041_square.gabc MEI_outfiles/antiphonae_ad_communionem/002_C02_benedicte-omnes_pem85041_square.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/001_C01_benedicite-omnes_pem82441_aquit.gabc MEI_outfiles/antiphonae_ad_communionem/001_C01_benedicite-omnes_pem82441_aquit.mei
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/002_C02_benedicite-omnes_pem85041_square.gabc MEI_outfiles/antiphonae_ad_communionem/002_C02_benedicite-omnes_pem85041_square.mei -notation square
 # python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/003_C03_de-fructu-operum_pem56766_aquit.gabc MEI_outfiles/antiphonae_ad_communionem/003_C03_de-fructu-operum_pem56766_aquit.mei 
 # python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/004_C04_de-fructu-operum_pem84909_square.gabc MEI_outfiles/antiphonae_ad_communionem/004_C04_de-fructu-operum_pem84909_square.mei -notation square
 # python3 gabc-tokens_to_mei-elements.py GABC_infiles/antiphonae_ad_communionem/005_C05_dicit-dominus_pem84540_aquit.gabc MEI_outfiles/antiphonae_ad_communionem/005_C05_dicit-dominus_pem84540_aquit.mei 

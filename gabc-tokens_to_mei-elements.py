@@ -313,13 +313,15 @@ def gabc2mei(gabc_line, mei_file, notation_type, metadata_dict):
     # Metadata
 
     mei_title = doc.getElementsByTagName("title")[0]
-    mei_title.nodeValue = metadata_dict['name']
+    name_as_textnode = doc.createTextNode(metadata_dict['name'])
+    mei_title.appendChild(name_as_textnode)
 
     mei_item = doc.getElementsByTagName("item")[0]
     mei_item.setAttribute("targettype", "url")
-    mei_item.setAttribute("target", '"' + metadata_dict['manuscript-storage-place'] + '"')
+    mei_item.setAttribute("target", metadata_dict['manuscript-storage-place'])
     mei_itemID = mei_item.getElementsByTagName("identifier")[0]
-    mei_itemID.nodeValue = metadata_dict['manuscript']
+    siglum_as_textnode = doc.createTextNode(metadata_dict['manuscript'])
+    mei_itemID.appendChild(siglum_as_textnode)
 
     # Content
 

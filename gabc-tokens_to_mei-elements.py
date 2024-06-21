@@ -336,7 +336,7 @@ def gabc2mei(gabc_line, mei_file, notation_type, metadata_dict):
     try:
         transcriber = metadata_dict['transcriber']
         head = doc.createElement('head')
-        parragraph = doc.createElement('p')
+        paragraph = doc.createElement('p')
         projectDesc = doc.getElementsByTagName('projectDesc')[0]
         projectDesc.appendChild(head)
         head.appendChild(doc.createTextNode("ECHOES Project"))

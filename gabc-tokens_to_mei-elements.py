@@ -333,6 +333,24 @@ def gabc2mei(gabc_line, mei_file, notation_type, metadata_dict):
     except:
         print("There is no SHELFMARK defined")
 
+    try:
+        transcriber = metadata_dict['transcriber']
+        # meiHead = doc.getElementsByTagName('meiHead')[0]
+        # encodingDesc = doc.createElement('encodingDesc')
+        # projectDesc = doc.createElement('projectDesc')
+        head = doc.createElement('head')
+        parragraph = doc.createElement('p')
+        # meiHead.appendChild(encodingDesc)
+        # encodingDesc.appendChild(projectDesc)
+        projectDesc = doc.getElementsByTagName('projectDesc')[0]
+        projectDesc.appendChild(head)
+        head.appendChild(doc.createTextNode("ECHOES Project"))
+        projectDesc.appendChild(parragraph)
+        paragraph.appendChild(doc.createTextNode("Encoded in GABC by" + transcriber + ". Converted into MEI with https://github.com/ECHOES-from-the-Past/GABCtoMEI/blob/main/gabc-tokens_to_mei-elements.py script."))
+    except:
+        print("There is no TRANSCRIBER provided")
+
+
     # Content
 
     # Get the words from gabc

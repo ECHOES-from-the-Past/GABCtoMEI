@@ -317,11 +317,21 @@ def gabc2mei(gabc_line, mei_file, notation_type, metadata_dict):
     mei_title.appendChild(name_as_textnode)
 
     mei_item = doc.getElementsByTagName("item")[0]
-    mei_item.setAttribute("targettype", "url")
-    mei_item.setAttribute("target", metadata_dict['manuscript-storage-place'])
-    mei_itemID = mei_item.getElementsByTagName("identifier")[0]
-    siglum_as_textnode = doc.createTextNode(metadata_dict['manuscript'])
-    mei_itemID.appendChild(siglum_as_textnode)
+    try:
+        facsimile_url = metadata_dict['manuscript-storage-place']
+        mei_item.setAttribute("targettype", "url")
+        mei_item.setAttribute("target", facsimile_url)
+    except:
+        print("There is no FACSIMILE URL defined")
+
+
+    try:
+        shelfmark = metadata_dict['manuscript']
+        mei_itemID = mei_item.getElementsByTagName("identifier")[0]
+        siglum_as_textnode = doc.createTextNode(shelfmark)
+        mei_itemID.appendChild(siglum_as_textnode)
+    except:
+        print("There is no SHELFMARK defined")
 
     # Content
 

@@ -33,7 +33,7 @@ The following code block shows an example of the MEI encoding for the neumes in 
 </staff>
 ```
 
-<img width="270" alt="example_mei_neumes_gloria" src="https://github.com/ECHOES-from-the-Past/GABCtoMEI/assets/13948831/26d7ef11-61a6-40a9-a9e3-6bae34f17bbf">
+<img width="270" alt="glo-ri-a" src="https://github.com/ECHOES-from-the-Past/GABCtoMEI/assets/13948831/8a9cca4f-1732-48f6-9057-c2c17945e6e1">
 
 For more information on how to encode chants using MEI Neumes, please consult the [MEI Guidelines - Chapter 6](https://music-encoding.org/guidelines/v5/content/neumes.html)
 

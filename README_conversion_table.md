@@ -7,19 +7,19 @@ The following code block shows an example of the MEI encoding for the neumes in 
    <layer n="1">
       <clef shape="C" line="3"/>
       <syllable>
-         <syl>glo</syl>
+         <syl wordpos="s">glo</syl>
          <neume>
             <nc loc="2"/>
          </neume>
       </syllable>
       <syllable>
-         <syl>ri</syl>
+         <syl wordpos="m">ri</syl>
          <neume>
             <nc loc="5" tilt="n"/>
          </neume>
       </syllable>
       <syllable>
-         <syl>a</syl>
+         <syl wordpos="t">a</syl>
          <neume>
             <nc loc="3"/>
          </neume>

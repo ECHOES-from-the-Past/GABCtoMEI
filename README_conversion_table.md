@@ -13,9 +13,14 @@ The following code block shows an example of the MEI encoding for the neumes in 
          </neume>
       </syllable>
       <syllable>
-         <syl>ria</syl>
+         <syl>ri</syl>
          <neume>
             <nc loc="5" tilt="n"/>
+         </neume>
+      </syllable>
+      <syllable>
+         <syl>a</syl>
+         <neume>
             <nc loc="3"/>
          </neume>
          <neume>

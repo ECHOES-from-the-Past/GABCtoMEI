@@ -316,6 +316,12 @@ def gabc2mei(gabc_line, mei_file, notation_type, metadata_dict):
     name_as_textnode = doc.createTextNode(metadata_dict['name'])
     mei_title.appendChild(name_as_textnode)
 
+    cantus_id = metadata_dict['commentary'].split()[1]
+    mei_title_identifier = doc.createElement("identifier")
+    mei_title_identifier.setAttribute("type", "CantusID")
+    mei_title.appendChild(mei_title_identifier)
+    mei_title_identifier.appendChild(doc.createTextNode(cantus_id))
+
     mei_item = doc.getElementsByTagName("item")[0]
     try:
         facsimile_url = metadata_dict['manuscript-storage-place']

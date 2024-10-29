@@ -46,7 +46,7 @@ For more information on how to encode chants using MEI Neumes, please consult th
 | 3  | \[downward\] Stem <br/>&nbsp;_Right side of note_  | `v` | `<nc`**`tilt="s"`**`/>` |
 | 4  | \[downward\] Stem <br/>&nbsp;_Left side of note_             | `V` | `<nc`**`tilt="n"`**`/>` (Square notation) <br/>`<nc`**`tilt="ne"`**`/>` (Aquitanian notation) |
 | 5  | Liquescent (lower note)                      | `>` | `<nc`**`curve="c"`**`>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<liquescent/>`**<br/>`</nc>` |
-| 6  | Liquescent (higher note) / Epiphonus         | `<` | `<nc`**`curve="a"`**`>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<liquescent/>`**<br/>`</nc>` |
+| 6  | Liquescent (higher note) / Epiphonus         | `<` | `<nc`**`curve="a" type="epiphonus"`**`>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<liquescent/>`**<br/>`</nc>` |
 | 7  | Oriscus                                          | `o` | `<nc>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<oriscus/>`**<br/>`</nc>`  |
 | 8  | Quilisma                                         | `w` | `<nc>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<quilisma/>`**<br/>`</nc>` |
 | 9 | Strophicus                                       | `s` | `<nc>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<strophicus/>`**<br/>`</nc>` |
@@ -64,7 +64,7 @@ In Iberian square notation, the square punctum with two tails (either up or down
 
 To represent a "cephalicus" or "punctum with a lower liquescent" with **one tail on the left**, we use the GABC code `>V`, which gets translated into the corresponding MEI code: 
 ```xml
-<nc curve="c" tilt="n">
+<nc curve="c" tilt="n" type="cephalicus">
  <liquescent/>
 </nc>
 ```
@@ -72,7 +72,7 @@ for square notation (for Aquitanian we use `@tilt=ne`).
 
 To represent a "cephalicus" or "punctum with a lower liquescent" with **one tail on the right**, we use the GABC code `>v`, which gets translated into the corresponding MEI code: 
 ```xml
-<nc curve="c" tilt="s">
+<nc curve="c" tilt="s" type="cephalicus">
  <liquescent/>
 </nc>
 ```

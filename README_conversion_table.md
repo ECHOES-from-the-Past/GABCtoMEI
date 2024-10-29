@@ -46,7 +46,7 @@ For more information on how to encode chants using MEI Neumes, please consult th
 | 3  | \[downward\] Stem <br/>&nbsp;_Right side of note_  | `v` | `<nc`**`tilt="s"`**`/>` |
 | 4  | \[downward\] Stem <br/>&nbsp;_Left side of note_             | `V` | `<nc`**`tilt="n"`**`/>` (Square notation) <br/>`<nc`**`tilt="ne"`**`/>` (Aquitanian notation) |
 | 5  | Liquescent (lower note)                      | `>` | `<nc`**`curve="c"`**`>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<liquescent/>`**<br/>`</nc>` |
-| 6  | Liquescent (higher note)                        | `<` | `<nc`**`curve="a"`**`>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<liquescent/>`**<br/>`</nc>` |
+| 6  | Liquescent (higher note) / Epiphonus         | `<` | `<nc`**`curve="a"`**`>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<liquescent/>`**<br/>`</nc>` |
 | 7  | Oriscus                                          | `o` | `<nc>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<oriscus/>`**<br/>`</nc>`  |
 | 8  | Quilisma                                         | `w` | `<nc>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<quilisma/>`**<br/>`</nc>` |
 | 9 | Strophicus                                       | `s` | `<nc>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<strophicus/>`**<br/>`</nc>` |
@@ -59,15 +59,24 @@ For more information on how to encode chants using MEI Neumes, please consult th
 | 16 | Completely illegible / lacuna: <br/>we do not provide notation <br/>in the transcription                | `text()`<br/>no content inside the pair of <br/>parentheses | `<syllable>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`<syl>text</syl>`<br/>`</syllable>` <br/><br/>**no child `<neume>`** inside of `<syllable>` |
 
 #### Notes:
-There could be normal liquescents, with two tails, 
-which are simply encoded as shown in entries 5 and 6 of the previous table. 
-Or there could be liquescents with just one tail, for example: 
+
+In Iberian square notation, the square punctum with two tails (either up or down) doesn't represent a liquescent but rather two repeated notes. Occasionally, there could be an extra short stroke between the two tails, known as lengüeta in the literature; however, its use doesn't change its interpretation.
+
+To represent a "cephalicus" or "punctum with a lower liquescent" with **one tail on the left**, we use the GABC code `>V`, which gets translated into the corresponding MEI code: 
 ```xml
 <nc curve="c" tilt="n">
  <liquescent/>
 </nc>
 ```
-which represents a liquescent that has just one tail (rather than two) in square notation; in this case, a left tail (`@tilt = n`). This neume is called "liquescent punctum" and would be encoded in our "strict" GABC as `>V`.
-<!--(Only happens in square?)-->
+for square notation (for Aquitanian we use `@tilt=ne`).
+
+To represent a "cephalicus" or "punctum with a lower liquescent" with **one tail on the right**, we use the GABC code `>v`, which gets translated into the corresponding MEI code: 
+```xml
+<nc curve="c" tilt="s">
+ <liquescent/>
+</nc>
+```
+This **only** happens in Aquitanian notation, when the note bearing the liquescent follows a rhombus.
+<!-- Add an example image -->
 
 [^1]: Not part of GABC

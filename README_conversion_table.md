@@ -53,9 +53,9 @@ For more information on how to encode chants using MEI Neumes, please consult th
 | 6  | Oriscus                                         | `o` | `<nc>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<oriscus/>`**<br/>`</nc>`  |
 | 7  | Quilisma                                        | `w` | `<nc>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<quilisma/>`**<br/>`</nc>` |
 | 8  | Strophicus                                      | `s` | `<nc>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<strophicus/>`**<br/>`</nc>` |
-| 9 | Square with two stems down/up (Iberian notation: repeated pitch) | `9` or `6`[^1] | `<neume>` with `@type=twolegsdown` or `@type=twolegsup`, and with two identical `<nc>` as children |
-| 9a | Square with two stems down (Iberian notation) | `9` | `<neume`**`type="twolegsdown">`**<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<nc @same-pitch/>`**<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<nc @same-pitch/>`**<br/>`</neume>` |
-| 9b | Square with two stems up (Iberian notation) | `6` | `<neume`**`type="twolegsup">`**<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<nc @same-pitch/>`**<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<nc @same-pitch/>`**<br/>`</neume>` |
+| 9 | Square with two stems down/up (Iberian notation: repeated pitch)[^3] | `9` or `6`[^1] | `<neume>` with `@type=twolegsdown` or `@type=twolegsup`, and with two identical `<nc>` as children |
+| 9a | Square with two stems down | `9` | `<neume`**`type="twolegsdown">`**<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<nc @same-pitch/>`**<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<nc @same-pitch/>`**<br/>`</neume>` |
+| 9b | Square with two stems up | `6` | `<neume`**`type="twolegsup">`**<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<nc @same-pitch/>`**<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<nc @same-pitch/>`**<br/>`</neume>` |
 | 10 | Lengüeta (Iberian notation: repeated pitch) | `*`[^2] | `<neume>` with `@type=lenguetadown` or `@type=lenguetaup`, and with two identical `<nc>` as children |
 | 10a | Lengüeta with two stems down | `*9` | `<neume`**`type="lenguetadown">`**<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<nc @same-pitch/>`**<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<nc @same-pitch/>`**<br/>`</neume>` |
 | 10b | Lengüeta with two stems up | `*6` | `<neume`**`type="lenguetaup">`**<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<nc @same-pitch/>`**<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<nc @same-pitch/>`**<br/>`</neume>` |
@@ -91,3 +91,4 @@ This **only** happens in Aquitanian notation, when the note bearing the liquesce
 
 [^1]: Not part of GABC
 [^2]: Different use in GABC
+[^3]: The same symbol is used as liquescent (to a lower or upper note) in other notations (like the examples shown in 4 or 5), but not in Iberian notation where it means a repeated pitch.

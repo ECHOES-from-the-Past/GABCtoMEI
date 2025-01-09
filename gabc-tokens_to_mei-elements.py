@@ -21,7 +21,7 @@ locs = [-6, -5, -4] + [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9] + [10, 11, 12]
 pitches = regular_pitches + inclinatum_pitches
 
 prefixes = ['º'] # I will not consider '@' to signal the abscence of a stem (as we are always encoding their presence by using 'V' or 'v')
-suffixes = ['~', '>', '<', 'o', 'w', 's', 'v', 'V', 'r'] 
+suffixes = ['~', '>', '<', 'o', 'w', 's', 'v', 'V', 'r', '9', '6', '*']
 # The suffixes for marking accidentals ('x', 'y', '#') are considered later
 # Missing episema ('_')
 

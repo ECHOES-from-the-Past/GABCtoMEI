@@ -145,19 +145,16 @@ def get_nc_qualities(gabc_nc):
             nc_type = doc.createElement('unclear') # LIBMEI METHOD
             features.append(nc_type)
         elif charitem == '9':
-            neume = liquescent_tilde.parentNode
-            attribute = ('type1', 'twolegsdown')
-            neume.append(attribute)
+            attribute = ('twolegs', 'down')
+            features.append(attribute)
             # Post-processing: 1. Repeat the <nc> with same attributes; 2. Look for 9* combination to have @type=lenguetadown
         elif charitem == '6':
-            neume = liquescent_tilde.parentNode
-            attribute = ('type1', 'twolegsup')
-            neume.append(attribute)
+            attribute = ('twolegs', 'up')
+            features.append(attribute)
             # Post-processing: 1. Repeat the <nc> with same attributes; 2. Look for 6* combination to have @type=lenguetaup
         elif charitem == '*':
-            neume = liquescent_tilde.parentNode
-            attribute = ('type2', 'lengueta')
-            neume.append(attribute)
+            attribute = ('lengueta', 'true')
+            features.append(attribute)
             # Post-processing: 1. Repeat the <nc> with same attributes; 2. Look for 9* or 6* combination to have @type=lenguetadown or lenguetaup
 
         # Elements that are not children of <nc> (but siblings or parents) -> none at the moment
@@ -198,6 +195,25 @@ def convert_to_mei_neume(gabc_token):
     gabc_ncs_of_neume = get_gabc_ncs(gabc_token)
     for gabc_nc in gabc_ncs_of_neume:
         mei_nc = convert_to_mei_nc(gabc_nc)
+        # Evaluate the ones that should have attributes in <neume> rather than in <nc>
+        # These are the repeated notes in Iberian notation, given by <neume>
+        # with @type=lenguetaup, lenguetadown, twolegsup, and twolegsdown
+        if (mei_nc.getAttribute('lengueta')):
+            # Add the @type attribute to <neume> with value lenguetaup / lenguetadown
+            mei_neume.setAttribute("type", "lengueta" + mei_nc.getAttribute('twolegs'))
+            # Remove these attributes from <nc>
+            mei_nc.removeAttribute('lengueta')
+            mei_nc.removeAttribute('twolegs')
+            # Add the repeated note (repeated <nc>)
+            mei_neume.appendChild(mei_nc)
+        if (mei_nc.getAttribute('twolegs')):
+            # Remove these attributes from <nc>
+            mei_neume.setAttribute("type", "twolegs" + mei_nc.getAttribute('twolegs'))
+            # Remove these attributes from <nc>
+            mei_nc.removeAttribute('twolegs')
+            # Add the repeated note (repeated <nc>)
+            mei_neume.appendChild(mei_nc)
+        # Add the individual <nc> to the <neume> parent
         mei_neume.appendChild(mei_nc) # LIBMEI METHOD
 
     return mei_neume

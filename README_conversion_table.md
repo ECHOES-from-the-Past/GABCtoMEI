@@ -41,7 +41,7 @@ For more information on how to encode chants using MEI Neumes, please consult th
 
 |    |   Class  | Strict GABC | Neumes MEI | Image |
 |----|----------|-------------|------------| ----- |
-| 1  | Square (note head)                              | lowercase characters <br/>from `a` to `m` | `<nc>` | <img src="https://github.com/user-attachments/assets/47bf2476-bb5f-4646-af28-ef3d514fac62" width="50"> <img src="https://github.com/user-attachments/assets/e6a2f1bd-99fb-452d-9dfd-cf955b4b4a81" width="50"/> |
+| 1  | Square (note head)                              | lowercase characters <br/>from `a` to `m` | `<nc>` | <img src="https://github.com/user-attachments/assets/47bf2476-bb5f-4646-af28-ef3d514fac62" width="75"> <img src="https://github.com/user-attachments/assets/e6a2f1bd-99fb-452d-9dfd-cf955b4b4a81" width="75"/> |
 | 2  | Rhombus                                         | uppercase characters <br/>from `A` to `M`   | `<nc`**`tilt="se"`**`/>` | ![stemright_rhombus](https://github.com/user-attachments/assets/c1b62d9f-7f34-4d1e-a317-e8044c7ddb76) ![clivis_rhombusbelow_AQ](https://github.com/user-attachments/assets/3233e47b-fffa-4d71-9dd2-be26fbe352eb) |
 | 3  | Downward stem                                   | `V` or `v` | `<nc>` with `@tilt=n` (`ne`) or `@tilt=s` ||
 | 3a  | Downward stem _left side of note_              | `V` | `<nc`**`tilt="n"`**`/>` (Square notation) <br/>`<nc`**`tilt="ne"`**`/>` (Aquitanian notation) | ![clivis(stemleft)](https://github.com/user-attachments/assets/351d5680-ac94-46a6-80c6-d5eb79e24abd) ![pes_AQ](https://github.com/user-attachments/assets/8a4f66c5-7f65-4b88-a734-766fd593ee1b) |

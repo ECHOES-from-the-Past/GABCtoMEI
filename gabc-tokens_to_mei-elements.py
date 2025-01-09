@@ -107,6 +107,8 @@ def get_nc_qualities(gabc_nc):
             # nc with @curve = c
             attribute = ('curve', 'c')
             features.append(attribute)
+            attribute = ('type', 'cephalicus') # ¿¿¿ ASK ELSA IS @CURVE=C IS ENOUGH FOR CEPHALICUS, OR IT NEEDS @TILT=N OR @TILT=S ???
+            features.append(attribute)
             # liquescent
             nc_type = doc.createElement('liquescent') # LIBMEI METHOD
             features.append(nc_type)

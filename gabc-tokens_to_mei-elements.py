@@ -114,6 +114,8 @@ def get_nc_qualities(gabc_nc):
             # nc with @curve = a
             attribute = ('curve', 'a')
             features.append(attribute)
+            attribute = ('type', 'epiphonus')
+            features.append(attribute)
             # liquescent
             nc_type = doc.createElement('liquescent') # LIBMEI METHOD
             features.append(nc_type)

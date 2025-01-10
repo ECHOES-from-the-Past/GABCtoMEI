@@ -21,9 +21,10 @@ locs = [-6, -5, -4] + [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9] + [10, 11, 12]
 pitches = regular_pitches + inclinatum_pitches
 
 prefixes = ['º'] # I will not consider '@' to signal the abscence of a stem (as we are always encoding their presence by using 'V' or 'v')
-suffixes = ['~', '>', '<', 'o', 'w', 's', 'v', 'V', 'r', '9', '6', '*']
+suffixes = ['>', '<', 'o', 'w', 's', 'v', 'V', 'r', '9', '6', '*']
 # The suffixes for marking accidentals ('x', 'y', '#') are considered later
 # Missing episema ('_')
+# Removed `~`
 
 clef_to_pitch = {
     'C1': ['d2', 'e2', 'f2'] + ['g2', 'a2', 'b2', 'c3', 'd3', 'e3', 'f3', 'g3', 'a3', 'b3', 'c4', 'd4', 'e4'] + ['f4', 'g4', 'a4'],
@@ -99,10 +100,6 @@ def get_nc_qualities(gabc_nc):
             attribute = ('ligated', 'true')
             features.append(attribute)
         # Suffixes
-        elif charitem == '~':
-            # liquescent
-            nc_type = doc.createElement('liquescent_type_tilde') # LIBMEI METHOD
-            features.append(nc_type)
         elif charitem == '>':
             # nc with @curve = c
             attribute = ('curve', 'c')
@@ -233,35 +230,6 @@ def get_syl_and_neumes(gabc_syllable):
 # ---------------------------------------- #
 #  Flavoring MEI (to square or aquitanian) #
 # ---------------------------------------- #
-def encode_liquescent_curve_for_tilde():
-    liquescent_tilde_elems = doc.getElementsByTagName("liquescent_type_tilde")
-
-    for liquescent_tilde in liquescent_tilde_elems:
-        nc2 = liquescent_tilde.parentNode
-        nc1 = nc2.previousSibling
-
-        loc1 = int(nc1.getAttribute('loc'))
-        loc2 = int(nc2.getAttribute('loc'))
-
-        # PES = Melody goes Up, ASCENDING pair of neume componentes
-        if(loc2 > loc1):
-            # If the second nc (the one with the liquescent) is a virga
-            if((nc2.getAttribute('tilt')) and ('n' in nc2.getAttribute('tilt'))):
-                # Then nc2 has @cuve=c (in addition to the @tilt="ne" and the <liquescent> child)
-                nc2.setAttribute('curve', 'c')
-            # Default
-            else:
-                # nc1 with @curve = a (while nc2 has the <liquescent> child)
-                nc1.setAttribute('curve', 'a')
-
-        # CLIVIS = Melody goes Down, DESCENDING pair of neume componentes
-        else:
-            # nc1 has nothing AND nc2 (with the <liquescent> child) has the @curve = c
-            nc2.setAttribute('curve', 'c')
-
-        # Change to a regular <liquescent> element
-        liquescent_tilde.tagName = 'liquescent'
-
 
 def encode_obliqua_ligatures():
     # Add the @ligated=true to the second neume component of the pair of obliqua ligated components
@@ -480,7 +448,6 @@ def gabc2mei(gabc_line, mei_file, notation_type, metadata_dict):
                         mei_neume = convert_to_mei_neume(gabc_neume)
                         syllable_mei.appendChild(mei_neume)
 
-    encode_liquescent_curve_for_tilde()
     encode_obliqua_ligatures()
 
     # Assign UUID @xml:ids for all elements
@@ -700,3 +667,12 @@ if __name__ == "__main__":
 # python3 gabc-tokens_to_mei-elements.py GABC_infiles/testfiles/twoclefsA_spaces-with-syllables.gabc MEI_outfiles/testfiles/twoclefsA_spaces-with-syllables.mei -notation square
 # python3 gabc-tokens_to_mei-elements.py GABC_infiles/testfiles/twoclefsB-nospace-with-following-syllable.gabc MEI_outfiles/testfiles/twoclefsB-nospace-with-following-syllable.mei -notation square
 # python3 gabc-tokens_to_mei-elements.py GABC_infiles/testfiles/twoclefsC-nospace-in-the-change-of-clefs-at-all.gabc MEI_outfiles/testfiles/twoclefsC-nospace-in-the-change-of-clefs-at-all.mei -notation square
+
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/testfiles/1.gabc MEI_outfiles/testfiles/1.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/testfiles/2.gabc MEI_outfiles/testfiles/2.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/testfiles/3.gabc MEI_outfiles/testfiles/3.mei -notation square
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/testfiles/4.gabc MEI_outfiles/testfiles/4.mei
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/testfiles/5.gabc MEI_outfiles/testfiles/5.mei
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/testfiles/6.gabc MEI_outfiles/testfiles/6.mei
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/testfiles/7.gabc MEI_outfiles/testfiles/7.mei
+# python3 gabc-tokens_to_mei-elements.py GABC_infiles/testfiles/8.gabc MEI_outfiles/testfiles/8.mei

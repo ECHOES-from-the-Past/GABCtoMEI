@@ -1,0 +1,111 @@
+<?xml version="1.0" ?>
+<?xml-model href="https://music-encoding.org/schema/5.0/mei-Neumes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://music-encoding.org/schema/5.0/mei-Neumes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<mei xmlns="http://www.music-encoding.org/ns/mei" meiversion="5.0">
+	<meiHead>
+		<fileDesc>
+			<titleStmt>
+				<title>
+					title
+					<identifier type="CantusID">6</identifier>
+				</title>
+			</titleStmt>
+			<pubStmt/>
+		</fileDesc>
+		<encodingDesc>
+			<projectDesc>
+				<head/>
+				<p/>
+			</projectDesc>
+		</encodingDesc>
+		<manifestationList>
+			<manifestation>
+				<itemList>
+					<item targettype="url" target="link">
+						<identifier>siglum</identifier>
+					</item>
+				</itemList>
+			</manifestation>
+		</manifestationList>
+	</meiHead>
+	<music>
+		<body>
+			<mdiv xml:id="m-bfc965b8-cf92-11ef-89ba-3645f29ecd15">
+				<score xml:id="m-bfc9664e-cf92-11ef-89ba-3645f29ecd15">
+					<scoreDef xml:id="m-bfc96694-cf92-11ef-89ba-3645f29ecd15">
+						<staffGrp xml:id="m-bfc966c6-cf92-11ef-89ba-3645f29ecd15">
+							<staffDef n="1" lines="5" notationtype="neume" xml:id="m-bfc9672a-cf92-11ef-89ba-3645f29ecd15"/>
+						</staffGrp>
+					</scoreDef>
+					<section xml:id="m-bfc96766-cf92-11ef-89ba-3645f29ecd15">
+						<staff n="1" xml:id="m-bfc96798-cf92-11ef-89ba-3645f29ecd15">
+							<layer n="1" xml:id="m-bfc967de-cf92-11ef-89ba-3645f29ecd15">
+								<syllable xml:id="m-bfc9681a-cf92-11ef-89ba-3645f29ecd15">
+									<syl wordpos="i" con="d" xml:id="m-bfc9684c-cf92-11ef-89ba-3645f29ecd15">Ec</syl>
+									<neume xml:id="m-bfc9687e-cf92-11ef-89ba-3645f29ecd15">
+										<nc loc="0" xml:id="m-bfc968b0-cf92-11ef-89ba-3645f29ecd15"/>
+									</neume>
+								</syllable>
+								<syllable xml:id="m-bfc968e2-cf92-11ef-89ba-3645f29ecd15">
+									<syl wordpos="t" xml:id="m-bfc96914-cf92-11ef-89ba-3645f29ecd15">ce</syl>
+									<neume xml:id="m-bfc96946-cf92-11ef-89ba-3645f29ecd15">
+										<nc loc="-1" xml:id="m-bfc9696e-cf92-11ef-89ba-3645f29ecd15"/>
+										<nc loc="2" tilt="n" xml:id="m-bfc969a0-cf92-11ef-89ba-3645f29ecd15"/>
+										<nc loc="1" xml:id="m-bfc969d2-cf92-11ef-89ba-3645f29ecd15"/>
+									</neume>
+								</syllable>
+								<syllable xml:id="m-bfc96a04-cf92-11ef-89ba-3645f29ecd15">
+									<syl wordpos="i" con="d" xml:id="m-bfc96a2c-cf92-11ef-89ba-3645f29ecd15">vir</syl>
+									<neume xml:id="m-bfc96a5e-cf92-11ef-89ba-3645f29ecd15">
+										<nc loc="1" xml:id="m-bfc96a90-cf92-11ef-89ba-3645f29ecd15"/>
+										<nc loc="1" curve="c" type="cephalicus" tilt="n" xml:id="m-bfc96ab8-cf92-11ef-89ba-3645f29ecd15">
+											<liquescent xml:id="m-bfc96aea-cf92-11ef-89ba-3645f29ecd15"/>
+										</nc>
+									</neume>
+								</syllable>
+								<syllable xml:id="m-bfc96b1c-cf92-11ef-89ba-3645f29ecd15">
+									<syl wordpos="t" xml:id="m-bfc96b4e-cf92-11ef-89ba-3645f29ecd15">go</syl>
+									<neume xml:id="m-bfc96b80-cf92-11ef-89ba-3645f29ecd15">
+										<nc loc="0" xml:id="m-bfc96ba8-cf92-11ef-89ba-3645f29ecd15"/>
+									</neume>
+								</syllable>
+								<syllable xml:id="m-bfc96bda-cf92-11ef-89ba-3645f29ecd15">
+									<syl wordpos="i" con="d" xml:id="m-bfc96c0c-cf92-11ef-89ba-3645f29ecd15">con</syl>
+									<neume xml:id="m-bfc96c48-cf92-11ef-89ba-3645f29ecd15">
+										<nc loc="-1" xml:id="m-bfc96c84-cf92-11ef-89ba-3645f29ecd15"/>
+										<nc loc="1" tilt="n" xml:id="m-bfc96cac-cf92-11ef-89ba-3645f29ecd15"/>
+									</neume>
+								</syllable>
+								<syllable xml:id="m-bfc96cde-cf92-11ef-89ba-3645f29ecd15">
+									<syl wordpos="m" con="d" xml:id="m-bfc96d10-cf92-11ef-89ba-3645f29ecd15">ci</syl>
+									<neume xml:id="m-bfc96d38-cf92-11ef-89ba-3645f29ecd15">
+										<nc loc="3" xml:id="m-bfc96d6a-cf92-11ef-89ba-3645f29ecd15"/>
+										<nc loc="4" tilt="n" xml:id="m-bfc96d9c-cf92-11ef-89ba-3645f29ecd15"/>
+									</neume>
+								</syllable>
+								<syllable xml:id="m-bfc96dce-cf92-11ef-89ba-3645f29ecd15">
+									<syl wordpos="m" con="d" xml:id="m-bfc96df6-cf92-11ef-89ba-3645f29ecd15">pi</syl>
+									<neume xml:id="m-bfc96e28-cf92-11ef-89ba-3645f29ecd15">
+										<nc loc="3" xml:id="m-bfc96e64-cf92-11ef-89ba-3645f29ecd15"/>
+										<nc loc="1" xml:id="m-bfc96e96-cf92-11ef-89ba-3645f29ecd15"/>
+									</neume>
+								</syllable>
+								<syllable xml:id="m-bfc96ebe-cf92-11ef-89ba-3645f29ecd15">
+									<syl wordpos="t" xml:id="m-bfc96ef0-cf92-11ef-89ba-3645f29ecd15">et</syl>
+									<neume xml:id="m-bfc96f22-cf92-11ef-89ba-3645f29ecd15">
+										<nc loc="2" xml:id="m-bfc96f4a-cf92-11ef-89ba-3645f29ecd15"/>
+										<nc loc="1" xml:id="m-bfc96f7c-cf92-11ef-89ba-3645f29ecd15"/>
+										<nc loc="2" tilt="n" xml:id="m-bfc96fae-cf92-11ef-89ba-3645f29ecd15">
+											<unclear xml:id="m-bfc96fe0-cf92-11ef-89ba-3645f29ecd15"/>
+										</nc>
+										<nc loc="0" xml:id="m-bfc97008-cf92-11ef-89ba-3645f29ecd15"/>
+									</neume>
+								</syllable>
+							</layer>
+						</staff>
+					</section>
+				</score>
+			</mdiv>
+		</body>
+	</music>
+</mei>

@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<?xml-model href="https://music-encoding.org/schema/5.0/mei-Neumes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://music-encoding.org/schema/5.0/mei-Neumes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<mei xmlns="http://www.music-encoding.org/ns/mei" meiversion="5.0">
+	<meiHead>
+		<fileDesc>
+			<titleStmt>
+				<title>
+					title
+					<identifier type="CantusID">3</identifier>
+				</title>
+			</titleStmt>
+			<pubStmt/>
+		</fileDesc>
+		<encodingDesc>
+			<projectDesc>
+				<head/>
+				<p/>
+			</projectDesc>
+		</encodingDesc>
+		<manifestationList>
+			<manifestation>
+				<itemList>
+					<item targettype="url" target="link">
+						<identifier>siglum</identifier>
+					</item>
+				</itemList>
+			</manifestation>
+		</manifestationList>
+	</meiHead>
+	<music>
+		<body>
+			<mdiv xml:id="m-b66ed4e4-cf92-11ef-9fe8-3645f29ecd15">
+				<score xml:id="m-b66ed57a-cf92-11ef-9fe8-3645f29ecd15">
+					<scoreDef xml:id="m-b66ed5b6-cf92-11ef-9fe8-3645f29ecd15">
+						<staffGrp xml:id="m-b66ed5e8-cf92-11ef-9fe8-3645f29ecd15">
+							<staffDef n="1" lines="5" notationtype="neume" xml:id="m-b66ed660-cf92-11ef-9fe8-3645f29ecd15"/>
+						</staffGrp>
+					</scoreDef>
+					<section xml:id="m-b66ed69c-cf92-11ef-9fe8-3645f29ecd15">
+						<staff n="1" xml:id="m-b66ed6ce-cf92-11ef-9fe8-3645f29ecd15">
+							<layer n="1" xml:id="m-b66ed714-cf92-11ef-9fe8-3645f29ecd15">
+								<clef shape="F" line="2" xml:id="m-b66ed750-cf92-11ef-9fe8-3645f29ecd15"/>
+								<syllable xml:id="m-b66ed782-cf92-11ef-9fe8-3645f29ecd15">
+									<syl wordpos="s" xml:id="m-b66ed7b4-cf92-11ef-9fe8-3645f29ecd15">fit</syl>
+									<neume type="lenguetadown" xml:id="m-b66ed7dc-cf92-11ef-9fe8-3645f29ecd15">
+										<nc loc="-2" xml:id="m-b66ed818-cf92-11ef-9fe8-3645f29ecd15"/>
+									</neume>
+								</syllable>
+								<syllable xml:id="m-b66edb56-cf92-11ef-9fe8-3645f29ecd15">
+									<syl wordpos="s" xml:id="m-b66edb92-cf92-11ef-9fe8-3645f29ecd15">lau</syl>
+									<neume type="lenguetaup" xml:id="m-b66edbc4-cf92-11ef-9fe8-3645f29ecd15">
+										<nc loc="3" xml:id="m-b66edbf6-cf92-11ef-9fe8-3645f29ecd15"/>
+									</neume>
+								</syllable>
+							</layer>
+						</staff>
+					</section>
+				</score>
+			</mdiv>
+		</body>
+	</music>
+</mei>

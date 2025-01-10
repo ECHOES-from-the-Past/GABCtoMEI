@@ -1,0 +1,84 @@
+<?xml version="1.0" ?>
+<?xml-model href="https://music-encoding.org/schema/5.0/mei-Neumes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://music-encoding.org/schema/5.0/mei-Neumes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<mei xmlns="http://www.music-encoding.org/ns/mei" meiversion="5.0">
+	<meiHead>
+		<fileDesc>
+			<titleStmt>
+				<title>
+					title
+					<identifier type="CantusID">7</identifier>
+				</title>
+			</titleStmt>
+			<pubStmt/>
+		</fileDesc>
+		<encodingDesc>
+			<projectDesc>
+				<head/>
+				<p/>
+			</projectDesc>
+		</encodingDesc>
+		<manifestationList>
+			<manifestation>
+				<itemList>
+					<item targettype="url" target="link">
+						<identifier>siglum</identifier>
+					</item>
+				</itemList>
+			</manifestation>
+		</manifestationList>
+	</meiHead>
+	<music>
+		<body>
+			<mdiv xml:id="m-c2bb74c8-cf92-11ef-8a86-3645f29ecd15">
+				<score xml:id="m-c2bb755e-cf92-11ef-8a86-3645f29ecd15">
+					<scoreDef xml:id="m-c2bb759a-cf92-11ef-8a86-3645f29ecd15">
+						<staffGrp xml:id="m-c2bb75cc-cf92-11ef-8a86-3645f29ecd15">
+							<staffDef n="1" lines="5" notationtype="neume" xml:id="m-c2bb7626-cf92-11ef-8a86-3645f29ecd15"/>
+						</staffGrp>
+					</scoreDef>
+					<section xml:id="m-c2bb7662-cf92-11ef-8a86-3645f29ecd15">
+						<staff n="1" xml:id="m-c2bb7694-cf92-11ef-8a86-3645f29ecd15">
+							<layer n="1" xml:id="m-c2bb76da-cf92-11ef-8a86-3645f29ecd15">
+								<syllable xml:id="m-c2bb7716-cf92-11ef-8a86-3645f29ecd15">
+									<syl wordpos="i" con="d" xml:id="m-c2bb7748-cf92-11ef-8a86-3645f29ecd15">fi</syl>
+									<neume xml:id="m-c2bb777a-cf92-11ef-8a86-3645f29ecd15">
+										<nc loc="4" xml:id="m-c2bb77ac-cf92-11ef-8a86-3645f29ecd15"/>
+									</neume>
+								</syllable>
+								<syllable xml:id="m-c2bb77d4-cf92-11ef-8a86-3645f29ecd15">
+									<syl wordpos="m" con="d" xml:id="m-c2bb7806-cf92-11ef-8a86-3645f29ecd15">li</syl>
+									<neume xml:id="m-c2bb7838-cf92-11ef-8a86-3645f29ecd15">
+										<nc loc="4" xml:id="m-c2bb786a-cf92-11ef-8a86-3645f29ecd15"/>
+										<nc loc="3" xml:id="m-c2bb789c-cf92-11ef-8a86-3645f29ecd15"/>
+										<nc loc="4" tilt="n" xml:id="m-c2bb78c4-cf92-11ef-8a86-3645f29ecd15"/>
+									</neume>
+									<neume xml:id="m-c2bb78f6-cf92-11ef-8a86-3645f29ecd15">
+										<nc loc="5" xml:id="m-c2bb7928-cf92-11ef-8a86-3645f29ecd15"/>
+										<nc loc="6" tilt="n" xml:id="m-c2bb795a-cf92-11ef-8a86-3645f29ecd15"/>
+										<nc loc="4" xml:id="m-c2bb7982-cf92-11ef-8a86-3645f29ecd15"/>
+									</neume>
+								</syllable>
+								<syllable xml:id="m-c2bb79b4-cf92-11ef-8a86-3645f29ecd15">
+									<syl wordpos="t" xml:id="m-c2bb7a18-cf92-11ef-8a86-3645f29ecd15">um</syl>
+									<neume xml:id="m-c2bb7a40-cf92-11ef-8a86-3645f29ecd15">
+										<nc loc="4" xml:id="m-c2bb7a72-cf92-11ef-8a86-3645f29ecd15"/>
+									</neume>
+								</syllable>
+								<syllable xml:id="m-c2bb7aa4-cf92-11ef-8a86-3645f29ecd15">
+									<syl wordpos="s" xml:id="m-c2bb7ad6-cf92-11ef-8a86-3645f29ecd15">et</syl>
+									<neume xml:id="m-c2bb7afe-cf92-11ef-8a86-3645f29ecd15">
+										<nc loc="4" xml:id="m-c2bb7b30-cf92-11ef-8a86-3645f29ecd15"/>
+										<nc loc="5" curve="c" type="cephalicus" tilt="n" xml:id="m-c2bb7b62-cf92-11ef-8a86-3645f29ecd15">
+											<liquescent xml:id="m-c2bb7b94-cf92-11ef-8a86-3645f29ecd15"/>
+										</nc>
+									</neume>
+								</syllable>
+							</layer>
+						</staff>
+					</section>
+				</score>
+			</mdiv>
+		</body>
+	</music>
+</mei>

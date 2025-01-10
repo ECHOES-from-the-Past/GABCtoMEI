@@ -1,0 +1,82 @@
+<?xml version="1.0" ?>
+<?xml-model href="https://music-encoding.org/schema/5.0/mei-Neumes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://music-encoding.org/schema/5.0/mei-Neumes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<mei xmlns="http://www.music-encoding.org/ns/mei" meiversion="5.0">
+	<meiHead>
+		<fileDesc>
+			<titleStmt>
+				<title>
+					title
+					<identifier type="CantusID">5</identifier>
+				</title>
+			</titleStmt>
+			<pubStmt/>
+		</fileDesc>
+		<encodingDesc>
+			<projectDesc>
+				<head/>
+				<p/>
+			</projectDesc>
+		</encodingDesc>
+		<manifestationList>
+			<manifestation>
+				<itemList>
+					<item targettype="url" target="link">
+						<identifier>siglum</identifier>
+					</item>
+				</itemList>
+			</manifestation>
+		</manifestationList>
+	</meiHead>
+	<music>
+		<body>
+			<mdiv xml:id="m-bc485796-cf92-11ef-93c1-3645f29ecd15">
+				<score xml:id="m-bc485840-cf92-11ef-93c1-3645f29ecd15">
+					<scoreDef xml:id="m-bc485886-cf92-11ef-93c1-3645f29ecd15">
+						<staffGrp xml:id="m-bc4858b8-cf92-11ef-93c1-3645f29ecd15">
+							<staffDef n="1" lines="1" notationtype="neume" xml:id="m-bc48591c-cf92-11ef-93c1-3645f29ecd15"/>
+						</staffGrp>
+					</scoreDef>
+					<section xml:id="m-bc485958-cf92-11ef-93c1-3645f29ecd15">
+						<staff n="1" xml:id="m-bc48598a-cf92-11ef-93c1-3645f29ecd15">
+							<layer n="1" xml:id="m-bc4859d0-cf92-11ef-93c1-3645f29ecd15">
+								<syllable xml:id="m-bc485a0c-cf92-11ef-93c1-3645f29ecd15">
+									<syl wordpos="i" con="d" xml:id="m-bc485a3e-cf92-11ef-93c1-3645f29ecd15">di</syl>
+									<neume xml:id="m-bc485a70-cf92-11ef-93c1-3645f29ecd15">
+										<nc loc="0" xml:id="m-bc485aa2-cf92-11ef-93c1-3645f29ecd15"/>
+										<nc loc="1" tilt="ne" xml:id="m-bc485ad4-cf92-11ef-93c1-3645f29ecd15"/>
+										<nc loc="-1" xml:id="m-bc485b06-cf92-11ef-93c1-3645f29ecd15"/>
+										<nc loc="1" xml:id="m-bc485b38-cf92-11ef-93c1-3645f29ecd15"/>
+										<nc loc="2" tilt="ne" xml:id="m-bc485b6a-cf92-11ef-93c1-3645f29ecd15"/>
+									</neume>
+								</syllable>
+								<syllable xml:id="m-bc485b92-cf92-11ef-93c1-3645f29ecd15">
+									<syl wordpos="t" xml:id="m-bc485bc4-cf92-11ef-93c1-3645f29ecd15">cit</syl>
+									<neume xml:id="m-bc485bf6-cf92-11ef-93c1-3645f29ecd15">
+										<nc loc="-1" tilt="se" xml:id="m-bc485c28-cf92-11ef-93c1-3645f29ecd15"/>
+										<nc loc="-1" curve="c" type="cephalicus" tilt="s" xml:id="m-bc485c5a-cf92-11ef-93c1-3645f29ecd15">
+											<liquescent xml:id="m-bc485c82-cf92-11ef-93c1-3645f29ecd15"/>
+										</nc>
+									</neume>
+								</syllable>
+								<syllable xml:id="m-bc485cb4-cf92-11ef-93c1-3645f29ecd15">
+									<syl wordpos="i" con="d" xml:id="m-bc485ce6-cf92-11ef-93c1-3645f29ecd15">spon</syl>
+									<neume xml:id="m-bc485d0e-cf92-11ef-93c1-3645f29ecd15">
+										<nc loc="-2" xml:id="m-bc485d54-cf92-11ef-93c1-3645f29ecd15"/>
+										<nc loc="-1" tilt="ne" xml:id="m-bc485d86-cf92-11ef-93c1-3645f29ecd15"/>
+									</neume>
+								</syllable>
+								<syllable xml:id="m-bc485db8-cf92-11ef-93c1-3645f29ecd15">
+									<syl wordpos="t" xml:id="m-bc485de0-cf92-11ef-93c1-3645f29ecd15">so</syl>
+									<neume xml:id="m-bc485e12-cf92-11ef-93c1-3645f29ecd15">
+										<nc loc="-2" xml:id="m-bc485e44-cf92-11ef-93c1-3645f29ecd15"/>
+									</neume>
+								</syllable>
+							</layer>
+						</staff>
+					</section>
+				</score>
+			</mdiv>
+		</body>
+	</music>
+</mei>

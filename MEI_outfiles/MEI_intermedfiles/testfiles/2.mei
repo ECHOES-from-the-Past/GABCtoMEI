@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<?xml-model href="https://music-encoding.org/schema/5.0/mei-Neumes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://music-encoding.org/schema/5.0/mei-Neumes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<mei xmlns="http://www.music-encoding.org/ns/mei" meiversion="5.0">
+	<meiHead>
+		<fileDesc>
+			<titleStmt>
+				<title>
+					title
+					<identifier type="CantusID">2</identifier>
+				</title>
+			</titleStmt>
+			<pubStmt/>
+		</fileDesc>
+		<encodingDesc>
+			<projectDesc>
+				<head/>
+				<p/>
+			</projectDesc>
+		</encodingDesc>
+		<manifestationList>
+			<manifestation>
+				<itemList>
+					<item targettype="url" target="link">
+						<identifier>siglum</identifier>
+					</item>
+				</itemList>
+			</manifestation>
+		</manifestationList>
+	</meiHead>
+	<music>
+		<body>
+			<mdiv xml:id="m-b27a5d36-cf92-11ef-b460-3645f29ecd15">
+				<score xml:id="m-b27a5e62-cf92-11ef-b460-3645f29ecd15">
+					<scoreDef xml:id="m-b27a5ed0-cf92-11ef-b460-3645f29ecd15">
+						<staffGrp xml:id="m-b27a5f16-cf92-11ef-b460-3645f29ecd15">
+							<staffDef n="1" lines="5" notationtype="neume" xml:id="m-b27a5f7a-cf92-11ef-b460-3645f29ecd15"/>
+						</staffGrp>
+					</scoreDef>
+					<section xml:id="m-b27a5fb6-cf92-11ef-b460-3645f29ecd15">
+						<staff n="1" xml:id="m-b27a5fe8-cf92-11ef-b460-3645f29ecd15">
+							<layer n="1" xml:id="m-b27a602e-cf92-11ef-b460-3645f29ecd15">
+								<clef shape="F" line="2" xml:id="m-b27a6308-cf92-11ef-b460-3645f29ecd15"/>
+								<syllable xml:id="m-b27a6344-cf92-11ef-b460-3645f29ecd15">
+									<syl wordpos="s" xml:id="m-b27a6376-cf92-11ef-b460-3645f29ecd15">te</syl>
+									<neume type="twolegsdown" xml:id="m-b27a63b2-cf92-11ef-b460-3645f29ecd15">
+										<nc loc="2" xml:id="m-b27a63e4-cf92-11ef-b460-3645f29ecd15"/>
+									</neume>
+									<neume xml:id="m-b27a6416-cf92-11ef-b460-3645f29ecd15">
+										<nc ligated="true" loc="2" tilt="n" xml:id="m-b27a6448-cf92-11ef-b460-3645f29ecd15"/>
+										<nc loc="0" ligated="true" xml:id="m-b27a647a-cf92-11ef-b460-3645f29ecd15"/>
+										<nc loc="1" xml:id="m-b27a64ac-cf92-11ef-b460-3645f29ecd15"/>
+										<nc loc="0" xml:id="m-b27a64d4-cf92-11ef-b460-3645f29ecd15"/>
+									</neume>
+								</syllable>
+							</layer>
+						</staff>
+					</section>
+				</score>
+			</mdiv>
+		</body>
+	</music>
+</mei>

@@ -1,0 +1,71 @@
+<?xml version="1.0" ?>
+<?xml-model href="https://music-encoding.org/schema/5.0/mei-Neumes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://music-encoding.org/schema/5.0/mei-Neumes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<mei xmlns="http://www.music-encoding.org/ns/mei" meiversion="5.0">
+	<meiHead>
+		<fileDesc>
+			<titleStmt>
+				<title>
+					title
+					<identifier type="CantusID">1</identifier>
+				</title>
+			</titleStmt>
+			<pubStmt/>
+		</fileDesc>
+		<encodingDesc>
+			<projectDesc>
+				<head/>
+				<p/>
+			</projectDesc>
+		</encodingDesc>
+		<manifestationList>
+			<manifestation>
+				<itemList>
+					<item targettype="url" target="link">
+						<identifier>siglum</identifier>
+					</item>
+				</itemList>
+			</manifestation>
+		</manifestationList>
+	</meiHead>
+	<music>
+		<body>
+			<mdiv xml:id="m-af73e13e-cf92-11ef-9164-3645f29ecd15">
+				<score xml:id="m-af73e1ca-cf92-11ef-9164-3645f29ecd15">
+					<scoreDef xml:id="m-af73e206-cf92-11ef-9164-3645f29ecd15">
+						<staffGrp xml:id="m-af73e238-cf92-11ef-9164-3645f29ecd15">
+							<staffDef n="1" lines="5" notationtype="neume" xml:id="m-af73e27e-cf92-11ef-9164-3645f29ecd15"/>
+						</staffGrp>
+					</scoreDef>
+					<section xml:id="m-af73e2b0-cf92-11ef-9164-3645f29ecd15">
+						<staff n="1" xml:id="m-af73e4e0-cf92-11ef-9164-3645f29ecd15">
+							<layer n="1" xml:id="m-af73e51c-cf92-11ef-9164-3645f29ecd15">
+								<clef shape="F" line="2" xml:id="m-af73e558-cf92-11ef-9164-3645f29ecd15"/>
+								<syllable xml:id="m-af73e580-cf92-11ef-9164-3645f29ecd15">
+									<syl wordpos="i" con="d" xml:id="m-af73e5a8-cf92-11ef-9164-3645f29ecd15">tu</syl>
+									<neume xml:id="m-af73e5d0-cf92-11ef-9164-3645f29ecd15">
+										<nc loc="5" xml:id="m-af73e5f8-cf92-11ef-9164-3645f29ecd15"/>
+									</neume>
+								</syllable>
+								<syllable xml:id="m-af73e620-cf92-11ef-9164-3645f29ecd15">
+									<syl wordpos="m" con="d" xml:id="m-af73e652-cf92-11ef-9164-3645f29ecd15">o</syl>
+									<neume xml:id="m-af73e67a-cf92-11ef-9164-3645f29ecd15">
+										<nc loc="6" xml:id="m-af73e6a2-cf92-11ef-9164-3645f29ecd15"/>
+									</neume>
+								</syllable>
+								<syllable xml:id="m-af73e6ca-cf92-11ef-9164-3645f29ecd15">
+									<syl wordpos="t" xml:id="m-af73e6f2-cf92-11ef-9164-3645f29ecd15">rum</syl>
+									<neume xml:id="m-af73e71a-cf92-11ef-9164-3645f29ecd15">
+										<nc loc="5" curve="c" type="cephalicus" tilt="n" xml:id="m-af73e738-cf92-11ef-9164-3645f29ecd15">
+											<liquescent xml:id="m-af73e76a-cf92-11ef-9164-3645f29ecd15"/>
+										</nc>
+									</neume>
+								</syllable>
+							</layer>
+						</staff>
+					</section>
+				</score>
+			</mdiv>
+		</body>
+	</music>
+</mei>

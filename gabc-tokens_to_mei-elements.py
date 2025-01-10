@@ -204,14 +204,18 @@ def convert_to_mei_neume(gabc_token):
             mei_nc.removeAttribute('lengueta')
             mei_nc.removeAttribute('twolegs')
             # Add the repeated note (repeated <nc>)
-            mei_neume.appendChild(mei_nc)
+            mei_nc2 = doc.createElement("nc")
+            mei_nc2.setAttribute('loc', mei_nc.getAttribute('loc'))
+            mei_neume.appendChild(mei_nc2)
         if (mei_nc.getAttribute('twolegs')):
             # Remove these attributes from <nc>
             mei_neume.setAttribute("type", "twolegs" + mei_nc.getAttribute('twolegs'))
             # Remove these attributes from <nc>
             mei_nc.removeAttribute('twolegs')
             # Add the repeated note (repeated <nc>)
-            mei_neume.appendChild(mei_nc)
+            mei_nc2 = doc.createElement("nc")
+            mei_nc2.setAttribute('loc', mei_nc.getAttribute('loc'))
+            mei_neume.appendChild(mei_nc2)
         # Add the individual <nc> to the <neume> parent
         mei_neume.appendChild(mei_nc) # LIBMEI METHOD
 

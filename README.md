@@ -22,9 +22,9 @@ In addition to the GABC specifications (that can be found [here](https://gregori
     - Quilisma (`w`)
     - Strophicus (`s`)
     - Liquescent (`<`, `>`, `~`)
-      - The liquescent with two tails up is represented by `<` (in MEI this would be represented with a `@curve=a` in the neume component `<nc>`, plus a child `<liquescent>`)
-      - The liquescent with two tails down is represented by `>` (in MEI this would be represented with a `@curve=c` in the neume component `<nc>`, plus a child `<liquescent>`)
-      - If we want the liquescent to have only one tail (instead of two tails), we additionally provide a `V` for a left tail and a `v` for a right tail
+      - A liquescent epiphonus (i.e., a neume component with a liquescent indicating a second, higher note) is represented by `<`. In MEI this would be represented with a `@curve=a` in the neume component `<nc>`, plus a child `<liquescent>`. Additionally, the `<nc>` is classified as an *epiphonus* by including a `@type = epiphonus`.
+      - A liquescent cephalicus (i.e., a neume component with a liquescent indicating a second, lower note) is represented by `>`. In MEI this would be represented with a `@curve=c` in the neume component `<nc>`, plus a child `<liquescent>`. Additionally, the `<nc>` is classified as a *cephalicus* by including a `@type = cephalicus`.
+      - On the other hand, if we want to represent a liquescent virga, one needs to add a `V` or `v` to the liquescent symbol `>` to indicate the type of virga (`V` for a virga with downward stem at the left or `v` for a virga with a downward stem at the right).[^1] In this case, the MEI encoding does not have a `@type = epiphonus` or `@type = cephalicus` as we don't know whether the liquescent represents a higher or lower note, but we have `@curve = c` (as the liquescent virga always has a clockwise curve) with a `@tilt = n` for a left downward stem or `@tilt = s` for a right downward stem.
 - Features added:
   - Use `º` as a prefix to mark the first neume component of the pair of an obliqua ligature.
 
@@ -85,3 +85,6 @@ The program will produce two types of MEI files:
    2. Recomputing the location value (`@loc`) based on a reference line (`<staffDef lines="1">`), in the case of Aquitanian notation.
 
    These output files for square and Aquitanian notation can be found in the **MEI_outfiles** folder.
+
+
+[^1]: The liquescent symbol used is `>` as liquescent virgas are always drawn with a clockwise curve (`@curve = c` in MEI).

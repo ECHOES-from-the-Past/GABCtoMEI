@@ -62,9 +62,9 @@ For more information on how to encode chants using MEI Neumes, please consult th
 | 11 | Obliqua                     | `º` preceding first neume <br/>component of the two[^2] | `<nc`**`ligated="true"`**`/>`<br/>`<nc`**`ligated="true"`**`/>`| <img src="images/obliqua_stemleft.jpg" width="60"> <img src="images/obliqueInTheMiddle.jpg" width="60"> | <img src="images/verovio_obliqua.png" height="75"> |
 | 12 | Separation of neumes                             | `/`<br/>what precedes and follows this <br/>slash are the characters representing <br/>all neume components of one neume, <br/>and the characters of all the neume <br/>components of the following neume, <br/>respectively | **`<neume>`**<br/>&nbsp;&nbsp;&nbsp;&nbsp;`<nc/>...<nc/>`<br/>**`</neume>`<br/>`<neume>`**<br/>&nbsp;&nbsp;&nbsp;&nbsp;`<nc/>...<nc/>`<br/>**`</neume>`** | - | - |
 | 13  | Accidentals     | `x` or `y` or `#` | `<accid>` with `@accid=f` or `@accid=n` or `@accid=s` | - | - |
-| 13a | Flat     | `x` | `<accid`**`accid="f"`**`/>` | <img src="images/flat_square.png" width="40"> | <img src="images/verovio_flat.png" width="40"> |
-| 13b | Natural  | `y` | `<accid`**`accid="n"`**`/>` | no examples in our corpus | <img src="images/verovio_natural.png" width="40"> |
-| 13c | Sharp    | `#` | `<accid`**`accid="s"`**`/>` | no examples in our corpus | <img src="images/verovio_sharp.png" width="40"> |
+| 13a | Flat     | `x` | `<accid`**`accid="f"`**`/>` | <img src="images/flat_square.png" width="30"> | <img src="images/verovio_flat.png" width="30"> |
+| 13b | Natural  | `y` | `<accid`**`accid="n"`**`/>` | no examples in our corpus | <img src="images/verovio_natural.png" width="30"> |
+| 13c | Sharp    | `#` | `<accid`**`accid="s"`**`/>` | no examples in our corpus | <img src="images/verovio_sharp.png" width="30"> |
 | 14 | Uncertain reading <br/>unclear neume components   | `r`[^4] | `<nc>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<unclear/>`**<br/>`</nc>` | - | - |
 | 15 | Completely illegible / lacuna: <br/>we do not provide notation <br/>in the transcription                | `text()`<br/>no content inside the pair of <br/>parentheses | `<syllable>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`<syl>text</syl>`<br/>`</syllable>` <br/><br/>**no child `<neume>`** inside of `<syllable>` | - | - |
 

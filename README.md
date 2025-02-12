@@ -36,7 +36,7 @@ In addition to the GABC specifications (that can be found [here](https://gregori
 
 
 
-- Torculus in Aquitanian looks like a punctum followed by a clivis ![torculus](https://github.com/martha-thomae/GABCtoMEI/tree/main/images/torculusAsTorculus.png), but since it is a single neume, we encode it as a single neume consisting of three squares with the upper pitch having a tail on the left.
+- Torculus in Aquitanian looks like a punctum followed by a clivis ![torculus](./images/torculusAsTorculus.png), but since it is a single neume, we encode it as a single neume consisting of three squares with the upper pitch having a tail on the left.
   
   **Example:** A syllable with just one torculus that starts in the second line (`f`), moves up a third (`h`) with a stem on the left pointing to a 'north-east' direction (`hV`), and back down a third (`f`).
   -  This torculus would be encoded as `(fhVf)`, which is a single neume
@@ -44,13 +44,13 @@ In addition to the GABC specifications (that can be found [here](https://gregori
 
 - Only provide a clef in GABC if there is one in the manuscript. Otherwise, we do not encode any clef and just start encoding the notes in GABC as their encoding indicates their position in the staff and has no pitch-related information.
 
-  ![GABC_a-to-m_edited](https://github.com/martha-thomae/GABCtoMEI/tree/main/images/GABC_a-to-m_edited.png)
+  ![GABC_a-to-m_edited](./images/GABC_a-to-m_edited.png)
 
 
 - Given that GABC can only display a 4-line staff, and we are working with square-notation manuscripts with 5-line staves, we decided on allowing for encoding `c5` clefs as well (even though they do not render correctly on [GABC's Transcription Tool](https://bbloomf.github.io/jgabc/transcriber.html)).
 - We also decided to increase the range of the notes allowed by GABC. GABC allows to encode notes from the space below the first ledger line (represented by `a`) to the space above the fifth line (represented by `m`). We expanded this range by including some characters before `a` (these are `t`, `u`, `z`) and some characters after `m` (these are `n`, `p`, `q`). These extra characters are shown in the image below, where the red background shows the usual range covered by GABC and the extended system is shown by the characters in the blue background. The extra characters would not be rendered on the [GABC Transcription Tool](https://bbloomf.github.io/jgabc/transcriber.html), but they are useful to encode a wider range than the one currently allowed.
   
-  ![extended_gabc_scale](https://github.com/martha-thomae/GABCtoMEI/tree/main/images/GABC_x-to-q_edited.png)
+  ![extended_gabc_scale](./images/GABC_x-to-q_edited.png)
 
 
 ## Conversion Process (GABC to MEI)

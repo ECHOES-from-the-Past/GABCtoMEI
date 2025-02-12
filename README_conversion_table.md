@@ -53,10 +53,10 @@ For more information on how to encode chants using MEI Neumes, please consult th
 | 6  | Oriscus                                         | `o` | `<nc>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<oriscus/>`**<br/>`</nc>`  | <img src="images/oriscus_AQ.jpg" width="60"> | <img src="images/verovio_oriscus.png" height="75"> |
 | 7  | Quilisma                                        | `w` | `<nc>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<quilisma/>`**<br/>`</nc>` | <img src="images/quilisma_AQ2.jpg" width="60"> | <img src="images/verovio_quilisma.png" height="75"> |
 | 8  | Strophicus                                      | `s` | `<nc>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<strophicus/>`**<br/>`</nc>` | no examples in our corpus | not implemented yet |
-| 9  | Square with two stems down/up (Iberian notation: repeated pitch)[^1] | `9` or `6`[^2] | `<neume>` with `@type=twolegsdown` or `@type=twolegsup`, and with two identical `<nc>` as children[^4] | - | - |
+| 9  | Square with two stems down/up (Iberian notation: repeated pitch)[^1] | `9` or `6`[^2] | `<neume>` with `@type=twolegsdown` or `@type=twolegsup`, and with two identical `<nc>` as children[^3] | - | - |
 | 9a | Square with two stems down | `9` | `<neume`**`type="twolegsdown">`**<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<nc @same-pitch/>`**<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<nc @same-pitch/>`**<br/>`</neume>` | <img src="images/twostemsdown.png" width="30"> | <img src="images/verovio_repeated.png" height="75"> |
 | 9b | Square with two stems up | `6` | `<neume`**`type="twolegsup">`**<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<nc @same-pitch/>`**<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<nc @same-pitch/>`**<br/>`</neume>` |  no examples in our corpus  | <img src="images/verovio_repeated.png" height="75"> |
-| 10 | Lengüeta (Iberian notation: repeated pitch) | `*`[^3] | `<neume>` with `@type=lenguetadown` or `@type=lenguetaup`, and with two identical `<nc>` as children[^4] | - | - |
+| 10 | Lengüeta (Iberian notation: repeated pitch) | `*`[^4] | `<neume>` with `@type=lenguetadown` or `@type=lenguetaup`, and with two identical `<nc>` as children[^3] | - | - |
 | 10a | Lengüeta with two stems down | `*9`<br/>(or `9*`) | `<neume`**`type="lenguetadown">`**<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<nc @same-pitch/>`**<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<nc @same-pitch/>`**<br/>`</neume>` | <img src="images/lenguetadown.png" width="60"> | <img src="images/verovio_repeated.png" height="75"> |
 | 10b | Lengüeta with two stems up | `*6`<br/>(or `6*`) | `<neume`**`type="lenguetaup">`**<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<nc @same-pitch/>`**<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<nc @same-pitch/>`**<br/>`</neume>` | <img src="images/lenguetaup.png" width="60"> | <img src="images/verovio_repeated.png" height="75"> |
 | 11 | Obliqua                     | `º` preceding first neume <br/>component of the two[^2] | `<nc`**`ligated="true"`**`/>`<br/>`<nc`**`ligated="true"`**`/>`| <img src="images/obliqua_stemleft.jpg" width="60"> <img src="images/obliqueInTheMiddle.jpg" width="60"> | <img src="images/verovio_obliqua.png" height="75"> |
@@ -65,7 +65,7 @@ For more information on how to encode chants using MEI Neumes, please consult th
 | 13a | Flat     | `x` | `<accid`**`accid="f"`**`/>` |
 | 13b | Natural  | `y` | `<accid`**`accid="n"`**`/>` |
 | 13c | Sharp    | `#` | `<accid`**`accid="s"`**`/>` |
-| 14 | Uncertain reading <br/>unclear neume components   | `r`[^3] | `<nc>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<unclear/>`**<br/>`</nc>` | - | - |
+| 14 | Uncertain reading <br/>unclear neume components   | `r`[^4] | `<nc>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<unclear/>`**<br/>`</nc>` | - | - |
 | 15 | Completely illegible / lacuna: <br/>we do not provide notation <br/>in the transcription                | `text()`<br/>no content inside the pair of <br/>parentheses | `<syllable>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`<syl>text</syl>`<br/>`</syllable>` <br/><br/>**no child `<neume>`** inside of `<syllable>` | - | - |
 
 #### Notes:
@@ -76,8 +76,8 @@ On the other hand, liquescents are represented with the GABC symbols `<` or `>`.
 
 [^1]: The same symbol is used as liquescent (to a lower or upper note) in other notations (like the examples shown in 4 or 5), but not in Iberian notation, where it means a repeated pitch. 
 
-[^4]: For the two sub-entries of *square with two stems* (*9a* and *9b*) and the two sub-entries of *lengueta* (*10a* and *10b*), the `@same-pitch` in the two neume components `<nc>` of the `<neume>` is not a **real, valid attribute in MEI**, but it is used here as a shortcut to represent the use of pitch-related attributes (e.g., `@pname` and `@oct`, or `@loc`) that notate the exact same pitch for both neume components in the neume as these are supposed to be neumes "with two identical `<nc>` as children".
-
 [^2]: Not part of GABC.
 
-[^3]: Different use in GABC.
+[^3]: For the two sub-entries of *square with two stems* (*9a* and *9b*) and the two sub-entries of *lengueta* (*10a* and *10b*), the `@same-pitch` in the two neume components `<nc>` of the `<neume>` is not a **real, valid attribute in MEI**, but it is used here as a shortcut to represent the use of pitch-related attributes (e.g., `@pname` and `@oct`, or `@loc`) that notate the exact same pitch for both neume components in the neume as these are supposed to be neumes "with two identical `<nc>` as children".
+
+[^4]: Different use in GABC.

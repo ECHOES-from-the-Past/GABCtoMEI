@@ -36,7 +36,7 @@ In addition to the GABC specifications (that can be found [here](https://gregori
 
 
 
-- Torculus in Aquitanian looks like a punctum followed by a clivis ![torculus](./images/torculusAsTorculus.png), but since it is a single neume, we encode it as a single neume consisting of three squares with the upper pitch having a tail on the left.
+- Torculus in Aquitanian looks like a punctum followed by a clivis <img src="./images/torculusAsTorculus.png" width="30"/>, but since it is a single neume, we encode it as a single neume consisting of three squares with the upper pitch having a tail on the left.
   
   **Example:** A syllable with just one torculus that starts in the second line (`f`), moves up a third (`h`) with a stem on the left pointing to a 'north-east' direction (`hV`), and back down a third (`f`).
   -  This torculus would be encoded as `(fhVf)`, which is a single neume

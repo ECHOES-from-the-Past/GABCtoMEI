@@ -42,7 +42,7 @@ For more information on how to encode chants using MEI Neumes, please consult th
 |    |   Class  | Strict GABC | Neumes MEI | Image | Rendition |
 |----|----------|-------------|------------| ----- | --------- |
 | 1  | Square (note head)                              | lowercase characters <br/>from `a` to `m` | `<nc>` | <img src="images/square_punctum.jpg" width="60"> <img src="images/punctum_AQ.jpg" width="60"/> | <img src="images/verovio_square.png" height="75"> |
-| 2  | Rhombus                                         | uppercase characters <br/>from `A` to `M`   | `<nc`**`tilt="se"`**`/>` | <img src="images/stemright_rhombus.jpg" width="120"> <img src="images/clivis_rhombusbelow_AQ.jpg" width="60"> | <img src="images/verovio_rhombus.png" height="75"> |
+| 2  | Rhombus                                         | uppercase characters <br/>from `A` to `M`   | `<nc`**`tilt="se"`**`/>` | <img src="images/stemright_rhombus2.jpg" width="120"> <img src="images/clivis_rhombusbelow_AQ.jpg" width="60"> | <img src="images/verovio_rhombus.png" height="75"> |
 | 3  | Downward stem                                   | `V` or `v` | `<nc>` with `@tilt=n` (`ne`) or `@tilt=s` | - | - |
 | 3a  | Downward stem _left side of note_              | `V` | `<nc`**`tilt="n"`**`/>` (Square notation) <br/>`<nc`**`tilt="ne"`**`/>` (Aquitanian notation) | <img src="images/clivis(stemleft).jpg" width="60"> <img src="images/pes_AQ.jpg" width="60"> | <img src="images/verovio_stemleft.png" height="75"> |
 | 3b  | Downward stem _right side of note_             | `v` | `<nc`**`tilt="s"`**`/>` | <img src="images/stemright_rhombus.jpg" width="120"> | <img src="images/verovio_stemright.png" height="75"> |

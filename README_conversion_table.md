@@ -70,9 +70,16 @@ For more information on how to encode chants using MEI Neumes, please consult th
 
 #### Notes:
 
-Enties *9* and *10* imply a neume with two neume components with the same pitch. In Iberian square notation, the square punctum with two tails (either up or down) doesn't represent a liquescent but rather two repeated notes. This is why it is encoded as such in the Table above (see entries *9a* and *9b*). Occasionally, there could be an extra short stroke between the two tails, known as lengüeta in the literature (see entries *10a* and *10b* above); however, its use doesn't change its interpretation. For both *square with two stem* (*9a* and *9b*) and *lengueta* entries (*10a* and *10b*), the `@same-pitch` is not a real, valid attribute in MEI, but it is meant to represent the use of attributes that provide the same pitch for both neume components `<nc>`. This is done by, for example, using the same `@panme` and `@oct` attributes in the two neume components, or the same `@loc`.
+* In the table above, entries ***9*** and ***10*** imply a neume with two neume components with the same pitch.
 
-On the other hand, liquescents are represented with the GABC symbols `<` or `>`. The use of a regular `<` implies an epiphonus (higher liquescent, with `@curve = a` and `@type = epiphonus`). The use of a regular `>` implies a cephalicus (downward liquescent, with `@curve = c` and `@type = cephalicus`). However, if the `>` is combined with either `V` (stem left) or `v` (stem right); these are read more like a liquescent virga, therefore, the `@type = cephalicus` is removed and substituted by `@tilt = n` (if `V`) or `@tilt = s` (if `v`). These are all internal conventions from our project on how to interpret these combination of symbols and their conversion to MEI.
+   In Iberian square notation, the square punctum with two tails (either up or down) doesn't represent a liquescent but rather two repeated notes. This is why it is encoded as such in the table above (see entries *9a* and *9b*). Occasionally, there could be an extra short stroke between the two tails, known as lengüeta in the literature (see entries *10a* and *10b* above); however, its use doesn't change its interpretation. For both *square with two stem* (*9a* and *9b*) and *lengueta* entries (*10a* and *10b*), the `@same-pitch` is not a real, valid attribute in MEI, but it is meant to represent the use of attributes that provide the same pitch for both neume components `<nc>`. This is done by, for example, using the same `@panme` and `@oct` attributes in the two neume components, or the same `@loc`.
+
+* On the other hand, liquescents are represented with the GABC symbols `<` or `>`. 
+   * The use of a regular `<` implies an epiphonus (higher liquescent, with `@curve = a` and `@type = epiphonus`). 
+   * The use of a regular `>` implies a cephalicus (downward liquescent, with `@curve = c` and `@type = cephalicus`).
+   * However, if the `>` is combined with either `V` (stem left) or `v` (stem right); these are read more like a liquescent virga, therefore, the `@type = cephalicus` is removed and substituted by `@tilt = n` (if `V`) or `@tilt = s` (if `v`). 
+
+   These are all internal conventions from our project on how to interpret these combination of symbols and their conversion to MEI.
 
 [^1]: The same symbol is used as liquescent (to a lower or upper note) in other notations (like the examples shown in 4 or 5), but not in Iberian notation, where it means a repeated pitch. 
 

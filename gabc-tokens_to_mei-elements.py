@@ -260,7 +260,7 @@ def encode_gaps():
     # goes away (only leaving the @curve=c/a)
     syllables = doc.getElementsByTagName("syllable")
     for syllable in syllables:
-        syllable_children = syllables.childNodes
+        syllable_children = syllable.childNodes
         for syllable_child in syllable_children:
             if (syllable_child.tagName == "neume"):
                 break

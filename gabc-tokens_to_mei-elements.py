@@ -263,6 +263,7 @@ def encode_gaps():
         lacuna = False
         for syllable_child in syllable.childNodes:
             if (syllable_child.tagName == "neume"):
+                lacuna = False
                 break
             lacuna = True
         if lacuna:

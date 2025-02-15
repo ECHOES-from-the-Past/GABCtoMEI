@@ -236,7 +236,9 @@ def get_syl_and_neumes(gabc_syllable):
 # ---------------------------------------- #
 
 def encode_obliqua_ligatures_and_liquescents():
-    # Add the @ligated=true to the second neume component of the pair of obliqua ligated components
+    # OBLIQUA: Add the @ligated=true to the second neume component of the pair of obliqua ligated components
+    # LIQUESCENT: As soon as there is a @tilt=n/ne/s involved (by a GABC V/v), the @type=cephalicus/epiphonus (from the GABC >/< signs)
+    # goes away (only leaving the @curve=c/a)
     square_neumes = doc.getElementsByTagName("neume")
     for sq_neume in square_neumes:
         save = -20

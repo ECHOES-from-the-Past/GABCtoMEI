@@ -254,21 +254,6 @@ def encode_obliqua_ligatures_and_liquescents():
         if (save > 0):
             ncs[save].setAttribute('ligated', 'true')
 
-def encode_gaps():
-    # OBLIQUA: Add the @ligated=true to the second neume component of the pair of obliqua ligated components
-    # LIQUESCENT: As soon as there is a @tilt=n/ne/s involved (by a GABC V/v), the @type=cephalicus/epiphonus (from the GABC >/< signs)
-    # goes away (only leaving the @curve=c/a)
-    syllables = doc.getElementsByTagName("syllable")
-    for syllable in syllables:
-        lacuna = False
-        for syllable_child in syllable.childNodes:
-            if (syllable_child.tagName == "neume"):
-                lacuna = False
-                break
-            lacuna = True
-        if lacuna:
-            syllable.appendChild(doc.createElement("gap"))
-
 def convert_to_square(general_mei, clef, neume_components):
     # Change @loc to @pname and @oct
     scale = clef_to_pitch[clef]
@@ -343,6 +328,7 @@ def gabc2mei(gabc_line, mei_file, notation_type, metadata_dict):
 
     mei_title = doc.getElementsByTagName("title")[0]
     name_as_textnode = doc.createTextNode(metadata_dict['name'])
+    print(name_as_textnode)
     mei_title.appendChild(name_as_textnode)
 
     cantus_id = metadata_dict['commentary'].split()[1]
@@ -412,6 +398,11 @@ def gabc2mei(gabc_line, mei_file, notation_type, metadata_dict):
                 syl_text, indiv_neumes_list = get_syl_and_neumes(gabc_syllable)
                 print(syl_text)
                 print(indiv_neumes_list)
+                if (indiv_neumes_list == ['']):
+                    print("HERE THERE SHOULD BE A GAP")
+                    print(syl_text)
+                    gap_mei = doc.createElement('gap')
+                    syllable_mei.appendChild(gap_mei)
                 
                 # Fill in the syllable with <syl> and <neume> elements
 
@@ -474,7 +465,6 @@ def gabc2mei(gabc_line, mei_file, notation_type, metadata_dict):
                         syllable_mei.appendChild(mei_neume)
 
     encode_obliqua_ligatures_and_liquescents()
-    encode_gaps()
 
     # Assign UUID @xml:ids for all elements
     body = doc.getElementsByTagName('body')[0]

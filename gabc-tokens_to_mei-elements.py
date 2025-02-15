@@ -239,11 +239,11 @@ def encode_obliqua_ligatures_and_liquescents():
     # OBLIQUA: Add the @ligated=true to the second neume component of the pair of obliqua ligated components
     # LIQUESCENT: As soon as there is a @tilt=n/ne/s involved (by a GABC V/v), the @type=cephalicus/epiphonus (from the GABC >/< signs)
     # goes away (only leaving the @curve=c/a)
-    square_neumes = doc.getElementsByTagName("neume")
-    for sq_neume in square_neumes:
+    neumes = doc.getElementsByTagName("neume")
+    for neume in neumes:
         save = -20
-        sq_ncs = sq_neume.childNodes
-        for i, nc in enumerate(sq_ncs):
+        ncs = neume.childNodes
+        for i, nc in enumerate(ncs):
             if (nc.getAttribute('ligated') and nc.getAttribute('ligated') == 'true'):
                 save = i+1
             if (nc.getAttribute('type') and nc.getAttribute('tilt')):
@@ -252,7 +252,7 @@ def encode_obliqua_ligatures_and_liquescents():
                 if (typeval in ["epiphonus", "cephalicus"] and tilt in ["n", "ne", "s"]):
                     nc.removeAttribute('type')
         if (save > 0):
-            sq_ncs[save].setAttribute('ligated', 'true')
+            ncs[save].setAttribute('ligated', 'true')
 
 
 def convert_to_square(general_mei, clef, neume_components):

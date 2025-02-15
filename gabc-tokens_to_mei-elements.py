@@ -260,10 +260,12 @@ def encode_gaps():
     # goes away (only leaving the @curve=c/a)
     syllables = doc.getElementsByTagName("syllable")
     for syllable in syllables:
-        syllable_children = syllable.childNodes
-        for syllable_child in syllable_children:
+        lacuna = False
+        for syllable_child in syllable.childNodes:
             if (syllable_child.tagName == "neume"):
                 break
+            lacuna = True
+        if lacuna:
             syllable.appendChild(doc.createElement("gap"))
 
 def convert_to_square(general_mei, clef, neume_components):

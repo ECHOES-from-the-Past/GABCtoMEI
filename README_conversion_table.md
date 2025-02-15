@@ -66,7 +66,7 @@ For more information on how to encode chants using MEI Neumes, please consult th
 | 12c | Sharp    | `#` | `<accid`**`accid="s"`**`/>` | no examples in our corpus | <img src="images/verovio_sharp.png" width="30"> |
 | 13 | Separation of neumes                             | `/`<br/>what precedes and follows this <br/>slash are the characters representing <br/>all neume components of one neume, <br/>and the characters of all the neume <br/>components of the following neume, <br/>respectively | **`<neume>`**<br/>&nbsp;&nbsp;&nbsp;&nbsp;`<nc/>...<nc/>`<br/>**`</neume>`<br/>`<neume>`**<br/>&nbsp;&nbsp;&nbsp;&nbsp;`<nc/>...<nc/>`<br/>**`</neume>`** | - | - |
 | 14 | Uncertain reading <br/>unclear neume components   | `r`[^4] | `<nc>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;**`<unclear/>`**<br/>`</nc>` | - | - |
-| 15 | Completely illegible / lacuna: <br/>we do not provide notation <br/>in the transcription                | `text()`<br/>no content inside the pair of <br/>parentheses | `<syllable>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`<syl>text</syl>`<br/>`</syllable>` <br/><br/>**no child `<neume>`** inside of `<syllable>` | - | - |
+| 15 | Completely illegible / lacuna: | `text()`<br/>no content inside the pair of <br/>parentheses | `<syllable>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`<syl>text</syl>`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`<gap></gap>`<br/>`</syllable>` <br/><br/>**no child `<neume>`** inside of `<syllable>`, **we use `<gap>` instead** | - | - |
 
 #### Notes:
 

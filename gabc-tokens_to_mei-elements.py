@@ -247,10 +247,10 @@ def encode_obliqua_ligatures_and_liquescents():
             if (nc.getAttribute('ligated') and nc.getAttribute('ligated') == 'true'):
                 save = i+1
             if (nc.getAttribute('type') and nc.getAttribute('tilt')):
-                type = nc.getAttribute('type')
+                typeval = nc.getAttribute('type')
                 tilt = nc.getAttribute('tilt')
-                if ((type.value == "epiphonus" or type.value == "cephalicus") and (tilt=="n" or tilt=="ne" or tilt=="s")):
-                    nc.removeAttribute(type)
+                if (typeval in ["epiphonus", "cephalicus"] and tilt in ["n", "ne", "s"]):
+                    nc.removeAttribute('type')
         if (save > 0):
             sq_ncs[save].setAttribute('ligated', 'true')
 

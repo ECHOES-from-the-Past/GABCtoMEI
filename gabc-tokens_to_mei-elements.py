@@ -235,7 +235,7 @@ def get_syl_and_neumes(gabc_syllable):
 #  Flavoring MEI (to square or aquitanian) #
 # ---------------------------------------- #
 
-def encode_obliqua_ligatures():
+def encode_obliqua_ligatures_and_liquescents():
     # Add the @ligated=true to the second neume component of the pair of obliqua ligated components
     square_neumes = doc.getElementsByTagName("neume")
     for sq_neume in square_neumes:
@@ -244,6 +244,11 @@ def encode_obliqua_ligatures():
         for i, nc in enumerate(sq_ncs):
             if (nc.getAttribute('ligated') and nc.getAttribute('ligated') == 'true'):
                 save = i+1
+            if (nc.getAttribute('type') and nc.getAttribute('tilt')):
+                type = nc.getAttribute('type')
+                tilt = nc.getAttribute('tilt')
+                if ((type.value == "epiphonus" or type.value == "cephalicus") and (tilt=="n" or tilt=="ne" or tilt=="s")):
+                    nc.removeAttribute(type)
         if (save > 0):
             sq_ncs[save].setAttribute('ligated', 'true')
 
@@ -452,7 +457,7 @@ def gabc2mei(gabc_line, mei_file, notation_type, metadata_dict):
                         mei_neume = convert_to_mei_neume(gabc_neume)
                         syllable_mei.appendChild(mei_neume)
 
-    encode_obliqua_ligatures()
+    encode_obliqua_ligatures_and_liquescents()
 
     # Assign UUID @xml:ids for all elements
     body = doc.getElementsByTagName('body')[0]

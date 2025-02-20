@@ -79,7 +79,7 @@ For more information on how to encode chants using MEI Neumes, please consult th
 * **Liquescents**, on the other hand, are represented with the GABC symbols `<` or `>`. 
    * The use of a regular `<` implies an epiphonus (higher liquescent, with `@curve = a` and `@type = epiphonus`). 
    * The use of a regular `>` implies a cephalicus (downward liquescent, with `@curve = c` and `@type = cephalicus`).
-   * However, if the `>` is combined with either `V` (stem left) or `v` (stem right); these are read more like a liquescent virga, therefore, the `@type = cephalicus` is removed and substituted by `@tilt = n` (if `V`) or `@tilt = s` (if `v`). 
+   * However, if the `>` is combined with either `V` (stem left) or `v` (stem right), the `@type = cephalicus` is removed and substituted by `@tilt = n` (if `V`) or `@tilt = s` (if `v`). In Aquitanian notation, the combination of `V` and `>` represent a liquescent virga (a liquescent with `@tilt=ne`).
 
    These are all internal conventions from our project on how to interpret these combination of symbols and their conversion to MEI.
 

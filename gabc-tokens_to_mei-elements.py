@@ -360,7 +360,7 @@ def gabc2mei(gabc_line, mei_file, notation_type, metadata_dict):
         head = projectDesc.getElementsByTagName('head')[0]
         paragraph = projectDesc.getElementsByTagName('p')[0]
         head.appendChild(doc.createTextNode("ECHOES Project"))
-        paragraph.appendChild(doc.createTextNode("Encoded in GABC by" + transcriber + ". Converted into MEI with https://github.com/ECHOES-from-the-Past/GABCtoMEI/blob/main/gabc-tokens_to_mei-elements.py script."))
+        paragraph.appendChild(doc.createTextNode("Encoded in GABC by " + transcriber + ". Converted into MEI with https://github.com/ECHOES-from-the-Past/GABCtoMEI/blob/main/gabc-tokens_to_mei-elements.py script."))
     except:
         print("There is no TRANSC")
 
